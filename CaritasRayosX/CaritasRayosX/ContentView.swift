@@ -8,9 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    //@EnvironmentObject var authViewModel: AuthenticationViewModel
+    var hasPersistedSignedIn = UserDefaults.standard.bool(forKey: "isLoggedIn")
     var body: some View {
-        Text("Hola")
-        ListaDeRecibos()
+            NavigationStack {
+                /*
+                if authViewModel.state == .signedOut && !hasPersistedSignedIn && !authViewModel.restoreGoogleSignIn {
+                    Login()
+                */
+                Login()
+            }
     }
 }
 

@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+/*
 struct ListaDeRecibos: View {
     var body: some View {
         NavigationStack{
@@ -39,4 +39,4 @@ struct ListaDeRecibos_Previews: PreviewProvider {
     static var previews: some View {
         ListaDeRecibos()
     }
-}
+}*/

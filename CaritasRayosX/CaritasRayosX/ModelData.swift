@@ -8,7 +8,7 @@
 import Foundation
 
 //var listaDonantes = cargarDato()
-
+/*
 func callAPI2() -> Array<donante>{
     var lista: Array<donante> = []
     guard let url = URL(string: "https://jsonplaceholder.typicode.com/posts") else{
@@ -39,7 +39,7 @@ func callAPI2() -> Array<donante>{
     group.wait()
     return lista
     
-}
+}*/
 
 /*func cargarDato() -> Array<donante>{
     let listaDonantes = [donante(id: 1, nombre: "Eugenio", apellidoP: "Turcott"),

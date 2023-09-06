@@ -8,10 +8,6 @@
 import Foundation
 
 struct donante: Identifiable{ // Revisar variables verdaderas
-    var id: Int
-    var nombre: String
-    var apellidoP: String
-    /*var apellidoM: String
-    var telefono: Int
-    var direccion: String*/
+    let activo, idTipoRecolector, idZona, idZona2: String
+    let indice, nombre, id: String
 }

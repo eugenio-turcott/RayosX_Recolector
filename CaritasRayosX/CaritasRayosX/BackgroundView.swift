@@ -13,7 +13,7 @@ struct BackgroundView: View {
             HStack(){
                 Spacer()
                 
-                Image("Logo")
+                Image("logo")
                     .resizable(resizingMode: .stretch)
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 200.0)

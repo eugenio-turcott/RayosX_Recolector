@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FB24D1EE2AA8F4D80038D109 /* ListaDeRecibos.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB24D1ED2AA8F4D80038D109 /* ListaDeRecibos.swift */; };
+		FB41F8592AA9000700E99EE9 /* donante2.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB41F8582AA9000700E99EE9 /* donante2.swift */; };
 		FB6670D92AA8F082007C38A9 /* donanteRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6670D82AA8F082007C38A9 /* donanteRow.swift */; };
 		FB6670DB2AA8F0D0007C38A9 /* DetallesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6670DA2AA8F0D0007C38A9 /* DetallesView.swift */; };
 		FB6670DD2AA8F10C007C38A9 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6670DC2AA8F10C007C38A9 /* ModelData.swift */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		FB24D1ED2AA8F4D80038D109 /* ListaDeRecibos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaDeRecibos.swift; sourceTree = "<group>"; };
+		FB41F8582AA9000700E99EE9 /* donante2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = donante2.swift; sourceTree = "<group>"; };
 		FB6670D82AA8F082007C38A9 /* donanteRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = donanteRow.swift; sourceTree = "<group>"; };
 		FB6670DA2AA8F0D0007C38A9 /* DetallesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetallesView.swift; sourceTree = "<group>"; };
 		FB6670DC2AA8F10C007C38A9 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 				FB6670DA2AA8F0D0007C38A9 /* DetallesView.swift */,
 				FB6670DC2AA8F10C007C38A9 /* ModelData.swift */,
 				FB6670DE2AA8F124007C38A9 /* donante.swift */,
+				FB41F8582AA9000700E99EE9 /* donante2.swift */,
 				FBAADD2D2AA8EE730064A068 /* Assets.xcassets */,
 				FBAADD2F2AA8EE730064A068 /* Preview Content */,
 			);
@@ -156,6 +159,7 @@
 				FB6670DF2AA8F124007C38A9 /* donante.swift in Sources */,
 				FB6670D92AA8F082007C38A9 /* donanteRow.swift in Sources */,
 				FB24D1EE2AA8F4D80038D109 /* ListaDeRecibos.swift in Sources */,
+				FB41F8592AA9000700E99EE9 /* donante2.swift in Sources */,
 				FB6670DD2AA8F10C007C38A9 /* ModelData.swift in Sources */,
 				FB6670DB2AA8F0D0007C38A9 /* DetallesView.swift in Sources */,
 				FBAADD2A2AA8EE720064A068 /* CaritasRayosXApp.swift in Sources */,

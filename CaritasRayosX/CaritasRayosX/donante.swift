@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct donante: Identifiable{ // Revisar variables verdaderas
+struct donante: Identifiable{ // RECOLECTORES!!!
     let activo, idTipoRecolector, idZona, idZona2: String
     let indice, nombre, id: String
 }

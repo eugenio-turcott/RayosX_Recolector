@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct donante: Identifiable{ // RECOLECTORES!!!
+struct donante: Codable, Identifiable{ // RECOLECTORES!!!
     let activo, idTipoRecolector, idZona, idZona2: String
     let indice, nombre, id: String
 }

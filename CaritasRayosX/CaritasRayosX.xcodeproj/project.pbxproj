@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		FB24D1EE2AA8F4D80038D109 /* ListaDeRecibos.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB24D1ED2AA8F4D80038D109 /* ListaDeRecibos.swift */; };
 		FB41F8592AA9000700E99EE9 /* donante2.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB41F8582AA9000700E99EE9 /* donante2.swift */; };
+		FB41F85B2AA9121300E99EE9 /* bitacora.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB41F85A2AA9121300E99EE9 /* bitacora.swift */; };
+		FB41F85D2AA9123700E99EE9 /* donativos.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB41F85C2AA9123700E99EE9 /* donativos.swift */; };
 		FB6670D92AA8F082007C38A9 /* donanteRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6670D82AA8F082007C38A9 /* donanteRow.swift */; };
 		FB6670DB2AA8F0D0007C38A9 /* DetallesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6670DA2AA8F0D0007C38A9 /* DetallesView.swift */; };
 		FB6670DF2AA8F124007C38A9 /* donante.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6670DE2AA8F124007C38A9 /* donante.swift */; };
@@ -24,6 +26,8 @@
 /* Begin PBXFileReference section */
 		FB24D1ED2AA8F4D80038D109 /* ListaDeRecibos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaDeRecibos.swift; sourceTree = "<group>"; };
 		FB41F8582AA9000700E99EE9 /* donante2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = donante2.swift; sourceTree = "<group>"; };
+		FB41F85A2AA9121300E99EE9 /* bitacora.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bitacora.swift; sourceTree = "<group>"; };
+		FB41F85C2AA9123700E99EE9 /* donativos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = donativos.swift; sourceTree = "<group>"; };
 		FB6670D82AA8F082007C38A9 /* donanteRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = donanteRow.swift; sourceTree = "<group>"; };
 		FB6670DA2AA8F0D0007C38A9 /* DetallesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetallesView.swift; sourceTree = "<group>"; };
 		FB6670DE2AA8F124007C38A9 /* donante.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = donante.swift; sourceTree = "<group>"; };
@@ -73,6 +77,8 @@
 				FB6670D82AA8F082007C38A9 /* donanteRow.swift */,
 				FB6670DA2AA8F0D0007C38A9 /* DetallesView.swift */,
 				FB6670DE2AA8F124007C38A9 /* donante.swift */,
+				FB41F85A2AA9121300E99EE9 /* bitacora.swift */,
+				FB41F85C2AA9123700E99EE9 /* donativos.swift */,
 				FB41F8582AA9000700E99EE9 /* donante2.swift */,
 				FB71D0FE2AA9144A00610ED0 /* BackgroundView.swift */,
 				FB71D1002AA914E300610ED0 /* Login.swift */,
@@ -164,12 +170,14 @@
 				FB71D0FF2AA9144A00610ED0 /* BackgroundView.swift in Sources */,
 				FB71D1012AA914E300610ED0 /* Login.swift in Sources */,
 				FBAADD2C2AA8EE720064A068 /* ContentView.swift in Sources */,
+				FB41F85D2AA9123700E99EE9 /* donativos.swift in Sources */,
 				FB6670DF2AA8F124007C38A9 /* donante.swift in Sources */,
 				FB71D1032AA9150500610ED0 /* Principal.swift in Sources */,
 				FB6670D92AA8F082007C38A9 /* donanteRow.swift in Sources */,
 				FB24D1EE2AA8F4D80038D109 /* ListaDeRecibos.swift in Sources */,
 				FB41F8592AA9000700E99EE9 /* donante2.swift in Sources */,
 				FB6670DB2AA8F0D0007C38A9 /* DetallesView.swift in Sources */,
+				FB41F85B2AA9121300E99EE9 /* bitacora.swift in Sources */,
 				FBAADD2A2AA8EE720064A068 /* CaritasRayosXApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

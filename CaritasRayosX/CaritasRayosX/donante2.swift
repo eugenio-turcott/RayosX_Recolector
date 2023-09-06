@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct donante2 { // DONANTES!!
+struct donante2: Codable, Identifiable { // DONANTES!!
     let aMaterno, aPaterno, email, fechaNac: String
-    let idDonante, idGenero, nombre, telCasa: String
+    let id, idGenero, nombre, telCasa: String
     let telMovil, telOficina, ultimoDonativo: String
 }

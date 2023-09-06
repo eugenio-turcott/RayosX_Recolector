@@ -14,7 +14,7 @@ struct donanteRow: View {
     var body: some View {
         VStack{
             HStack{
-                Text(donante.nombre + " " + donante.apellidoP)
+                Text(donante.nombre + " " )
                     .font(.title)
                     .fontWeight(.bold)
                     .foregroundColor(Color(red: 0/255, green: 59/255, blue: 92/255))

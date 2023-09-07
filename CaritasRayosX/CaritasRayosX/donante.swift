@@ -1,5 +1,5 @@
 //
-//  donante.swift
+//  donante2.swift
 //  CaritasRayosX
 //
 //  Created by Alumno on 06/09/23.
@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct donante: Codable, Identifiable{ // RECOLECTORES!!!
-    let activo, idTipoRecolector, idZona, idZona2: String
-    let indice, nombre, id: String
+struct donante: Codable, Identifiable { // DONANTES!!
+    let aMaterno, aPaterno, email, fechaNac: String
+    let id, idGenero, nombre, telCasa: String
+    let telMovil, telOficina, ultimoDonativo: String
 }

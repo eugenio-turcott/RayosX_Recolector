@@ -6,8 +6,10 @@
 //
 
 import SwiftUI
-/*
+
 struct ListaDeRecibos: View {
+    @State private var listaRecibos: Array<recibos> = []
+    
     var body: some View {
         NavigationStack{
             VStack {
@@ -15,16 +17,16 @@ struct ListaDeRecibos: View {
                     Spacer()
                 }
                 VStack {
-                    List(listaDonantes){
-                        donanteItem in
-                        NavigationLink{
-                            DetallesView(donante: donanteItem)
-                        }
-                    label:{
-                        donanteRow(donante: donanteItem)
-                    }
-                    }
-                    .listStyle(.inset)
+//                    List(listaRecibos){
+//                        donanteItem in
+//                        NavigationLink{
+//                            DetallesView(donante: donanteItem)
+//                        }
+//                    label:{
+//                        donanteRow(donante: donanteItem)
+//                    }
+//                    }
+//                    .listStyle(.inset)
                 }
                 .cornerRadius(10)
                 .padding()
@@ -39,4 +41,4 @@ struct ListaDeRecibos_Previews: PreviewProvider {
     static var previews: some View {
         ListaDeRecibos()
     }
-}*/
+}

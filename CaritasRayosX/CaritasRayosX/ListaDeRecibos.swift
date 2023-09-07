@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ListaDeRecibos: View {
+    @State private var listaRecibos: Array<recibos> = []
+    
     var body: some View {
         NavigationStack{
             VStack {
@@ -15,7 +17,7 @@ struct ListaDeRecibos: View {
                     Spacer()
                 }
                 VStack {
-//                    List(listaDonantes){
+//                    List(listaRecibos){
 //                        donanteItem in
 //                        NavigationLink{
 //                            DetallesView(donante: donanteItem)

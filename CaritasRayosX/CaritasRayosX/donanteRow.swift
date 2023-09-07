@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct donanteRow: View {
-    //var donante: donante
+    var recibos:recibos
     @State private var estatus: String = ""
     
     var body: some View {
         VStack{
             HStack{
-                Text("g")
+                Text("\(recibos.NOMBRE) \(recibos.A_PATERNO)")
                     .font(.title)
                     .fontWeight(.bold)
                     .foregroundColor(Color(red: 0/255, green: 59/255, blue: 92/255))
@@ -45,6 +45,6 @@ struct donanteRow: View {
 
 struct donanteRow_Previews: PreviewProvider {
     static var previews: some View {
-        donanteRow()
+        donanteRow(recibos: recibosList[0])
     }
 }

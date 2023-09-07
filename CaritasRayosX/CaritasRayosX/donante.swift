@@ -12,3 +12,5 @@ struct donante: Codable, Identifiable { // DONANTES!!
     let id, idGenero, nombre, telCasa: String
     let telMovil, telOficina, ultimoDonativo: String
 }
+
+

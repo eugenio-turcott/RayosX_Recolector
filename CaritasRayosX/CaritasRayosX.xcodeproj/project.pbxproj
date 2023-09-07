@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		FB24D1EE2AA8F4D80038D109 /* ListaDeRecibos.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB24D1ED2AA8F4D80038D109 /* ListaDeRecibos.swift */; };
-		FB41F8592AA9000700E99EE9 /* donante.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB41F8582AA9000700E99EE9 /* donante.swift */; };
 		FB41F85B2AA9121300E99EE9 /* bitacora.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB41F85A2AA9121300E99EE9 /* bitacora.swift */; };
 		FB41F85D2AA9123700E99EE9 /* donativos.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB41F85C2AA9123700E99EE9 /* donativos.swift */; };
 		FB6670D92AA8F082007C38A9 /* donanteRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6670D82AA8F082007C38A9 /* donanteRow.swift */; };
@@ -16,18 +15,15 @@
 		FB6670DF2AA8F124007C38A9 /* recolector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6670DE2AA8F124007C38A9 /* recolector.swift */; };
 		FB71D0FF2AA9144A00610ED0 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB71D0FE2AA9144A00610ED0 /* BackgroundView.swift */; };
 		FB71D1012AA914E300610ED0 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB71D1002AA914E300610ED0 /* Login.swift */; };
-		FB71D1032AA9150500610ED0 /* Principal.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB71D1022AA9150500610ED0 /* Principal.swift */; };
 		FBAADD2A2AA8EE720064A068 /* CaritasRayosXApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAADD292AA8EE720064A068 /* CaritasRayosXApp.swift */; };
 		FBAADD2C2AA8EE720064A068 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAADD2B2AA8EE720064A068 /* ContentView.swift */; };
 		FBAADD2E2AA8EE730064A068 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBAADD2D2AA8EE730064A068 /* Assets.xcassets */; };
 		FBAADD312AA8EE730064A068 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBAADD302AA8EE730064A068 /* Preview Assets.xcassets */; };
-		FBB07BDF2AAA7FEB00E1F16A /* recibos.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB07BDE2AAA7FEB00E1F16A /* recibos.swift */; };
-		FBBECDCA2AAA309A00EC53CC /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBECDC92AAA309A00EC53CC /* ModelData.swift */; };
+		FBEE20782AA927DE000956FE /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEE20772AA927DE000956FE /* ModelData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FB24D1ED2AA8F4D80038D109 /* ListaDeRecibos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaDeRecibos.swift; sourceTree = "<group>"; };
-		FB41F8582AA9000700E99EE9 /* donante.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = donante.swift; sourceTree = "<group>"; };
 		FB41F85A2AA9121300E99EE9 /* bitacora.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bitacora.swift; sourceTree = "<group>"; };
 		FB41F85C2AA9123700E99EE9 /* donativos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = donativos.swift; sourceTree = "<group>"; };
 		FB6670D82AA8F082007C38A9 /* donanteRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = donanteRow.swift; sourceTree = "<group>"; };
@@ -35,14 +31,12 @@
 		FB6670DE2AA8F124007C38A9 /* recolector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recolector.swift; sourceTree = "<group>"; };
 		FB71D0FE2AA9144A00610ED0 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		FB71D1002AA914E300610ED0 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
-		FB71D1022AA9150500610ED0 /* Principal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Principal.swift; sourceTree = "<group>"; };
 		FBAADD262AA8EE720064A068 /* CaritasRayosX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CaritasRayosX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBAADD292AA8EE720064A068 /* CaritasRayosXApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaritasRayosXApp.swift; sourceTree = "<group>"; };
 		FBAADD2B2AA8EE720064A068 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FBAADD2D2AA8EE730064A068 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FBAADD302AA8EE730064A068 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		FBB07BDE2AAA7FEB00E1F16A /* recibos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recibos.swift; sourceTree = "<group>"; };
-		FBBECDC92AAA309A00EC53CC /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
+		FBEE20772AA927DE000956FE /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,12 +77,9 @@
 				FB6670DE2AA8F124007C38A9 /* recolector.swift */,
 				FB41F85A2AA9121300E99EE9 /* bitacora.swift */,
 				FB41F85C2AA9123700E99EE9 /* donativos.swift */,
-				FB41F8582AA9000700E99EE9 /* donante.swift */,
 				FB71D0FE2AA9144A00610ED0 /* BackgroundView.swift */,
 				FB71D1002AA914E300610ED0 /* Login.swift */,
-				FB71D1022AA9150500610ED0 /* Principal.swift */,
-				FBBECDC92AAA309A00EC53CC /* ModelData.swift */,
-				FBB07BDE2AAA7FEB00E1F16A /* recibos.swift */,
+				FBEE20772AA927DE000956FE /* ModelData.swift */,
 				FBAADD2D2AA8EE730064A068 /* Assets.xcassets */,
 				FBAADD2F2AA8EE730064A068 /* Preview Content */,
 			);
@@ -176,14 +167,11 @@
 				FB71D0FF2AA9144A00610ED0 /* BackgroundView.swift in Sources */,
 				FB71D1012AA914E300610ED0 /* Login.swift in Sources */,
 				FBAADD2C2AA8EE720064A068 /* ContentView.swift in Sources */,
-				FBB07BDF2AAA7FEB00E1F16A /* recibos.swift in Sources */,
-				FBBECDCA2AAA309A00EC53CC /* ModelData.swift in Sources */,
+				FBEE20782AA927DE000956FE /* ModelData.swift in Sources */,
 				FB41F85D2AA9123700E99EE9 /* donativos.swift in Sources */,
 				FB6670DF2AA8F124007C38A9 /* recolector.swift in Sources */,
-				FB71D1032AA9150500610ED0 /* Principal.swift in Sources */,
 				FB6670D92AA8F082007C38A9 /* donanteRow.swift in Sources */,
 				FB24D1EE2AA8F4D80038D109 /* ListaDeRecibos.swift in Sources */,
-				FB41F8592AA9000700E99EE9 /* donante.swift in Sources */,
 				FB6670DB2AA8F0D0007C38A9 /* DetallesView.swift in Sources */,
 				FB41F85B2AA9121300E99EE9 /* bitacora.swift in Sources */,
 				FBAADD2A2AA8EE720064A068 /* CaritasRayosXApp.swift in Sources */,

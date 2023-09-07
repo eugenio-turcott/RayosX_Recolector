@@ -2,15 +2,16 @@
 //  ModelData.swift
 //  CaritasRayosX
 //
-//  Created by Alumno on 07/09/23.
+//  Created by Alumno on 06/09/23.
 //
 
 import Foundation
 
-func callAPI() -> Array<recibos>{
-    var lista: Array<recibos> = []
-    guard let url = URL(string: "https://jsonplaceholder.typicode.com/posts") else{
-        return lista
+func loginVer(nombre:String, contrasenaI:String) -> Bool{
+    var lista: Array<recolector> = []
+    var contrasena: String = ""
+    guard let url = URL(string: "http://10.14.255.65:10206/crud/read?NOMBRE=\(nombre)") else{
+        return false
     }
     
     let group = DispatchGroup()
@@ -22,10 +23,11 @@ func callAPI() -> Array<recibos>{
         let jsonDecoder = JSONDecoder()
         if(data != nil){
             do{
-                let recibosList = try jsonDecoder.decode([recibos].self, from: data!)
-                lista = recibosList
-                for recibosItem in recibosList{
-                    print("Id: \(recibosItem.id) - Nombre: \(recibosItem.NOMBRE)")
+                let recolectorList = try jsonDecoder.decode([recolector].self, from: data!)
+                lista = recolectorList
+                for recolector in recolectorList{
+                    contrasena = recolector.CONTRASENA
+                    print("Id: \(recolector.id) - Titulo: \(recolector.NOMBRE)")
                 }
             }catch{
                 print(error)
@@ -35,6 +37,17 @@ func callAPI() -> Array<recibos>{
     }
     task.resume()
     group.wait()
-    return lista
+    
+    if lista.isEmpty {
+        return false
+    }
+    else{
+        if (contrasena == contrasenaI){
+            return true
+        }
+        else{
+            return false
+        }
+    }
     
 }

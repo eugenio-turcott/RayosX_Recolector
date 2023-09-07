@@ -20,6 +20,10 @@ struct Login: View {
     //var buttonText: String = "Sign In"
     //var buttonText: String = "Create Account"
     
+    @State private var isValid = false
+    @State private var mensajeError = ""
+
+    
     var body: some View {
         ZStack{
             BackgroundView()
@@ -56,7 +60,7 @@ struct Login: View {
                         .padding(.bottom, 40.0)
                         .textFieldStyle(.roundedBorder)
                         .lineLimit(5)
-                        
+
                     
                     HStack{
                         Image(systemName: "lock.circle")
@@ -70,14 +74,15 @@ struct Login: View {
                     }
                     .padding(.top, 20.0)
                             
-                    
                     SecureField("Contraseña", text: $contraseña)
                             //.withSecureFieldStyles()
                             .submitLabel(.next)
                             .focused($passwordIsFocused)
                             .textFieldStyle(.roundedBorder)
                             .lineLimit(5)
-                                
+                            
+                    Text(mensajeError).foregroundColor(.red).padding(.top, 30.0)
+
                     Spacer()
                     
                 }
@@ -93,12 +98,14 @@ struct Login: View {
                 
             VStack{
                 if (!showAuthLoader) {
-                        // Sign In
-                        NavigationLink("Iniciar sesión")
-                        {
-                            Principal()
-                                .toolbar(.hidden)
+                    
+                    Button("Iniciar Sesión") {
+                        self.isValid = self.validate()
+                    }
+                    .background(
+                        NavigationLink(destination: ContentView(), isActive: $isValid) {
                         }
+                    )
                         .padding(20)
                         .frame(maxWidth:.infinity)
                         .font(.headline)
@@ -115,9 +122,10 @@ struct Login: View {
                                 
                                 
                                 
-                            } else {
+                    } else {
                                 ProgressView()
-                            }
+                    }
+                 
                     }
                     .padding(.bottom, 30.0)
                 
@@ -133,6 +141,26 @@ struct Login: View {
         }
         
     }
+    
+    private func validate() -> Bool {
+        var valor : Bool = false
+
+        if (usuario != "" && contraseña != ""){
+            valor = loginVer(nombre: usuario, contrasenaI: contraseña)
+            if (valor == true){
+                return true
+            }
+            else{
+                mensajeError = "Usuario y/o contraseña incorrectos"
+                return false
+
+            }
+        }else{
+            mensajeError = "Debe ingresar usuario y contraseña"
+            return false
+        }
+    }
+    
 }
 
 struct Login_Previews: PreviewProvider {

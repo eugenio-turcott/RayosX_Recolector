@@ -8,6 +8,8 @@
 import Foundation
 
 struct recolector: Codable, Identifiable{ // RECOLECTORES!!!
-    let activo, idTipoRecolector, idZona, idZona2: String
-    let indice, nombre, id: String
+    let ACTIVO: Int
+    let CONTRASENA: String
+    let ID_TIPO_RECOLECTOR, ID_ZONA, ID_ZONA_2, INDICE: Int
+    let NOMBRE, id: String
 }

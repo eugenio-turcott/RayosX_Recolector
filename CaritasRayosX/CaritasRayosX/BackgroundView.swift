@@ -9,22 +9,28 @@ import SwiftUI
 
 struct BackgroundView: View {
     var body: some View {
-        VStack(alignment: .center){
-            HStack(){
-                Spacer()
-                
-                Image("logo")
-                    .resizable(resizingMode: .stretch)
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 200.0)
+        HStack{
+            VStack(alignment: .center){
+                HStack(){
+                    Spacer()
+                    
+                    Image("logo")
+                        .resizable(resizingMode: .stretch)
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 200.0)
+                    
+                    Spacer()
+                }
+                .background(Color("AccentColor"))
                 
                 Spacer()
             }
             .background(Color("AccentColor"))
-            
-            Spacer()
+            VStack{
+                
+            }
         }
-        .background(Color("AccentColor"))
+        
     }
 }
 

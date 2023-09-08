@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct ListaDeRecibos: View {
-    var listaRecibos = callRecibos()
+    //@State public var idRecolectorEnLista: String
+    var listaRecibos = callRecibos(idEnCall: idR)
     
     var body: some View {
         NavigationStack{

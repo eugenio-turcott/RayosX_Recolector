@@ -102,7 +102,6 @@ struct Login: View {
                     
                     Button("Iniciar Sesión") {
                         self.isValid = self.validate()
-                        listaRecibos = callRecibos()
                     }
                     .background(
                         NavigationLink(destination: ListaDeRecibos(), isActive: $isValid) {

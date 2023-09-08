@@ -57,7 +57,7 @@ var listaRecibos = callRecibos()
 
 func callRecibos() -> Array<recibos>{
     var listaRecibos: Array<recibos> = []
-    guard let url = URL(string: "http://10.14.255.65:10206/crud/readReciboxldR?ID_RECOLECTOR=30") else{
+    guard let url = URL(string: "http://10.14.255.65:10206/crud/readReciboxIdR?id=30") else{
         /*listaRecibos[0] = recibos(id:3, aPaterno: "Mama", comentarios:"", email:"", estatusPago: "", idDireccionCobro: "1", idRecolector: "0", importe: 200, nombre: "eugenio", telMovil: "")*/
         return listaRecibos
     }
@@ -74,7 +74,7 @@ func callRecibos() -> Array<recibos>{
                 let decodeRecibos = try jsonDecoder.decode([recibos].self, from: data!)
                 listaRecibos = decodeRecibos
                 for recibosItem in decodeRecibos{
-                    print("Id: \(recibosItem.id) - Nombre: \(recibosItem.nombre)")
+                    print("Id: \(recibosItem.id) - Nombre: \(recibosItem.NOMBRE)")
                 }
             }catch{
                 print(error)

@@ -8,24 +8,26 @@
 import SwiftUI
 
 struct donanteRow: View {
-    //var recibos:recibos
+    var recibos:recibos
     @State private var estatus: String = ""
     
     var body: some View {
         VStack{
             HStack{
-                Text("Pancha")
+                Text("\(recibos.NOMBRE) \(recibos.A_PATERNO)")
                     .font(.title)
                     .fontWeight(.bold)
                     .foregroundColor(Color(red: 0/255, green: 59/255, blue: 92/255))
                     .padding(.leading, 30.0)
+                    .padding(.top, 10.0)
+                    .offset(y:5)
                 
                 Spacer()
                 Image("simboloInfo2")
                     .resizable(resizingMode: .stretch)
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 45.0)
-                    //.offset(y: -10)
+                    .offset(y: 10)
                 Spacer()
             }
             HStack{
@@ -45,6 +47,6 @@ struct donanteRow: View {
 
 struct donanteRow_Previews: PreviewProvider {
     static var previews: some View {
-        donanteRow()
+        donanteRow(recibos: listaRecibos[0])
     }
 }

@@ -17,14 +17,13 @@ struct ListaDeRecibos: View {
                     Spacer()
                 }
                 VStack {
-                    
                     List(listaRecibos){
                         recibosItem in
                         NavigationLink{
                             DetallesView()
                         }
                     label:{
-                        donanteRow()
+                        donanteRow(recibos: recibosItem)
                     }
                     }
                     .listStyle(.inset)

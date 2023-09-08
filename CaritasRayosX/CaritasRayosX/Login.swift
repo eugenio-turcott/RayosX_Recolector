@@ -15,6 +15,7 @@ struct Login: View {
     @State private var showInvalidUCAlert: Bool = false
     @State private var isAuthenticated: Bool = false
     @FocusState private var passwordIsFocused: Bool
+    @State public var listaRecibos: Array<recibos> = []
     //@EnvironmentObject var authViewModel: AuthenticationViewModel
     @Environment(\.presentationMode) var presentationMode
     //var buttonText: String = "Sign In"
@@ -101,9 +102,10 @@ struct Login: View {
                     
                     Button("Iniciar Sesión") {
                         self.isValid = self.validate()
+                        listaRecibos = callRecibos()
                     }
                     .background(
-                        NavigationLink(destination: ContentView(), isActive: $isValid) {
+                        NavigationLink(destination: ListaDeRecibos(), isActive: $isValid) {
                         }
                     )
                         .padding(20)

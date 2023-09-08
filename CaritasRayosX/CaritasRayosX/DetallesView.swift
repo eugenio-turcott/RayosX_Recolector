@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct DetallesView: View {
-    //var donante: donante
     
     var body: some View {
         ZStack{
@@ -27,7 +26,7 @@ struct DetallesView: View {
                     }
                 }
                 HStack{
-                    Text("Pancha mama")
+                    Text("Nombre")
                         .font(.largeTitle)
                         .foregroundColor(Color("Azul oscuro"))
                         .padding(.leading, 20.0)

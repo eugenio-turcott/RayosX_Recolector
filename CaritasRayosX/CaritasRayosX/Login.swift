@@ -9,6 +9,7 @@ import SwiftUI
 
 struct Login: View {
     
+    @State public var idRecolector: String = ""
     @State private var usuario: String = ""
     @State private var contraseña: String = ""
     @State private var showAuthLoader: Bool = false
@@ -105,6 +106,7 @@ struct Login: View {
                     }
                     .background(
                         NavigationLink(destination: ListaDeRecibos(), isActive: $isValid) {
+                            
                         }
                     )
                         .padding(20)

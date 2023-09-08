@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ListaDeRecibos: View {
-    @State private var listaRecibos: Array<recibos> = []
+    var listaRecibos = callRecibos()
     
     var body: some View {
         NavigationStack{
@@ -17,16 +17,16 @@ struct ListaDeRecibos: View {
                     Spacer()
                 }
                 VStack {
-//                    List(listaRecibos){
-//                        donanteItem in
-//                        NavigationLink{
-//                            DetallesView(donante: donanteItem)
-//                        }
-//                    label:{
-//                        donanteRow(donante: donanteItem)
-//                    }
-//                    }
-//                    .listStyle(.inset)
+                    List(listaRecibos){
+                        recibosItem in
+                        NavigationLink{
+                            DetallesView()
+                        }
+                    label:{
+                        donanteRow(recibos: recibosItem)
+                    }
+                    }
+                    .listStyle(.inset)
                 }
                 .cornerRadius(10)
                 .padding()

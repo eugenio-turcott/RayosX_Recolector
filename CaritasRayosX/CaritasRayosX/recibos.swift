@@ -8,11 +8,9 @@
 import Foundation
 
 struct recibos: Codable, Identifiable{
-    let id: Int
-    
-    let IMPORTE, ESTATUS_PAGO: Int
-    let COMENTARIOS: String
-    let ID_DIRECCION_COBRO: Int
-    let NOMBRE, A_PATERNO, EMAIL: String
-    let TEL_MOVIL: Int
+    let A_PATERNO, COMENTARIOS, EMAIL, ESTATUS_PAGO: String
+    let ID_DIRECCION_COBRO: String
+    let IMPORTE: Int
+    let NOMBRE, TEL_MOVIL: String
+    var id: String
 }

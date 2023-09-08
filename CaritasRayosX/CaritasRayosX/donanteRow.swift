@@ -19,13 +19,15 @@ struct donanteRow: View {
                     .fontWeight(.bold)
                     .foregroundColor(Color(red: 0/255, green: 59/255, blue: 92/255))
                     .padding(.leading, 30.0)
+                    .padding(.top, 10.0)
+                    .offset(y:5)
                 
                 Spacer()
                 Image("simboloInfo2")
                     .resizable(resizingMode: .stretch)
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 45.0)
-                    //.offset(y: -10)
+                    .offset(y: 10)
                 Spacer()
             }
             HStack{
@@ -45,6 +47,6 @@ struct donanteRow: View {
 
 struct donanteRow_Previews: PreviewProvider {
     static var previews: some View {
-        donanteRow(recibos: recibosList[0])
+        donanteRow(recibos: listaRecibos[0])
     }
 }

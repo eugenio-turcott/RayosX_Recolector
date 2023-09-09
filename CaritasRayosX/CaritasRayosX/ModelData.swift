@@ -7,8 +7,7 @@
 
 import Foundation
 
-var idR: String = "0"
-
+/*
 func loginVeriD(nombre:String, contrasenaI:String) -> String{
     var lista: Array<recolector> = []
     var contrasena: String = ""
@@ -30,10 +29,7 @@ func loginVeriD(nombre:String, contrasenaI:String) -> String{
                 lista = recolectorList
                 for recolector in recolectorList{
                     contrasena = recolector.CONTRASENA
-                    print(idR)
                     print("Id: \(recolector.id) - Titulo: \(recolector.NOMBRE)")
-                    idR = recolector.id
-                    print(idR)
                 }
             }catch{
                 print(error)
@@ -56,7 +52,7 @@ func loginVeriD(nombre:String, contrasenaI:String) -> String{
         }
     }
     
-}
+}*/
 
 func loginVer(nombre:String, contrasenaI:String) -> Bool{
     var lista: Array<recolector> = []
@@ -79,10 +75,7 @@ func loginVer(nombre:String, contrasenaI:String) -> Bool{
                 lista = recolectorList
                 for recolector in recolectorList{
                     contrasena = recolector.CONTRASENA
-                    print(idR)
                     print("Id: \(recolector.id) - Titulo: \(recolector.NOMBRE)")
-                    idR = recolector.id
-                    print(idR)
                 }
             }catch{
                 print(error)
@@ -107,15 +100,14 @@ func loginVer(nombre:String, contrasenaI:String) -> Bool{
     
 }
 
-var listaRecibos = callRecibos(idEnCall: idR)
+var listaRecibos = callRecibos()
 
-func callRecibos(idEnCall: String) -> Array<recibos>{
-    var listaRecibos: Array<recibos> = []
+func callRecibos() -> Array<recibo>{
+    var listaRecibos: Array<recibo> = []
     print("Entre a funcion")
-    print("Antes de query http://10.14.255.65:10206/crud/readReciboxIdR?id=\(idEnCall)")
-    guard let url = URL(string: "http://10.14.255.65:10206/crud/readReciboxIdR?id=\(idEnCall)") else{
+    print("Antes de query http://10.14.255.65:10206/crud/readReciboxIdR?id=30")
+    guard let url = URL(string: "http://10.14.255.65:10206/crud/readReciboxIdR?id=30") else{
         /*listaRecibos[0] = recibos(id:3, aPaterno: "Mama", comentarios:"", email:"", estatusPago: "", idDireccionCobro: "1", idRecolector: "0", importe: 200, nombre: "eugenio", telMovil: "")*/
-        print("http://10.14.255.65:10206/crud/readReciboxIdR?id=\(idEnCall)")
         return listaRecibos
     }
 
@@ -128,7 +120,7 @@ func callRecibos(idEnCall: String) -> Array<recibos>{
         let jsonDecoder = JSONDecoder()
         if(data != nil){
             do{
-                let decodeRecibos = try jsonDecoder.decode([recibos].self, from: data!)
+                let decodeRecibos = try jsonDecoder.decode([recibo].self, from: data!)
                 listaRecibos = decodeRecibos
                 for recibosItem in decodeRecibos{
                     print("Id: \(recibosItem.id) - Nombre: \(recibosItem.NOMBRE)")

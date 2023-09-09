@@ -9,7 +9,9 @@ import SwiftUI
 
 struct DetallesView: View {
     //var donante: donante
-    
+    @State private var estatus: String = ""
+    var recibos: recibo
+
     var body: some View {
         ZStack{
             BackgroundView()
@@ -19,32 +21,29 @@ struct DetallesView: View {
                     Button {
                         
                     } label: {
-                        
-                        Image(systemName: "clear")
-                            .resizable(capInsets: EdgeInsets(), resizingMode: .stretch)
-                            .aspectRatio(contentMode: .fit)
-                            .padding([.top, .trailing], 40.0)
-                            .padding(.leading, 240.0)
-                            .padding(.bottom, 20.0)
-                            .foregroundColor(Color("Rosa"))
+                        NavigationLink (destination: ListaDeRecibos()){
+                            Image(systemName: "clear")
+                                .resizable(capInsets: EdgeInsets(), resizingMode: .stretch)
+                                .aspectRatio(contentMode: .fit)
+                                .padding([.top, .trailing], 40.0)
+                                .padding(.leading, 240.0)
+                                .padding(.bottom, 20.0)
+                                .foregroundColor(Color("Rosa"))
+                        }
                         Spacer()
                     }
                 }
                 HStack{
-                    Text("Pancha Mama")
+                    Text(recibos.NOMBRE)
                         .font(.title)
                         .fontWeight(.heavy)
                         .foregroundColor(Color("Azul oscuro"))
                         .padding(.leading, 20.0)
-                    Spacer()
-                    Text("Pagado")
-                        .padding(5)
-                        .overlay( RoundedRectangle(cornerRadius: 20)
-                            .stroke(Color("Gris")))
-                        .font(.title3)
+                    Text(recibos.A_PATERNO)
+                        .font(.title)
                         .fontWeight(.heavy)
-                        .foregroundColor(Color("Gris"))
-                        .padding(.vertical, 20.0)
+                        .foregroundColor(Color("Azul oscuro"))
+                        .padding(.leading, 20.0)
                     Spacer()
                 }
                 .padding(.horizontal, 5.0)
@@ -52,31 +51,19 @@ struct DetallesView: View {
                 Spacer()
                 HStack(alignment: .top){
                     Spacer()
-                    Text("Dirección:")
-                        .font(.title3)
-                        .fontWeight(.bold)
-                        .foregroundColor(Color("Azul oscuro"))
-                    Spacer()
-                    Text("Junco de la Vega, Tlaxcala, Apodaca #66634")
-                        .foregroundColor(Color("Gris"))
-                        .frame(width: 200.0)
-                    Spacer()
-                }
-                .padding(.bottom, 40.0)
-                .padding(.leading, 20.0)
-                .padding(.trailing, 5.0)
-                
-                HStack(alignment: .top){
-                    Spacer()
                     Text("Contacto:")
                         .font(.title3)
                         .fontWeight(.bold)
                         .foregroundColor(Color("Azul oscuro"))
                     Spacer()
-                    Text("+52 891 94 52 32 mariadrian@gmail.com")
-                        .foregroundColor(Color("Gris"))
-                        .multilineTextAlignment(.leading)
-                        .frame(width: 200.0)
+                    VStack{
+                        Text(recibos.TEL_MOVIL)
+                            .foregroundColor(Color("Gris"))
+                            .multilineTextAlignment(.leading)
+                        Text(recibos.EMAIL)
+                            .foregroundColor(Color("Gris"))
+                            .multilineTextAlignment(.leading)
+                    }
                     Spacer()
                 }
                 .padding(.bottom, 40.0)
@@ -90,7 +77,7 @@ struct DetallesView: View {
                         .fontWeight(.bold)
                         .foregroundColor(Color("Azul oscuro"))
                     Spacer()
-                    Text("200 $")
+                    Text(String(recibos.IMPORTE))
                         .foregroundColor(Color("Gris"))
                         .multilineTextAlignment(.leading)
                         .frame(width: 200.0)
@@ -100,6 +87,16 @@ struct DetallesView: View {
                 .padding(.leading, 20.0)
                 .padding(.trailing, 5.0)
                 
+                HStack{
+                    Spacer()
+                    Picker(selection: $estatus, label: Text("Picker")){
+                        Text("No localizado").tag("No localizado")
+                        Text("Pagado").tag("Pagado")
+                        Text("No pagado").tag("No pagado")
+                    }
+                    .padding(.leading, 10.0).frame(width: 330.0, height: 50.0).pickerStyle(.segmented)
+                    Spacer()
+                }
                 Spacer()
             }
             .background(.white)
@@ -118,6 +115,6 @@ struct DetallesView: View {
 
 struct DetallesView_Previews: PreviewProvider {
     static var previews: some View {
-        DetallesView()
+        DetallesView(recibos: listaRecibos[0])
     }
 }

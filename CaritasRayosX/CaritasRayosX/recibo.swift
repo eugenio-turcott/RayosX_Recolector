@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct recibos: Codable, Identifiable{
-    let A_PATERNO, COMENTARIOS, EMAIL, ESTATUS_PAGO: String
+struct recibo: Codable, Identifiable{
+    let A_PATERNO, COMENTARIOS, DIRECCION, EMAIL, ESTATUS_PAGO: String
     let ID_DIRECCION_COBRO: String
     let IMPORTE: Int
     let NOMBRE, TEL_MOVIL: String

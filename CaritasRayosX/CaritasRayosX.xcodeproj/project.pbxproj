@@ -19,7 +19,7 @@
 		FBAADD2C2AA8EE720064A068 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAADD2B2AA8EE720064A068 /* ContentView.swift */; };
 		FBAADD2E2AA8EE730064A068 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBAADD2D2AA8EE730064A068 /* Assets.xcassets */; };
 		FBAADD312AA8EE730064A068 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBAADD302AA8EE730064A068 /* Preview Assets.xcassets */; };
-		FBC9A06F2AAAB43A00064947 /* recibos.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC9A06E2AAAB43A00064947 /* recibos.swift */; };
+		FBC9A06F2AAAB43A00064947 /* recibo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC9A06E2AAAB43A00064947 /* recibo.swift */; };
 		FBEE20782AA927DE000956FE /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEE20772AA927DE000956FE /* ModelData.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,7 +37,7 @@
 		FBAADD2B2AA8EE720064A068 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FBAADD2D2AA8EE730064A068 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FBAADD302AA8EE730064A068 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		FBC9A06E2AAAB43A00064947 /* recibos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recibos.swift; sourceTree = "<group>"; };
+		FBC9A06E2AAAB43A00064947 /* recibo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recibo.swift; sourceTree = "<group>"; };
 		FBEE20772AA927DE000956FE /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -76,7 +76,7 @@
 				FBAADD292AA8EE720064A068 /* CaritasRayosXApp.swift */,
 				FBAADD2B2AA8EE720064A068 /* ContentView.swift */,
 				FB24D1ED2AA8F4D80038D109 /* ListaDeRecibos.swift */,
-				FBC9A06E2AAAB43A00064947 /* recibos.swift */,
+				FBC9A06E2AAAB43A00064947 /* recibo.swift */,
 				FB6670D82AA8F082007C38A9 /* donanteRow.swift */,
 				FB6670DA2AA8F0D0007C38A9 /* DetallesView.swift */,
 				FB6670DE2AA8F124007C38A9 /* recolector.swift */,
@@ -174,7 +174,7 @@
 				FB41F85D2AA9123700E99EE9 /* donativos.swift in Sources */,
 				FB6670DF2AA8F124007C38A9 /* recolector.swift in Sources */,
 				FB6670D92AA8F082007C38A9 /* donanteRow.swift in Sources */,
-				FBC9A06F2AAAB43A00064947 /* recibos.swift in Sources */,
+				FBC9A06F2AAAB43A00064947 /* recibo.swift in Sources */,
 				FB24D1EE2AA8F4D80038D109 /* ListaDeRecibos.swift in Sources */,
 				FB6670DB2AA8F0D0007C38A9 /* DetallesView.swift in Sources */,
 				FB41F85B2AA9121300E99EE9 /* bitacora.swift in Sources */,

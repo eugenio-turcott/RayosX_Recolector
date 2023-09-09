@@ -16,7 +16,7 @@ struct Login: View {
     @State private var showInvalidUCAlert: Bool = false
     @State private var isAuthenticated: Bool = false
     @FocusState private var passwordIsFocused: Bool
-    @State public var listaRecibos: Array<recibos> = []
+    @State public var listaRecibos: Array<recibo> = []
     //@EnvironmentObject var authViewModel: AuthenticationViewModel
     @Environment(\.presentationMode) var presentationMode
     //var buttonText: String = "Sign In"

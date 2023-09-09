@@ -1,6 +1,6 @@
 # **RayosX**
 
-<img src="RayosX_Logo.png" width=55% height=55%>
+<img src="Rayos_X_Logo.png" width=45% height=45%>
 
 ## Equipo 1 - Integración de seguridad informática en redes y sistemas de software
 

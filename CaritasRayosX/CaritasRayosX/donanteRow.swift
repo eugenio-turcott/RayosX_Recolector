@@ -8,17 +8,17 @@
 import SwiftUI
 
 struct donanteRow: View {
-    var recibos: recibo
-    @State private var estatus: String = ""
-    
+    var recibo: RECIBOS
+    @State var donante: DONANTES
+
     var body: some View {
         VStack{
-            HStack{
-                Text("\(recibos.NOMBRE) \(recibos.A_PATERNO)")
+            HStack{ //Nombre                   Apellido
+                Text("\(donante.NOMBRE) \(donante.A_PATERNO)")
                     .font(.title)
                     .fontWeight(.bold)
                     .foregroundColor(Color(red: 0/255, green: 59/255, blue: 92/255))
-                    .padding(.leading, 30.0)
+                    .padding(.leading, 15.0)
                     .padding(.top, 10.0)
                     .offset(y:5)
                 Spacer()
@@ -30,21 +30,26 @@ struct donanteRow: View {
                     .offset(y: 10)
                 Spacer()*/
             }
-            HStack{
-                Text(recibos.DIRECCION)
-                    .font(.title3)
+            .onAppear(){
+                donante = traerDonante(idD: recibo.ID_DONANTE)
             }
-            .padding(.top, 10.0)
+            HStack{
+                Text(recibo.DIRECCION_COBRO)
+                    .font(.title3)
+                    .padding(.leading, 15)
+            }
+            .padding(.top, 1.0)
             
             // Opciones de estatus
         }
         
+        
     }
 }
 
-
+/*
 struct donanteRow_Previews: PreviewProvider {
     static var previews: some View {
         donanteRow(recibos: listaRecibos[0])
     }
-}
+}*/

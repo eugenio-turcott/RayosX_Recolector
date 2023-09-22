@@ -6,58 +6,12 @@
 //
 
 import Foundation
+import UIKit
 
-/*
-func loginVeriD(nombre:String, contrasenaI:String) -> String{
-    var lista: Array<recolector> = []
+func loginVer(usuario:String, contrasenaI:String) -> Bool{
+    var lista: Array<RECOLECTOR> = []
     var contrasena: String = ""
-    guard let url = URL(string: "http://10.14.255.65:10206/crud/read?NOMBRE=\(nombre)") else{
-        print("Error en hacer crud")
-        return "Error"
-    }
-    
-    let group = DispatchGroup()
-    group.enter()
-    
-    let task = URLSession.shared.dataTask(with: url){
-        data, response, error in
-        
-        let jsonDecoder = JSONDecoder()
-        if(data != nil){
-            do{
-                let recolectorList = try jsonDecoder.decode([recolector].self, from: data!)
-                lista = recolectorList
-                for recolector in recolectorList{
-                    contrasena = recolector.CONTRASENA
-                    print("Id: \(recolector.id) - Titulo: \(recolector.NOMBRE)")
-                }
-            }catch{
-                print(error)
-            }
-        }
-        group.leave()
-    }
-    task.resume()
-    group.wait()
-    
-    if lista.isEmpty {
-        return "Error"
-    }
-    else{
-        if (contrasena == contrasenaI){
-            return idR
-        }
-        else{
-            return "Error"
-        }
-    }
-    
-}*/
-
-func loginVer(nombre:String, contrasenaI:String) -> Bool{
-    var lista: Array<recolector> = []
-    var contrasena: String = ""
-    guard let url = URL(string: "http://10.14.255.65:10206/crud/read?NOMBRE=\(nombre)") else{
+    guard let url = URL(string: "http://10.14.255.65:10206/crud/read?usuario=\(usuario)") else{
         print("Error en hacer crud")
         return false
     }
@@ -71,7 +25,7 @@ func loginVer(nombre:String, contrasenaI:String) -> Bool{
         let jsonDecoder = JSONDecoder()
         if(data != nil){
             do{
-                let recolectorList = try jsonDecoder.decode([recolector].self, from: data!)
+                let recolectorList = try jsonDecoder.decode([RECOLECTOR].self, from: data!)
                 lista = recolectorList
                 for recolector in recolectorList{
                     contrasena = recolector.CONTRASENA
@@ -100,14 +54,49 @@ func loginVer(nombre:String, contrasenaI:String) -> Bool{
     
 }
 
-var listaRecibos = callRecibos()
+func RecuperarIDRecolector(usuario:String, contrasenaI:String) -> Int{
+    var lista: Array<RECOLECTOR> = []
+    var IDRecolector: Int = 0
+    guard let url = URL(string: "http://10.14.255.65:10206/crud/read?usuario=\(usuario)") else{
+        print("Error en hacer crud")
+        return 0
+    }
+    
+    let group = DispatchGroup()
+    group.enter()
+    
+    let task = URLSession.shared.dataTask(with: url){
+        data, response, error in
+        
+        let jsonDecoder = JSONDecoder()
+        if(data != nil){
+            do{
+                let recolectorList = try jsonDecoder.decode([RECOLECTOR].self, from: data!)
+                lista = recolectorList
+                for recolector in recolectorList{
+                    IDRecolector = recolector.id
+                    print("Id: \(recolector.id) - Titulo: \(recolector.NOMBRE)")
+                }
+            }catch{
+                print(error)
+            }
+        }
+        group.leave()
+    }
+    task.resume()
+    group.wait()
+    
+    return IDRecolector
+    
+}
 
-func callRecibos() -> Array<recibo>{
-    var listaRecibos: Array<recibo> = []
+
+
+func callRecibos(idR1: Int) -> Array<RECIBOS>{ //recibir como input idrecolector
+    var idR = idR1
+    var listaRecibos: Array<RECIBOS> = []
     print("Entre a funcion")
-    print("Antes de query http://10.14.255.65:10206/crud/readReciboxIdR?id=30")
-    guard let url = URL(string: "http://10.14.255.65:10206/crud/readReciboxIdR?id=30") else{
-        /*listaRecibos[0] = recibos(id:3, aPaterno: "Mama", comentarios:"", email:"", estatusPago: "", idDireccionCobro: "1", idRecolector: "0", importe: 200, nombre: "eugenio", telMovil: "")*/
+    guard let url = URL(string: "http://10.14.255.65:10206/crud/readRecibo?id=\(idR)") else{
         return listaRecibos
     }
 
@@ -120,10 +109,10 @@ func callRecibos() -> Array<recibo>{
         let jsonDecoder = JSONDecoder()
         if(data != nil){
             do{
-                let decodeRecibos = try jsonDecoder.decode([recibo].self, from: data!)
+                let decodeRecibos = try jsonDecoder.decode([RECIBOS].self, from: data!)
                 listaRecibos = decodeRecibos
                 for recibosItem in decodeRecibos{
-                    print("Id: \(recibosItem.id) - Nombre: \(recibosItem.NOMBRE)")
+                    print("Id: \(recibosItem.id) ")
                 }
             }catch{
                 print(error)
@@ -133,6 +122,78 @@ func callRecibos() -> Array<recibo>{
     }
     task.resume()
     group.wait()
+    print(listaRecibos)
     return listaRecibos
 
+}
+
+func traerDonante(idD:Int) -> DONANTES{
+    var listaDonantes: Array<DONANTES> = []
+
+    var donanteF = DONANTES(A_MATERNO: "", A_PATERNO: "", EMAIL: "", FECHA_NAC: "", NOMBRE: "", TELEFONO: "", id: 0)
+    guard let url = URL(string: "http://10.14.255.65:10206/crud/readDonante?id=\(idD)") else{
+        print("Error en hacer crud")
+        return donanteF
+    }
+    
+    let group = DispatchGroup()
+    group.enter()
+    
+    let task = URLSession.shared.dataTask(with: url){
+        data, response, error in
+        
+        let jsonDecoder = JSONDecoder()
+        if(data != nil){
+            do{
+                let donanteList = try jsonDecoder.decode([DONANTES].self, from: data!)
+                listaDonantes = donanteList
+                for donante in donanteList{
+                    donanteF = donante
+                    print("Id: \(donante.id) - Titulo: \(donante.NOMBRE)")
+                }
+            }catch{
+                print(error)
+            }
+        }
+        group.leave()
+    }
+    task.resume()
+    group.wait()
+    
+    return donanteF
+    
+}
+
+func enviarEstatus(estatus:Int, idR:Int) {
+    // Crear una instancia de la estructura MyData con los datos que deseas enviar
+    let datos = ObtenerEstatus(ID_ESTATUS: estatus, id: idR)
+
+    // Convertir la estructura a JSON
+    do {
+        let jsonData = try JSONEncoder().encode(datos)
+        
+        // Crear la URL del servidor
+        let url = URL(string: "http://10.14.255.65:10206/crud/update") // Reemplaza con la URL correcta de tu servidor
+
+        // Crear una solicitud HTTP POST
+        var request = URLRequest(url: url!)
+        request.httpMethod = "PUT"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpBody = jsonData
+
+        // Realizar la solicitud HTTP
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if let error = error {
+                print("Error al enviar los datos al servidor: \(error)")
+            } else if let data = data {
+                // Procesar la respuesta del servidor si es necesario
+                let respuesta = String(data: data, encoding: .utf8)
+                print("Respuesta del servidor: \(respuesta ?? "N/A")")
+            }
+        }
+        
+        task.resume()
+    } catch {
+        print("Error al codificar los datos como JSON: \(error)")
+    }
 }

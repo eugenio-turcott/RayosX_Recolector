@@ -16,7 +16,7 @@ struct Login: View {
     @State private var showInvalidUCAlert: Bool = false
     @State private var isAuthenticated: Bool = false
     @FocusState private var passwordIsFocused: Bool
-    @State public var listaRecibos: Array<recibo> = []
+    @State public var listaRecibos: Array<RECIBOS> = []
     //@EnvironmentObject var authViewModel: AuthenticationViewModel
     @Environment(\.presentationMode) var presentationMode
     //var buttonText: String = "Sign In"
@@ -24,6 +24,8 @@ struct Login: View {
     
     @State private var isValid = false
     @State private var mensajeError = ""
+
+    @State private var idR: Int=0
 
     
     var body: some View {
@@ -100,11 +102,12 @@ struct Login: View {
                 
             VStack{
                 if (!showAuthLoader) {
-                    
+                   
                     Button("Iniciar Sesión") {
                         self.isValid = self.validate()
                     }
-                    .background(
+                    .background( //mandar recuperarIDRecolector en listarecibos()
+                        
                         NavigationLink(destination: ListaDeRecibos(), isActive: $isValid) {
                             
                         }
@@ -147,9 +150,10 @@ struct Login: View {
     
     private func validate() -> Bool {
         var valor : Bool = false
-
+        idR = RecuperarIDRecolector(usuario: usuario, contrasenaI: contraseña)
+        UserDefaults.standard.setValue(idR, forKey: "idR")
         if (usuario != "" && contraseña != ""){
-            valor = loginVer(nombre: usuario, contrasenaI: contraseña)
+            valor = loginVer(usuario: usuario, contrasenaI: contraseña)
             if (valor == true){
                 return true
             }

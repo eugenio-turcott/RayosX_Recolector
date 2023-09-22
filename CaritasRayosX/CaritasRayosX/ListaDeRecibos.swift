@@ -5,11 +5,17 @@
 //  Created by Alumno on 06/09/23.
 //
 
+//
+//Llamar a callRecibos(idrecolector)
+//
+
 import SwiftUI
 
 struct ListaDeRecibos: View {
     //@State public var idRecolectorEnLista: String
-    
+        
+    @State private var listaRecibos: Array<RECIBOS> = []
+
     var body: some View {
         NavigationStack{
             ZStack {
@@ -25,24 +31,32 @@ struct ListaDeRecibos: View {
     //                        .padding(.leading, 30.0)
     //                        .padding(.top, 10.0)
     //                        .padding(.horizontal,70)
-                            .offset(y:5)
+                            //.offset(y:5)
                     }
-
+                    Spacer()
                     VStack {
                         List(listaRecibos){
                             recibosItem in
                             NavigationLink{
-                                DetallesView(recibos: recibosItem)
+                                DetallesView(recibo: recibosItem, donante: DONANTES(A_MATERNO: "", A_PATERNO: "", EMAIL: "", FECHA_NAC: "", NOMBRE: "", TELEFONO: "", id: 0))
                             }
                         label:{
-                            donanteRow(recibos: recibosItem)
+                            donanteRow(recibo: recibosItem, donante: DONANTES(A_MATERNO: "", A_PATERNO: "", EMAIL: "", FECHA_NAC: "", NOMBRE: "", TELEFONO: "", id: 0))
                         }
                         }
                         .listStyle(.inset)
                     }
                     .cornerRadius(10)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(Color("Rosa"), lineWidth: 5))
                     .padding()
                     Spacer()
+                    Spacer()
+                }
+                .onAppear(){
+                    var idR: Int = UserDefaults.standard.integer(forKey:"idR")
+                    listaRecibos = callRecibos(idR1: idR)
                 }
                 .background(Color(red: 0/255, green: 156/255, blue: 166/255))
             }

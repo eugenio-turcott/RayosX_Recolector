@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct ObtenerEstatus: Codable{
+struct ObtenerEstatus: Codable, Identifiable{
     let ID_ESTATUS, id:Int
 }

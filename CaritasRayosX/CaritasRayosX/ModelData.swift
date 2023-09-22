@@ -92,8 +92,7 @@ func RecuperarIDRecolector(usuario:String, contrasenaI:String) -> Int{
 
 
 
-func callRecibos(idR1: Int) -> Array<RECIBOS>{ //recibir como input idrecolector
-    var idR = idR1
+func callRecibos(idR: Int) -> Array<RECIBOS>{ //recibir como input idrecolector
     var listaRecibos: Array<RECIBOS> = []
     print("Entre a funcion")
     guard let url = URL(string: "http://10.14.255.65:10206/crud/readRecibo?id=\(idR)") else{
@@ -164,9 +163,9 @@ func traerDonante(idD:Int) -> DONANTES{
     
 }
 
-func enviarEstatus(estatus:Int, idR:Int) {
+func enviarEstatus(estatus:Int, idRecibo:Int) {
     // Crear una instancia de la estructura MyData con los datos que deseas enviar
-    let datos = ObtenerEstatus(ID_ESTATUS: estatus, id: idR)
+    let datos = ObtenerEstatus(ID_ESTATUS: estatus, id: idRecibo)
 
     // Convertir la estructura a JSON
     do {
@@ -182,6 +181,9 @@ func enviarEstatus(estatus:Int, idR:Int) {
         request.httpBody = jsonData
 
         // Realizar la solicitud HTTP
+        let group = DispatchGroup()
+        group.enter()
+        
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             if let error = error {
                 print("Error al enviar los datos al servidor: \(error)")
@@ -190,9 +192,13 @@ func enviarEstatus(estatus:Int, idR:Int) {
                 let respuesta = String(data: data, encoding: .utf8)
                 print("Respuesta del servidor: \(respuesta ?? "N/A")")
             }
+            group.leave()
+
         }
         
         task.resume()
+        group.wait()
+
     } catch {
         print("Error al codificar los datos como JSON: \(error)")
     }

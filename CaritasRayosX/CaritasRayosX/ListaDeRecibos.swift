@@ -15,7 +15,7 @@ struct ListaDeRecibos: View {
     //@State public var idRecolectorEnLista: String
         
     @State private var listaRecibos: Array<RECIBOS> = []
-
+    
     var body: some View {
         NavigationStack{
             ZStack {
@@ -55,8 +55,9 @@ struct ListaDeRecibos: View {
                     Spacer()
                 }
                 .onAppear(){
-                    var idR: Int = UserDefaults.standard.integer(forKey:"idR")
-                    listaRecibos = callRecibos(idR1: idR)
+                    
+                    
+                    listaRecibos = callRecibos(idR: UserDefaults.standard.integer(forKey:"idR"))
                 }
                 .background(Color(red: 0/255, green: 156/255, blue: 166/255))
             }

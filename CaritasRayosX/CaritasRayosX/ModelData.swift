@@ -9,48 +9,62 @@ import Foundation
 import UIKit
 
 func loginVer(usuario:String, contrasenaI:String) -> Bool{
-    var lista: Array<RECOLECTOR> = []
-    var contrasena: String = ""
-    guard let url = URL(string: "http://10.14.255.65:10206/crud/read?usuario=\(usuario)") else{
+    
+    guard let url = URL(string: "http://10.14.255.65:10206/crud/loginCheck?usuario=\(usuario)&password=\(contrasenaI)") else{
         print("Error en hacer crud")
         return false
     }
+    let task = URLSession.shared.dataTask(with: url) {(data, response, error) in
+        if let error = error {
+            print("Error")
+        }
+    }
     
-    let group = DispatchGroup()
-    group.enter()
     
-    let task = URLSession.shared.dataTask(with: url){
-        data, response, error in
+    if let data = data, let responseString = String(data: data, encoding: .utf8)
         
-        let jsonDecoder = JSONDecoder()
-        if(data != nil){
-            do{
-                let recolectorList = try jsonDecoder.decode([RECOLECTOR].self, from: data!)
-                lista = recolectorList
-                for recolector in recolectorList{
-                    contrasena = recolector.CONTRASENA
-                    print("Id: \(recolector.id) - Titulo: \(recolector.NOMBRE)")
-                }
-            }catch{
-                print(error)
-            }
-        }
-        group.leave()
-    }
-    task.resume()
-    group.wait()
+    //var lista: Array<RECOLECTOR> = []
+    //var contrasena: String = ""
+    //guard let url = URL(string: "http://10.14.255.65:10206/crud/read?usuario=\(usuario)") else{
+    //    print("Error en hacer crud")
+    //    return false
+    //}
     
-    if lista.isEmpty {
-        return false
-    }
-    else{
-        if (contrasena == contrasenaI){
-            return true
-        }
-        else{
-            return false
-        }
-    }
+    //let group = DispatchGroup()
+    //group.enter()
+    
+    //let task = URLSession.shared.dataTask(with: url){
+    //    data, response, error in
+    //
+    //    let jsonDecoder = JSONDecoder()
+    //    if(data != nil){
+    //        do{
+    //            let recolectorList = try jsonDecoder.decode([RECOLECTOR].self, from: data!)
+    //            lista = recolectorList
+    //            for recolector in recolectorList{
+    //                contrasena = recolector.CONTRASENA
+    //                print("Id: \(recolector.id) - Titulo: \(recolector.NOMBRE)")
+    //            }
+    //        }catch{
+    //            print(error)
+    //        }
+    //    }
+    //    group.leave()
+    //}
+    //task.resume()
+    //group.wait()
+    //
+    //if lista.isEmpty {
+    //    return false
+    //}
+    //else{
+    //    if (contrasena == contrasenaI){
+    //        return true
+    //    }
+    //    else{
+    //        return false
+    //    }
+    //}
     
 }
 

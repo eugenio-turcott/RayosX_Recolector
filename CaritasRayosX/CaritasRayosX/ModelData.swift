@@ -90,7 +90,81 @@ func RecuperarIDRecolector(usuario:String, contrasenaI:String) -> Int{
     
 }
 
+var listaRecibos = callAllRecibos()
 
+func callAllRecibos() -> Array<RECIBOS>{
+    var lista: Array<RECIBOS> = []
+    
+    guard let url = URL(string: "http://10.14.255.65/crud/readRecibos")
+    else {
+        return lista
+    }
+    
+    let group = DispatchGroup()
+    group.enter()
+    
+    let task = URLSession.shared.dataTask(with: url) {
+        data, response, error in
+        
+        let jsonDecoder = JSONDecoder()
+        if (data != nil) {
+            do{
+                let reciboList = try jsonDecoder.decode([RECIBOS].self, from: data!)
+                lista = reciboList
+                for reciboItem in reciboList {
+                    print("RECIBO: ID = \(reciboItem.id) - Importe: \(reciboItem.IMPORTE)")
+                }
+            } catch {
+                print(error)
+            }
+            
+        }
+        group.leave()
+    }
+    task.resume()
+    
+    group.wait()
+    
+    return lista
+}
+
+var listaDonantes = callAllDonantes()
+
+func callAllDonantes() -> Array<DONANTES>{
+    var lista: Array<DONANTES> = []
+    
+    guard let url = URL(string: "http://10.14.255.65/crud/readDonantes")
+    else {
+        return lista
+    }
+    
+    let group = DispatchGroup()
+    group.enter()
+    
+    let task = URLSession.shared.dataTask(with: url) {
+        data, response, error in
+        
+        let jsonDecoder = JSONDecoder()
+        if (data != nil) {
+            do{
+                let donanteList = try jsonDecoder.decode([DONANTES].self, from: data!)
+                lista = donanteList
+                for donanteItem in donanteList {
+                    print("DONANTE: ID = \(donanteItem.id) - Nombre: \(donanteItem.NOMBRE) - Apellido: \(donanteItem.A_PATERNO)")
+                }
+            } catch {
+                print(error)
+            }
+            
+        }
+        group.leave()
+    }
+    task.resume()
+    
+    group.wait()
+    
+    return lista
+}
 
 func callRecibos(idR: Int) -> Array<RECIBOS>{ //recibir como input idrecolector
     var listaRecibos: Array<RECIBOS> = []

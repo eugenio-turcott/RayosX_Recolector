@@ -1,21 +1,23 @@
 //
 //  ContentView.swift
-//  RayosXCordinador
+//  CaritasRayosX
 //
-//  Created by Alumno on 26/09/23.
+//  Created by Alumno on 06/09/23.
 //
 
 import SwiftUI
 
 struct ContentView: View {
+    //@EnvironmentObject var authViewModel: AuthenticationViewModel
+    var hasPersistedSignedIn = UserDefaults.standard.bool(forKey: "isLoggedIn")
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-        }
-        .padding()
+            NavigationStack {
+                /*
+                if authViewModel.state == .signedOut && !hasPersistedSignedIn && !authViewModel.restoreGoogleSignIn {
+                    Login()
+                */
+                ListaDeRecolectores()
+            }
     }
 }
 

@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct Login: View {
-    
     @State public var idRecolector: String = ""
     @State private var usuario: String = ""
     @State private var contraseña: String = ""
@@ -17,17 +16,10 @@ struct Login: View {
     @State private var isAuthenticated: Bool = false
     @FocusState private var passwordIsFocused: Bool
     @State public var listaRecibos: Array<RECIBOS> = []
-    //@EnvironmentObject var authViewModel: AuthenticationViewModel
     @Environment(\.presentationMode) var presentationMode
-    //var buttonText: String = "Sign In"
-    //var buttonText: String = "Create Account"
-    
     @State private var isValid = false
     @State private var mensajeError = ""
-
     @State private var idR: Int=0
-
-    
     var body: some View {
         ZStack{
             BackgroundView()
@@ -42,9 +34,7 @@ struct Login: View {
                         .font(.system(size: 35))
                         .multilineTextAlignment(.center)
                 }
-                        
                 Spacer()
-                        
                 VStack(alignment: .leading) {
                     HStack{
                         Image(systemName: "person.crop.circle")
@@ -52,7 +42,6 @@ struct Login: View {
                             .padding(.trailing, 10.0)
                             .foregroundColor(Color("Gris"))
                             .bold()
-                            
                         Text("Usuario")
                             .bold()
                             .foregroundColor(Color("Azul oscuro"))
@@ -95,11 +84,7 @@ struct Login: View {
                 .navigationBarBackButtonHidden(true)
                 .navigationDestination(for: Bool.self) { isAuth in
             }
-                
             Spacer()
-                
-                
-                
             VStack{
                 if (!showAuthLoader) {
                    
@@ -129,17 +114,16 @@ struct Login: View {
                                 
                                 
                     } else {
-                                ProgressView()
+                        ProgressView()
                     }
                  
                     }
                     .padding(.bottom, 30.0)
-                
-                                    
                     Spacer()
                 }
                 .background(.white)
-                .cornerRadius(30)
+                .cornerRadius(20)
+                .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color("Rosa"), lineWidth: 5))
                 .padding(.top, 130.0)
                 .padding(.horizontal, 20.0)
                 .padding(.bottom, 10.0)

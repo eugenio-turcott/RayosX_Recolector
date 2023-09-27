@@ -12,55 +12,55 @@
 import SwiftUI
 
 struct ListaDeRecibos: View {
-    //@State public var idRecolectorEnLista: String
-        
     @State private var listaRecibos: Array<RECIBOS> = []
-    
     var body: some View {
-        NavigationStack{
+        NavigationStack {
             ZStack {
-                BackgroundView()
+                HStack {
+                    Image("logo")
+                        .resizable(resizingMode: .stretch)
+                        .aspectRatio(contentMode: .fit)
+                        
+                }
+                .frame(width: 205.0)
+                .padding(.top, -425.0)
                 VStack {
                     HStack {
-                        Text("Recibos")
-                            .font(.largeTitle)
-                            .foregroundColor(.white)
-                            .multilineTextAlignment(.center)
-                            .fontWeight(.bold)
-                            .foregroundColor(.black)
-    //                        .padding(.leading, 30.0)
-    //                        .padding(.top, 10.0)
-    //                        .padding(.horizontal,70)
-                            //.offset(y:5)
                     }
-                    Spacer()
+                    .padding(.bottom, 20.0)
                     VStack {
+                        HStack {
+                            Text("Recibos")
+                                .font(.largeTitle)
+                                .foregroundColor(.black)
+                                .multilineTextAlignment(.center)
+                                .fontWeight(.bold)
+                        }
+                        .padding(.top, 15.0)
                         List(listaRecibos){
                             recibosItem in
                             NavigationLink{
                                 DetallesView(recibo: recibosItem, donante: DONANTES(A_MATERNO: "", A_PATERNO: "", EMAIL: "", FECHA_NAC: "", NOMBRE: "", TELEFONO: "", id: 0))
                             }
-                        label:{
-                            donanteRow(recibo: recibosItem, donante: DONANTES(A_MATERNO: "", A_PATERNO: "", EMAIL: "", FECHA_NAC: "", NOMBRE: "", TELEFONO: "", id: 0))
+                            label:{
+                                donanteRow(recibo: recibosItem, donante: DONANTES(A_MATERNO: "", A_PATERNO: "", EMAIL: "", FECHA_NAC: "", NOMBRE: "", TELEFONO: "", id: 0))
                         }
-                        }
-                        .listStyle(.inset)
                     }
-                    .cornerRadius(10)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 10)
-                            .stroke(Color("Rosa"), lineWidth: 5))
-                    .padding()
-                    Spacer()
-                    Spacer()
+                    .padding(.top, -15.0)
+                    .listStyle(.inset)
                 }
-                .onAppear(){
-                    
-                    
-                    listaRecibos = callRecibos(idR: UserDefaults.standard.integer(forKey:"idR"))
-                }
-                .background(Color(red: 0/255, green: 156/255, blue: 166/255))
+                .background(.white)
+                .cornerRadius(20)
+                .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color("Rosa"), lineWidth: 5))
+                
+                .padding(.horizontal, 5.0)
+                .padding()
             }
+            .onAppear(){
+                listaRecibos = callRecibos(idR: UserDefaults.standard.integer(forKey:"idR"))
+            }
+            }
+            .background(Color(red: 17/255, green: 151/255, blue: 165/255))
         }
     }
 }

@@ -230,9 +230,6 @@ struct ListaDeRecolectores: View {
                 }
                 
                 
-                
-                
-                
             }
             .background(.white)
             .cornerRadius(30)

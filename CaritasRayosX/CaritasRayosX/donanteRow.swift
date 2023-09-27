@@ -20,15 +20,8 @@ struct donanteRow: View {
                     .foregroundColor(Color(red: 0/255, green: 59/255, blue: 92/255))
                     .padding(.leading, 15.0)
                     .padding(.top, 10.0)
-                    .offset(y:5)
+                    .offset(y: 5)
                 Spacer()
-                /*
-                Image("simboloInfo2")
-                    .resizable(resizingMode: .stretch)
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 45.0)
-                    .offset(y: 10)
-                Spacer()*/
             }
             .onAppear(){
                 donante = traerDonante(idD: recibo.ID_DONANTE)

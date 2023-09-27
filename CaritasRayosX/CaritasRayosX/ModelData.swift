@@ -29,7 +29,6 @@ func loginVer(usuario:String, contrasenaI:String) -> Bool{
                 lista = recolectorList
                 for recolector in recolectorList{
                     contrasena = recolector.CONTRASENA
-                    print("Id: \(recolector.id) - Titulo: \(recolector.NOMBRE)")
                 }
             }catch{
                 print(error)
@@ -75,7 +74,6 @@ func RecuperarIDRecolector(usuario:String, contrasenaI:String) -> Int{
                 lista = recolectorList
                 for recolector in recolectorList{
                     IDRecolector = recolector.id
-                    print("Id: \(recolector.id) - Titulo: \(recolector.NOMBRE)")
                 }
             }catch{
                 print(error)
@@ -111,9 +109,6 @@ func callAllRecibos() -> Array<RECIBOS>{
             do{
                 let reciboList = try jsonDecoder.decode([RECIBOS].self, from: data!)
                 lista = reciboList
-                for reciboItem in reciboList {
-                    print("RECIBO: ID = \(reciboItem.id) - Importe: \(reciboItem.IMPORTE)")
-                }
             } catch {
                 print(error)
             }
@@ -149,9 +144,6 @@ func callAllDonantes() -> Array<DONANTES>{
             do{
                 let donanteList = try jsonDecoder.decode([DONANTES].self, from: data!)
                 lista = donanteList
-                for donanteItem in donanteList {
-                    print("DONANTE: ID = \(donanteItem.id) - Nombre: \(donanteItem.NOMBRE) - Apellido: \(donanteItem.A_PATERNO)")
-                }
             } catch {
                 print(error)
             }
@@ -184,9 +176,6 @@ func callRecibos(idR: Int) -> Array<RECIBOS>{ //recibir como input idrecolector
             do{
                 let decodeRecibos = try jsonDecoder.decode([RECIBOS].self, from: data!)
                 listaRecibos = decodeRecibos
-                for recibosItem in decodeRecibos{
-                    print("Id: \(recibosItem.id) ")
-                }
             }catch{
                 print(error)
             }
@@ -222,7 +211,6 @@ func traerDonante(idD:Int) -> DONANTES{
                 listaDonantes = donanteList
                 for donante in donanteList{
                     donanteF = donante
-                    print("Id: \(donante.id) - Titulo: \(donante.NOMBRE)")
                 }
             }catch{
                 print(error)

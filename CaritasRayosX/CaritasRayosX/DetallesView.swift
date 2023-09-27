@@ -25,7 +25,7 @@ struct DetallesView: View {
                             Image(systemName: "multiply")
                                 .resizable(capInsets: EdgeInsets(), resizingMode: .stretch)
                                 .aspectRatio(contentMode: .fit)
-                                .padding([.top, .trailing], 40.0)
+                                .padding([.top, .trailing], 50.0)
                                 .padding(.leading, 240.0)
                                 .padding(.bottom, 20.0)
                                 .foregroundColor(Color("Rosa"))
@@ -40,59 +40,58 @@ struct DetallesView: View {
                 }
                 HStack{ //Nombre
                     Text(donante.NOMBRE)
-                        .font(.title)
-                        .fontWeight(.heavy)
+                        .font(.custom("Trebuchet MS", size: 33).weight(.heavy))
                         .foregroundColor(Color("Azul oscuro"))
                     Text(donante.A_PATERNO)//apellido
-                        .font(.title)
-                        .fontWeight(.heavy)
+                        .font(.custom("Trebuchet MS", size: 33).weight(.heavy))
                         .foregroundColor(Color("Azul oscuro"))
                 }
-                //.padding(.horizontal, 5.0)
-                //.padding(.leading, 20)
                 .padding(.top, 25.0)
+                .padding(.bottom, 20.0)
+                
                 Spacer()
-                HStack(alignment: .top){
+                
+                HStack(alignment: .center){
                     Spacer()
                     Text("Contacto:")
-                        .font(.title3)
-                        .fontWeight(.bold)
-                        .foregroundColor(Color("Azul oscuro"))
-                    Spacer()
-                    VStack{
-                        Text(donante.TELEFONO)//telefono
-                            .foregroundColor(Color("Gris"))
-                            .multilineTextAlignment(.leading)
-                        Text(donante.EMAIL)//correo
-                            .foregroundColor(Color("Gris"))
-                            .multilineTextAlignment(.leading)
-                            .frame(width: 120)
-                    }
-                    Spacer()
-                }
-                .padding(.bottom, 40.0)
-                .padding(.leading, 20.0)
-                .padding(.trailing, 5.0)
-                
-                HStack(alignment: .top){
-                    Spacer()
-                    Spacer()
-                    Text("Monto:")
-                        .font(.title3)
-                        .fontWeight(.bold)
+                        .font(.custom("Trebuchet MS", size: 23).weight(.bold))
                         .foregroundColor(Color("Azul oscuro"))
                         .padding(.leading, 5)
                     Spacer()
-                    Text(String(recibo.IMPORTE))
+                    VStack{
+                        Text(donante.TELEFONO)//telefono
+                            .font(.custom("Trebuchet MS", size: 25))
+                            .foregroundColor(Color("Gris"))
+                            .multilineTextAlignment(.trailing)
+                            .frame(width: 180)
+                            .padding(.bottom, 1)
+                    }
+                }
+                .padding(.horizontal, 30.0)
+                HStack(alignment: .top) {
+                    Text(donante.EMAIL)//correo
+                        .font(.custom("Trebuchet MS", size: 18))
+                        .foregroundColor(Color("Gris"))
+                        .multilineTextAlignment(.trailing)
+                        .frame(width: 286)
+                }
+                .padding(.bottom, 15.0)
+                
+                HStack(alignment: .center){
+                    Spacer()
+                    Text("Monto:")
+                        .font(.custom("Trebuchet MS", size: 23).weight(.bold))
+                        .foregroundColor(Color("Azul oscuro"))
+                        .padding(.leading, 5)
+                    Spacer()
+                    Text("$" + String(recibo.IMPORTE))
+                        .font(.custom("Trebuchet MS", size: 25))
                         .foregroundColor(Color("Gris"))
                         .multilineTextAlignment(.leading)
-                        .frame(width: 180.0)
-                    Spacer()
-                    Spacer()
+                        .frame(width: 150.0)
                 }
-                .padding(.bottom, 40.0)
-                .padding(.leading, 20.0)
-                .padding(.trailing, 5.0)
+                .padding(.bottom, 30.0)
+                .padding(.horizontal, 30.0)
                 
                 HStack{
                     Spacer()
@@ -132,8 +131,8 @@ struct DetallesView: View {
     
 }
 
-struct DetallesView_Previews: PreviewProvider {
+/*struct DetallesView_Previews: PreviewProvider {
     static var previews: some View {
         DetallesView(recibo: listaRecibos[0], donante: listaDonantes[0])
     }
-}
+}*/

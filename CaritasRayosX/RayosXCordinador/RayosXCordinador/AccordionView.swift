@@ -4,7 +4,7 @@
 //
 //  Created by Alumno on 22/09/23.
 //
-
+/*
 import SwiftUI
 
 struct AccordionView<Content: View>: View {
@@ -32,3 +32,4 @@ struct AccordionView_Previews: PreviewProvider {
         AccordionView()
     }
 }
+*/

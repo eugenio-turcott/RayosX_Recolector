@@ -2,6 +2,7 @@ import SwiftUI
 
 struct ListaDeRecolectores: View {
     //var listaRecolectores = callRecibos(idEnCall: idR)
+    @State private var listaRecolectores: Array<RECOLECTOR> = []
     
     var body: some View {
         
@@ -27,6 +28,21 @@ struct ListaDeRecolectores: View {
                                             }
                                         }
                                 }
+                        // Inicio de lista de muestra
+                        VStack {
+                            List(listaRecolectores){
+                                recolectoresItem in
+                                Text( "Id: \(recolectoresItem.id), Nombre: \(recolectoresItem.NOMBRE)")
+                            
+                            }
+                            .listStyle(.inset)
+                        }
+                        .onAppear(){
+                            
+                            
+                            listaRecolectores = callRecolectores()
+                        }
+                        // Termino de lista de muestra
                         
                         HStack{
                             Image("Persona")

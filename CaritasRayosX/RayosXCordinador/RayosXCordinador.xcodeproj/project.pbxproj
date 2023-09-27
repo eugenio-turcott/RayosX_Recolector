@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB33A5A32AC3A8EF000CFD0B /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB33A5A22AC3A8EF000CFD0B /* ModelData.swift */; };
+		FB33A5A52AC3AA52000CFD0B /* RECIBOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB33A5A42AC3AA52000CFD0B /* RECIBOS.swift */; };
+		FB33A5A82AC3AEA7000CFD0B /* RECOLECTOR.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB33A5A72AC3AEA7000CFD0B /* RECOLECTOR.swift */; };
 		FBB0BFD02AC365D30010CF37 /* RayosXCordinadorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0BFCF2AC365D30010CF37 /* RayosXCordinadorApp.swift */; };
 		FBB0BFD22AC365D30010CF37 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0BFD12AC365D30010CF37 /* ContentView.swift */; };
 		FBB0BFD42AC365D40010CF37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBB0BFD32AC365D40010CF37 /* Assets.xcassets */; };
@@ -18,6 +21,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FB33A5A22AC3A8EF000CFD0B /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
+		FB33A5A42AC3AA52000CFD0B /* RECIBOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RECIBOS.swift; sourceTree = "<group>"; };
+		FB33A5A72AC3AEA7000CFD0B /* RECOLECTOR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RECOLECTOR.swift; sourceTree = "<group>"; };
 		FBB0BFCC2AC365D30010CF37 /* RayosXCordinador.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RayosXCordinador.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBB0BFCF2AC365D30010CF37 /* RayosXCordinadorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RayosXCordinadorApp.swift; sourceTree = "<group>"; };
 		FBB0BFD12AC365D30010CF37 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -40,6 +46,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FB33A5A62AC3AA60000CFD0B /* Structs */ = {
+			isa = PBXGroup;
+			children = (
+				FB33A5A72AC3AEA7000CFD0B /* RECOLECTOR.swift */,
+				FB33A5A42AC3AA52000CFD0B /* RECIBOS.swift */,
+			);
+			path = Structs;
+			sourceTree = "<group>";
+		};
 		FBB0BFC32AC365D30010CF37 = {
 			isa = PBXGroup;
 			children = (
@@ -62,10 +77,12 @@
 				FBB0BFCF2AC365D30010CF37 /* RayosXCordinadorApp.swift */,
 				FBB0BFD12AC365D30010CF37 /* ContentView.swift */,
 				FBB0BFDD2AC36F350010CF37 /* ListaDeRecolectores.swift */,
+				FB33A5A22AC3A8EF000CFD0B /* ModelData.swift */,
+				FB33A5A62AC3AA60000CFD0B /* Structs */,
 				FBB0BFDF2AC36F8A0010CF37 /* BackgroundView.swift */,
-				FBB0BFD32AC365D40010CF37 /* Assets.xcassets */,
 				FBB0BFE32AC373C00010CF37 /* AccordionView.swift */,
 				FBB0BFE52AC373FD0010CF37 /* CollapsibleView.swift */,
+				FBB0BFD32AC365D40010CF37 /* Assets.xcassets */,
 				FBB0BFD52AC365D40010CF37 /* Preview Content */,
 			);
 			path = RayosXCordinador;
@@ -149,12 +166,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB33A5A82AC3AEA7000CFD0B /* RECOLECTOR.swift in Sources */,
 				FBB0BFDE2AC36F350010CF37 /* ListaDeRecolectores.swift in Sources */,
 				FBB0BFD22AC365D30010CF37 /* ContentView.swift in Sources */,
 				FBB0BFE02AC36F8A0010CF37 /* BackgroundView.swift in Sources */,
 				FBB0BFE62AC373FD0010CF37 /* CollapsibleView.swift in Sources */,
 				FBB0BFE42AC373C00010CF37 /* AccordionView.swift in Sources */,
 				FBB0BFD02AC365D30010CF37 /* RayosXCordinadorApp.swift in Sources */,
+				FB33A5A32AC3A8EF000CFD0B /* ModelData.swift in Sources */,
+				FB33A5A52AC3AA52000CFD0B /* RECIBOS.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

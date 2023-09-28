@@ -41,6 +41,6 @@ struct donanteRow: View {
 
 struct donanteRow_Previews: PreviewProvider {
     static var previews: some View {
-        donanteRow(recibo: listaRecibos[0], donante: listaDonantes[0])
+        donanteRow(recibo: listaRecibos[8], donante: listaDonantes[2])
     }
 }

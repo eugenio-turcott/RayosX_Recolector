@@ -93,8 +93,7 @@ var listaRecibos = callAllRecibos()
 func callAllRecibos() -> Array<RECIBOS>{
     var lista: Array<RECIBOS> = []
     
-    guard let url = URL(string: "http://10.14.255.65/crud/readRecibos")
-    else {
+    guard let url = URL(string: "http://10.14.255.65:10206/crud/readRecibos") else {
         return lista
     }
     
@@ -109,6 +108,9 @@ func callAllRecibos() -> Array<RECIBOS>{
             do{
                 let reciboList = try jsonDecoder.decode([RECIBOS].self, from: data!)
                 lista = reciboList
+                for reciboItem in reciboList {
+                    print("RECIBO: ID = \(reciboItem.id) - Importe: \(reciboItem.IMPORTE)")
+                }
             } catch {
                 print(error)
             }
@@ -128,7 +130,7 @@ var listaDonantes = callAllDonantes()
 func callAllDonantes() -> Array<DONANTES>{
     var lista: Array<DONANTES> = []
     
-    guard let url = URL(string: "http://10.14.255.65/crud/readDonantes")
+    guard let url = URL(string: "http://10.14.255.65:10206/crud/readDonantes")
     else {
         return lista
     }

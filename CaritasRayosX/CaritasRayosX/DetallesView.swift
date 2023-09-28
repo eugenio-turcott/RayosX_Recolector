@@ -171,8 +171,8 @@ struct DetallesView: View {
     
 }
 
-/*struct DetallesView_Previews: PreviewProvider {
+struct DetallesView_Previews: PreviewProvider {
     static var previews: some View {
         DetallesView(recibo: listaRecibos[0], donante: listaDonantes[0])
     }
-}*/
+}

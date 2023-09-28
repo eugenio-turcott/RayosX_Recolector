@@ -2,7 +2,16 @@ import SwiftUI
 
 struct ListaDeRecolectores: View {
     //var listaRecolectores = callRecibos(idEnCall: idR)
-    
+    @State private var listaRecolectores: Array<RECOLECTOR> = []
+ 
+
+    @State private var colores1: [String] = []
+    @State private var recibosHechos: Int = 0
+    @State private var recibosTotales: Int = 0
+    @State private var color1: String = ""
+    @State private var color2: String = ""
+    @State private var cont: Int = 0
+
     var body: some View {
         
         ZStack{
@@ -18,188 +27,61 @@ struct ListaDeRecolectores: View {
                     ZStack{
                         NavigationView {
                             DisclosureGroup {
-                                            ForEach(0..<4) { _ in
-                                                Text("Roberto Luz")
-                                            }
-                                        } label: {
-                                            HStack(alignment: .center) {
-                                                Spacer()
-                                            }
-                                        }
+                                ForEach(0..<4) { _ in
+                                    Text("Roberto Luz")
                                 }
-                        
-                        HStack{
-                            Image("Persona")
-                                .resizable()
-                                .frame(width: 40, height: 40)
-                                .clipShape(Capsule())
-                                .bold()
-                                .padding(.trailing, 10.0)
-                                .padding(.vertical, 5.0)
-                                .foregroundColor(.black)
-                            Text("Marcelo Rivas")
-                                .multilineTextAlignment(.leading)
-                                .font(.headline)
-                                .fontWeight(.heavy)
-                                .foregroundColor(.black)
-                                .padding(.vertical, 10.0)
-                            Spacer()
-                            Text("0/4")
-                                .multilineTextAlignment(.trailing)
-                                .font(.headline)
-                                .fontWeight(.heavy)
-                                .foregroundColor(.black)
+                            } label: {
+                                HStack(alignment: .center) {
+                                    Spacer()
+                                }
+                            }
                         }
-                        .frame(maxWidth: .infinity)
-                        .padding(.horizontal)
-                        .background(Color("Rojo"))
-                        .frame(maxWidth: .infinity)
-                        .overlay( RoundedRectangle(cornerRadius: 20)
-                            .stroke(Color("RojoOpaco"), lineWidth: 5))
-                        .cornerRadius(20)
-                        .padding(.vertical, 10.0)
-                        
-                        
-                        
-                        Spacer()
-                    }
-                    
-                    
-                    
-                    
-                    
-                    HStack{
-                        Image(systemName: "person.crop.circle.fill")
-                            .resizable()
-                            .frame(width: 40, height: 40)
-                            .clipShape(Capsule())
-                            .bold()
-                            .padding(.trailing, 10.0)
-                            .padding(.vertical, 5.0)
-                            .foregroundColor(.black)
-                        Text("Marcelo Rivas")
-                            .multilineTextAlignment(.leading)
-                            .font(.headline)
-                            .fontWeight(.heavy)
-                            .foregroundColor(.black)
-                            .padding(.vertical, 10.0)
-                        Spacer()
-                        Text("2/4")
-                            .multilineTextAlignment(.trailing)
-                            .font(.headline)
-                            .fontWeight(.heavy)
-                            .foregroundColor(.black)
-                    }
-                    .frame(maxWidth: .infinity)
-                    .padding(.horizontal)
-                    .background(Color("Amarillo"))
-                    .overlay( RoundedRectangle(cornerRadius: 20)
-                        .stroke(Color("AmarilloOpaco"), lineWidth: 5))
-                    .cornerRadius(20)
-                    .padding(.vertical, 10.0)
-                    
-                    
-                    
-                    HStack{
-                        Image(systemName: "person.crop.circle.fill")
-                            .resizable()
-                            .frame(width: 40, height: 40)
-                            .clipShape(Capsule())
-                            .bold()
-                            .padding(.trailing, 10.0)
-                            .padding(.vertical, 5.0)
-                            .foregroundColor(.black)
-                        Text("Marcelo Rivas")
-                            .multilineTextAlignment(.leading)
-                            .font(.headline)
-                            .fontWeight(.heavy)
-                            .foregroundColor(.black)
-                            .padding(.vertical, 10.0)
-                        Spacer()
-                        Text("4/4")
-                            .multilineTextAlignment(.trailing)
-                            .font(.headline)
-                            .fontWeight(.heavy)
-                            .foregroundColor(.black)
-                    }
-                    .frame(maxWidth: .infinity)
-                    .padding(.horizontal)
-                    .background(Color("Verde"))
-                    .overlay( RoundedRectangle(cornerRadius: 20)
-                        .stroke(Color("VerdeOpaco"), lineWidth: 5))
-                    .cornerRadius(20)
-                    .padding(.vertical, 10.0)
-                    
-                    
-                    
-                    
-                    HStack{
-                        Image(systemName: "person.crop.circle.fill")
-                            .resizable()
-                            .frame(width: 40, height: 40)
-                            .clipShape(Capsule())
-                            .bold()
-                            .padding(.trailing, 10.0)
-                            .padding(.vertical, 5.0)
-                            .foregroundColor(.black)
-                        Text("Marcelo Rivas")
-                            .multilineTextAlignment(.leading)
-                            .font(.headline)
-                            .fontWeight(.heavy)
-                            .foregroundColor(.black)
-                            .padding(.vertical, 10.0)
-                        Spacer()
-                        Text("0/4")
-                            .multilineTextAlignment(.trailing)
-                            .font(.headline)
-                            .fontWeight(.heavy)
-                            .foregroundColor(.black)
-                    }
-                    .frame(maxWidth: .infinity)
-                    .padding(.horizontal)
-                    .overlay( RoundedRectangle(cornerRadius: 20)
-                        .stroke(Color("Gris"), lineWidth: 5))
-                    .cornerRadius(20)
-                    .padding(.vertical, 10.0)
-                    
-                    
-                    
-                    HStack{
-                        Image(systemName: "person.crop.circle.fill")
-                            .resizable()
-                            .frame(width: 40, height: 40)
-                            .clipShape(Capsule())
-                            .bold()
-                            .padding(.trailing, 10.0)
-                            .padding(.vertical, 5.0)
-                            .foregroundColor(.black)
-                        Text("Marcelo Rivas")
-                            .multilineTextAlignment(.leading)
-                            .font(.headline)
-                            .fontWeight(.heavy)
-                            .foregroundColor(.black)
-                            .padding(.vertical, 10.0)
-                        Spacer()
-                        Text("0/4")
-                            .multilineTextAlignment(.trailing)
-                            .font(.headline)
-                            .fontWeight(.heavy)
-                            .foregroundColor(.black)
-                    }
-                    .frame(maxWidth: .infinity)
-                    .padding(.horizontal)
-                    .overlay( RoundedRectangle(cornerRadius: 20)
-                        .stroke(Color("Gris"), lineWidth: 5))
-                    .cornerRadius(20)
-                    .padding(.vertical, 10.0)
+                        // Inicio de lista de muestra
+                        VStack {
 
-                    
-                    
-                    
-                    
-                    
-                    Spacer()
-                    
+                            List(listaRecolectores){
+                                recolectoresItem in
+                                HStack{
+                                    Image("Persona")
+                                        .resizable()
+                                        .frame(width: 40, height: 40)
+                                        .clipShape(Capsule())
+                                        .bold()
+                                        .padding(.trailing, 10.0)
+                                        .padding(.vertical, 5.0)
+                                        .foregroundColor(.black)
+                                    Text(recolectoresItem.NOMBRE)
+                                        .multilineTextAlignment(.leading)
+                                        .font(.headline)
+                                        .fontWeight(.heavy)
+                                        .foregroundColor(.black)
+                                        .padding(.vertical, 10.0)
+                                    Spacer()
+                                    Text("\(callRecibosHechos(idR: recolectoresItem.id))/\(callRecibosTotales(idR: recolectoresItem.id))")
+                                        .multilineTextAlignment(.trailing)
+                                        .font(.headline)
+                                        .fontWeight(.heavy)
+                                        .foregroundColor(.black)
+                                
+                                }
+                                .frame(maxWidth: .infinity)
+                                .padding(.horizontal)
+                                .frame(maxWidth: .infinity)
+                                .overlay( RoundedRectangle(cornerRadius: 20)
+                                    .stroke(.black, lineWidth: 5))
+                                .cornerRadius(20)
+                                .padding(.vertical, 10.0)
+                                
+                            }
+                            .listStyle(.inset)
+                        }
+                        .onAppear(){
+                            listaRecolectores = callRecolectores()
+                            
+
+                        }
+                        
+                    }
                 }
                 .padding(.all, 30.0)
                 .navigationBarHidden(true)
@@ -208,9 +90,9 @@ struct ListaDeRecolectores: View {
                 }
                 
                 Spacer()
-                    
-                    
-                    
+                
+                
+                
                 VStack{
                     Button("Asignar Recolecciones") {
                     }
@@ -227,8 +109,7 @@ struct ListaDeRecolectores: View {
                     .frame(maxWidth: .infinity)
                     .padding(.horizontal, 20.0)
                     .padding(.bottom, 20.0)
-                }
-                
+                } 
                 
             }
             .background(.white)
@@ -238,6 +119,8 @@ struct ListaDeRecolectores: View {
             .padding(.bottom, 10.0)
         }
     }
+
+    
 }
 
 

@@ -32,8 +32,6 @@ struct donanteRow: View {
                     .padding(.leading, 15)
             }
             .padding(.top, 1.0)
-            
-            // Opciones de estatus
         }
         
         

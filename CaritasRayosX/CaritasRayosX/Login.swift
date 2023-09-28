@@ -27,89 +27,93 @@ struct Login: View {
                 HStack(alignment: .top){
                     NavigationLink("", value: isAuthenticated)
                     Text("Iniciar sesión")
-                        .font(.largeTitle)
-                        .bold()
+                        .font(.system(size: 40))
+                        .fontWeight(.heavy)
                         .foregroundColor(Color("Azul oscuro"))
                         .padding(.top, 40.0)
-                        .font(.system(size: 35))
                         .multilineTextAlignment(.center)
                 }
                 Spacer()
                 VStack(alignment: .leading) {
                     HStack{
                         Image(systemName: "person.crop.circle")
-                            .bold()
-                            .padding(.trailing, 10.0)
+                            .resizable(resizingMode: .stretch)
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 45.0)
+                            .padding(.trailing, 15.0)
                             .foregroundColor(Color("Gris"))
-                            .bold()
+                            
                         Text("Usuario")
+                            .font(.system(size: 28))
                             .bold()
                             .foregroundColor(Color("Azul oscuro"))
                     }
-                    .padding(.top, 50.0)
+                    .padding(.top, 15.0)
                     
                     TextField("Nombre de usuario", text: $usuario)
                         .submitLabel(.next)
-                        .padding(.bottom, 40.0)
+                        .font(.system(size: 22))
                         .textFieldStyle(.roundedBorder)
-                        .lineLimit(5)
+                        .overlay(RoundedRectangle(cornerRadius: 10.0).stroke(Color.black, lineWidth: 0.35))
+                        .padding(.bottom, 20.0)
 
                     
                     HStack{
                         Image(systemName: "lock.circle")
-                            .bold()
-                            .padding(.trailing, 10.0)
+                            .resizable(resizingMode: .stretch)
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 45.0)
+                            .padding(.trailing, 15.0)
                             .foregroundColor(Color("Gris"))
                         
                         Text("Contraseña")
+                            .font(.system(size: 28))
                             .bold()
                             .foregroundColor(Color("Azul oscuro"))
                     }
                     .padding(.top, 20.0)
                             
                     SecureField("Contraseña", text: $contraseña)
-                            //.withSecureFieldStyles()
                             .submitLabel(.next)
+                            .font(.system(size: 22))
                             .focused($passwordIsFocused)
                             .textFieldStyle(.roundedBorder)
-                            .lineLimit(5)
+                            .overlay(RoundedRectangle(cornerRadius: 10.0).stroke(Color.black, lineWidth: 0.35))
                             
-                    Text(mensajeError).foregroundColor(.red).padding(.top, 30.0)
-
-                    Spacer()
-                    
+                    Text(mensajeError)
+                        .foregroundColor(.red)
+                        .multilineTextAlignment(.center)
+                        .padding(.top, 40.0)
                 }
                 .padding(.all, 30.0)
                 .navigationBarHidden(true)
                 .navigationBarBackButtonHidden(true)
                 .navigationDestination(for: Bool.self) { isAuth in
             }
-            Spacer()
             VStack{
                 if (!showAuthLoader) {
-                   
-                    Button("Iniciar Sesión") {
+                    Button {
                         self.isValid = self.validate()
                     }
-                    .background( //mandar recuperarIDRecolector en listarecibos()
-                        
+                    label: {
+                        Text("Iniciar Sesión")
+                            .padding(20)
+                            .frame(width: 300.0, height: 70.0)
+                            .font(.headline)
+                            .background(Color("Azul oscuro"))
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
+                            .padding(.horizontal, 20.0)
+                            .padding(.bottom, 20.0)
+                    }
+                    .background(
+                        // Mandar recuperarIDRecolector en listarecibos()
                         NavigationLink(destination: ListaDeRecibos(), isActive: $isValid) {
-                            
                         }
+                            .toolbar(.hidden)
                     )
-                        .padding(20)
-                        .frame(maxWidth:.infinity)
-                        .font(.headline)
-                        //.fontWeight(.bold)
-                        .navigationBarTitle("Volver")
-                        .toolbar(.hidden)
-                        .background(Color("Azul oscuro"))
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                        .padding(.horizontal, 5.0)
-                        .frame(maxWidth: .infinity)
-                        .padding(.horizontal, 20.0)
-                        .padding(.bottom, 20.0)
+                        
+                        
                                 
                                 
                                 

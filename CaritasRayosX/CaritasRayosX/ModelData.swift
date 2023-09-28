@@ -234,7 +234,48 @@ func enviarEstatus(estatus:Int, idRecibo:Int) {
         let jsonData = try JSONEncoder().encode(datos)
         
         // Crear la URL del servidor
-        let url = URL(string: "http://10.14.255.65:10206/crud/update") // Reemplaza con la URL correcta de tu servidor
+        let url = URL(string: "http://10.14.255.65:10206/crud/updateEstatus") // Reemplaza con la URL correcta de tu servidor
+
+        // Crear una solicitud HTTP POST
+        var request = URLRequest(url: url!)
+        request.httpMethod = "PUT"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpBody = jsonData
+
+        // Realizar la solicitud HTTP
+        let group = DispatchGroup()
+        group.enter()
+        
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if let error = error {
+                print("Error al enviar los datos al servidor: \(error)")
+            } else if let data = data {
+                // Procesar la respuesta del servidor si es necesario
+                let respuesta = String(data: data, encoding: .utf8)
+                print("Respuesta del servidor: \(respuesta ?? "N/A")")
+            }
+            group.leave()
+
+        }
+        
+        task.resume()
+        group.wait()
+
+    } catch {
+        print("Error al codificar los datos como JSON: \(error)")
+    }
+}
+
+func enviarComentarios(comentarios: String, idRecibo: Int) {
+    // Crear una instancia de la estructura MyData con los datos que deseas enviar
+    let datos = ObtenerComentarios(COMENTARIOS: comentarios, id: idRecibo)
+
+    // Convertir la estructura a JSON
+    do {
+        let jsonData = try JSONEncoder().encode(datos)
+        
+        // Crear la URL del servidor
+        let url = URL(string: "http://10.14.255.65:10206/crud/updateComentarios") // Reemplaza con la URL correcta de tu servidor
 
         // Crear una solicitud HTTP POST
         var request = URLRequest(url: url!)

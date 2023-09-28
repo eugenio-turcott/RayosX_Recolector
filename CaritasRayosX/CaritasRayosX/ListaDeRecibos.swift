@@ -23,18 +23,18 @@ struct ListaDeRecibos: View {
                         
                 }
                 .frame(width: 205.0)
-                .padding(.top, -425.0)
+                .padding(.top, -410.0)
                 VStack {
                     HStack {
                     }
-                    .padding(.bottom, 20.0)
+                    .padding(.bottom, 45.0)
                     VStack {
                         HStack {
                             Text("Recibos")
-                                .font(.largeTitle)
-                                .foregroundColor(.black)
+                                .font(.system(size: 40))
+                                .fontWeight(.heavy)
+                                .foregroundColor(Color("Azul oscuro"))
                                 .multilineTextAlignment(.center)
-                                .fontWeight(.bold)
                         }
                         .padding(.top, 15.0)
                         List(listaRecibos){

@@ -12,80 +12,88 @@ struct DetallesView: View {
     @State var recibo: RECIBOS
     @State var donante: DONANTES
     @State private var isValid = false
+    @State private var texto = ""
     @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
         ZStack{
-            BackgroundView()
+            HStack {
+                Image("logo")
+                    .resizable(resizingMode: .stretch)
+                    .aspectRatio(contentMode: .fit)
+                    
+            }
+            .frame(width: 205.0)
+            .padding(.top, -410.0)
+            
             VStack(alignment: .center){
                 NavigationStack{
                     HStack(alignment: .top){
-                        Spacer()
                         Button(action: {}) {
                             Image(systemName: "multiply")
-                                .resizable(capInsets: EdgeInsets(), resizingMode: .stretch)
-                                .aspectRatio(contentMode: .fit)
-                                .padding([.top, .trailing], 50.0)
-                                .padding(.leading, 240.0)
-                                .padding(.bottom, 20.0)
-                                .foregroundColor(Color("Rosa"))
-                                .onTapGesture {
-                                    self.isValid = validate()
-                                    if self.isValid {
-                                        self.presentationMode.wrappedValue.dismiss()
-                                    }
+                            .resizable(capInsets: EdgeInsets(), resizingMode: .stretch)
+                            .aspectRatio(contentMode: .fit)
+                            .foregroundColor(Color("Rosa"))
+                            .frame(width: 75.0)
+                            .padding(.top, 25.0)
+                            .padding(.leading, 200.0)
+                            .onTapGesture {
+                                self.isValid = validate()
+                                if self.isValid {
+                                    self.presentationMode.wrappedValue.dismiss()
                                 }
+                            }
                         }
                     }
                 }
-                HStack{ //Nombre
-                    Text(donante.NOMBRE)
-                        .font(.custom("Trebuchet MS", size: 33).weight(.heavy))
-                        .foregroundColor(Color("Azul oscuro"))
-                    Text(donante.A_PATERNO)//apellido
-                        .font(.custom("Trebuchet MS", size: 33).weight(.heavy))
+                HStack { //Nombre
+                    Text(donante.NOMBRE + " " + donante.A_PATERNO)
+                        .font(.system(size: 35))
+                        .fontWeight(.heavy)
                         .foregroundColor(Color("Azul oscuro"))
                 }
-                .padding(.top, 25.0)
+                .padding(.top, 15.0)
                 .padding(.bottom, 20.0)
+                .padding(.horizontal, 10.0)
                 
-                Spacer()
-                
-                HStack(alignment: .center){
+                HStack(alignment: .center) {
                     Spacer()
                     Text("Contacto:")
-                        .font(.custom("Trebuchet MS", size: 23).weight(.bold))
+                        .font(.system(size: 23))
+                        .fontWeight(.bold)
                         .foregroundColor(Color("Azul oscuro"))
                         .padding(.leading, 5)
                     Spacer()
                     VStack{
                         Text(donante.TELEFONO)//telefono
-                            .font(.custom("Trebuchet MS", size: 25))
+                            .font(.system(size: 25))
                             .foregroundColor(Color("Gris"))
                             .multilineTextAlignment(.trailing)
                             .frame(width: 180)
                             .padding(.bottom, 1)
                     }
                 }
-                .padding(.horizontal, 30.0)
+                .padding(.horizontal, 20.0)
+                
                 HStack(alignment: .top) {
                     Text(donante.EMAIL)//correo
-                        .font(.custom("Trebuchet MS", size: 18))
+                        .font(.system(size: 18))
                         .foregroundColor(Color("Gris"))
                         .multilineTextAlignment(.trailing)
                         .frame(width: 286)
                 }
                 .padding(.bottom, 15.0)
                 
-                HStack(alignment: .center){
+                HStack(alignment: .center) {
                     Spacer()
                     Text("Monto:")
-                        .font(.custom("Trebuchet MS", size: 23).weight(.bold))
+                        .font(.system(size: 23))
+                        .fontWeight(.bold)
                         .foregroundColor(Color("Azul oscuro"))
                         .padding(.leading, 5)
                     Spacer()
                     Text("$" + String(recibo.IMPORTE))
-                        .font(.custom("Trebuchet MS", size: 25))
+                        .font(.system(size: 25))
                         .foregroundColor(Color("Gris"))
                         .multilineTextAlignment(.leading)
                         .frame(width: 150.0)
@@ -93,39 +101,71 @@ struct DetallesView: View {
                 .padding(.bottom, 30.0)
                 .padding(.horizontal, 30.0)
                 
-                HStack{
+                ZStack{
                     Spacer()
-                    Picker(selection: $estatus, label: Text("Picker")){
-                        Text("Pagado").tag(1)
-                        Text("No pagado").tag(2)
+                    HStack {
+                        if (estatus == 1) {
+                            Color(red: 64/255, green: 146/255, blue: 97/255)
+                        } else if (estatus == 2) {
+                            Color(red: 235/255, green: 87/255, blue: 87/255)
+                        } else {
+                            Color(red: 10/255, green: 10/255, blue: 10/255)
+                        }
                     }
-                    .padding(.leading, 10.0).frame(width: 330.0, height: 50.0).pickerStyle(.segmented)
+                    .frame(width: 290.0, height: 45.0)
+                    .cornerRadius(10)
+                    HStack {
+                        Picker(selection: $estatus, label: Text("Picker")){
+                            Text("Pagado").tag(1)
+                            Text("No pagado").tag(2)
+                        }
+                        .pickerStyle(.segmented)
+                        .frame(width: 275.0, height: 30.0)
+                        .background(RoundedRectangle(cornerRadius: 5.0).fill(Color.white))
+                    }
                     Spacer()
                 }
+                Spacer()
+                Spacer()
                 
-                Spacer()
-                Spacer()
+                VStack(alignment: .center){
+                    Text("Comentarios:")
+                        .font(.system(size: 20))
+                        .fontWeight(.bold)
+                        .foregroundColor(Color("Azul oscuro"))
+                    TextField("", text: $texto)
+                        .textFieldStyle(.roundedBorder)
+                        .frame(width: 275.0)
+                        .onChange(of: texto) {value in
+                            
+                        }
+                        .overlay(RoundedRectangle(cornerRadius: 10.0).stroke(Color.black, lineWidth: 0.35))
+                }
+                .padding(.bottom, 30.0)
+                .padding(.horizontal, 30.0)
             }
             .background(.white)
-            .cornerRadius(50)
+            .cornerRadius(20)
             .overlay(
-                RoundedRectangle(cornerRadius: 50)
+                RoundedRectangle(cornerRadius: 20)
                     .stroke(Color("Rosa"), lineWidth: 5))
-            .padding(.top, 115.0)
-            .padding(.horizontal, 10.0)
-            .padding(.bottom, 20.0)
+            .padding(.top, 65.0)
+            .padding(.horizontal, 20.0)
+            .padding(.bottom, 125.0)
             
         }
+        .background(Color(red: 17/255, green: 151/255, blue: 165/255))
         .onAppear(){
             estatus = recibo.ID_ESTATUS
             donante = traerDonante(idD: recibo.ID_DONANTE)
-
         }
-        
     }
+    
+        
     
     private func validate() -> Bool {
         enviarEstatus(estatus: estatus, idRecibo: recibo.id)
+        enviarComentarios(comentarios: texto, idRecibo: recibo.id)
         return true
     }
     

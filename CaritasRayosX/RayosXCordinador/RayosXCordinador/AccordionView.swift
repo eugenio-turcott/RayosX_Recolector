@@ -4,14 +4,12 @@
 //
 //  Created by Alumno on 22/09/23.
 //
-
+/*
 import SwiftUI
 
-/*
 struct AccordionView<Content: View>: View {
     var body: some View {
         VStack {
-            
             Button(
                 action: { self.collapsed.toggle() },
                 label: {
@@ -34,6 +32,4 @@ struct AccordionView_Previews: PreviewProvider {
         AccordionView()
     }
 }
-
-
 */

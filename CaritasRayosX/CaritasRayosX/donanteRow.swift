@@ -88,7 +88,7 @@ struct donanteRow: View {
                 }
                 .padding(.top, 1.0)
             }
-            .background(Color("Gris claro"))
+            .background(Color("Azul claro"))
             .cornerRadius(20)
             .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color("Rosa"), lineWidth: 4))
         }

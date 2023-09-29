@@ -46,6 +46,7 @@ struct ListaDeRecibos: View {
                                 .foregroundColor(Color("Azul oscuro"))
                                 .multilineTextAlignment(.center)
                         }
+                        
                         List(listaRecibos){
                             recibosItem in
                             NavigationLink{
@@ -55,7 +56,7 @@ struct ListaDeRecibos: View {
                                 donanteRow(recibo: recibosItem, donante: DONANTES(A_MATERNO: "", A_PATERNO: "", EMAIL: "", FECHA_NAC: "", NOMBRE: "", TELEFONO: "", id: 0))
                         }
                     }
-                    .padding(.top, -15.0)
+                    .padding(.top, -5.0)
                     .listStyle(.inset)
                 }
                 .background(.white)

@@ -116,8 +116,8 @@ struct DetallesView: View {
                     .cornerRadius(10)
                     HStack {
                         Picker(selection: $estatus, label: Text("Picker")){
-                            Text("Pagado").tag(1)
-                            Text("No pagado").tag(2)
+                            Text("Cobrado").tag(1)
+                            Text("No cobrado").tag(2)
                         }
                         .pickerStyle(.segmented)
                         .frame(width: 275.0, height: 30.0)

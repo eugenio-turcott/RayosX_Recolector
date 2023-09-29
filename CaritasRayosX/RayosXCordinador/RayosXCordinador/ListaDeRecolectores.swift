@@ -22,55 +22,73 @@ struct ListaDeRecolectores: View {
                 }
                 
                 Spacer()
-                
-                VStack(alignment: .leading) {
-                    ZStack{
-                        NavigationView {
-                            DisclosureGroup {
-                                ForEach(0..<4) { _ in
-                                    Text("Roberto Luz")
-                                }
-                            } label: {
-                                HStack(alignment: .center) {
-                                    Spacer()
-                                }
-                            }
-                        }
-                        // Inicio de lista de muestra
-                        VStack {
+               
+                VStack(alignment: .center) {
+                    HStack {
+                        Text("Recolectores")
+                            .font(.largeTitle)
+                            .multilineTextAlignment(.center)
+                            .fontWeight(.bold)
+                            .foregroundColor(Color("AzulOscuro"))
+    //                        .padding(.leading, 30.0)
+    //                        .padding(.top, 10.0)
+    //                        .padding(.horizontal,70)
+                            //.offset(y:5)
+                    }
 
+                    ZStack{
+                        
+                        VStack {
+                            
                             List(listaRecolectores){
                                 recolectoresItem in
-                                HStack{
-                                    Image("Persona")
-                                        .resizable()
-                                        .frame(width: 40, height: 40)
-                                        .clipShape(Capsule())
-                                        .bold()
-                                        .padding(.trailing, 10.0)
-                                        .padding(.vertical, 5.0)
-                                        .foregroundColor(.black)
-                                    Text(recolectoresItem.NOMBRE)
-                                        .multilineTextAlignment(.leading)
-                                        .font(.headline)
-                                        .fontWeight(.heavy)
-                                        .foregroundColor(.black)
-                                        .padding(.vertical, 10.0)
-                                    Spacer()
-                                    Text("\(callRecibosHechos(idR: recolectoresItem.id))/\(callRecibosTotales(idR: recolectoresItem.id))")
-                                        .multilineTextAlignment(.trailing)
-                                        .font(.headline)
-                                        .fontWeight(.heavy)
-                                        .foregroundColor(.black)
-                                
+                                ZStack {
+                                    HStack {
+                                        if (callRecibosHechos(idR: recolectoresItem.id) == callRecibosTotales(idR: recolectoresItem.id) ) {
+                                            Color("VerdeOpaco")
+                                        } else if (callRecibosHechos(idR: recolectoresItem.id) == 0) {
+                                            Color("RojoOpaco")
+                                        }
+                                        else if (callRecibosHechos(idR: recolectoresItem.id) < callRecibosTotales(idR: recolectoresItem.id) ) {
+                                            Color("Amarillo")
+                                        }
+                                        
+                                    }
+                                    .frame(width: 250.0, height: 50.0)
+                                                .cornerRadius(20)
+                                                .offset(y: 8)
+
+                                    HStack{
+                                        Image("Persona")
+                                            .resizable()
+                                            .frame(width: 40, height: 40)
+                                            .clipShape(Capsule())
+                                            .bold()
+                                            .padding(.trailing, 10.0)
+                                            .padding(.vertical, 5.0)
+                                            .foregroundColor(.black)
+                                        Text(recolectoresItem.NOMBRE)
+                                            .multilineTextAlignment(.leading)
+                                            .font(.system(size:20))
+                                            .fontWeight(.heavy)
+                                            .foregroundColor(.black)
+                                            .padding(.vertical, 10.0)
+                                        Spacer()
+                                        Text("\(callRecibosHechos(idR: recolectoresItem.id))/\(callRecibosTotales(idR: recolectoresItem.id))")
+                                            .multilineTextAlignment(.trailing)
+                                            .font(.system(size:20))
+                                            .fontWeight(.heavy)
+                                            .foregroundColor(.black)
+                                        
+                                    }
+                                    .frame(maxWidth: .infinity)
+                                    .padding(.horizontal)
+                                    .frame(maxWidth: .infinity)
+                                    .overlay( RoundedRectangle(cornerRadius: 20)
+                                        .stroke(.black, lineWidth: 5))
+                                    .cornerRadius(20)
+                                    .padding(.vertical, 10.0)
                                 }
-                                .frame(maxWidth: .infinity)
-                                .padding(.horizontal)
-                                .frame(maxWidth: .infinity)
-                                .overlay( RoundedRectangle(cornerRadius: 20)
-                                    .stroke(.black, lineWidth: 5))
-                                .cornerRadius(20)
-                                .padding(.vertical, 10.0)
                                 
                             }
                             .listStyle(.inset)

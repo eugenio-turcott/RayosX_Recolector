@@ -11,7 +11,7 @@ import UIKit
 func loginVer(usuario:String, contrasenaI:String) -> Bool{
     var lista: Array<RECOLECTOR> = []
     var contrasena: String = ""
-    guard let url = URL(string: "http://10.14.255.65:10206/crud/read?usuario=\(usuario)") else{
+    guard let url = URL(string: "https://equipo01.tc2007b.tec.mx:10206/crud/read?usuario=\(usuario)") else{
         print("Error en hacer crud")
         return false
     }
@@ -56,7 +56,7 @@ func loginVer(usuario:String, contrasenaI:String) -> Bool{
 func RecuperarIDRecolector(usuario:String, contrasenaI:String) -> Int{
     var lista: Array<RECOLECTOR> = []
     var IDRecolector: Int = 0
-    guard let url = URL(string: "http://10.14.255.65:10206/crud/read?usuario=\(usuario)") else{
+    guard let url = URL(string: "https://equipo01.tc2007b.tec.mx:10206/crud/read?usuario=\(usuario)") else{
         print("Error en hacer crud")
         return 0
     }
@@ -93,7 +93,7 @@ var listaRecibos = callAllRecibos()
 func callAllRecibos() -> Array<RECIBOS>{
     var lista: Array<RECIBOS> = []
     
-    guard let url = URL(string: "http://10.14.255.65:10206/crud/readRecibos") else {
+    guard let url = URL(string: "https://equipo01.tc2007b.tec.mx:10206/crud/readRecibos") else {
         return lista
     }
     
@@ -127,7 +127,7 @@ var listaDonantes = callAllDonantes()
 func callAllDonantes() -> Array<DONANTES>{
     var lista: Array<DONANTES> = []
     
-    guard let url = URL(string: "http://10.14.255.65:10206/crud/readDonantes")
+    guard let url = URL(string: "https://equipo01.tc2007b.tec.mx:10206/crud/readDonantes")
     else {
         return lista
     }
@@ -160,7 +160,7 @@ func callAllDonantes() -> Array<DONANTES>{
 func callRecibos(idR: Int) -> Array<RECIBOS>{ //recibir como input idrecolector
     var listaRecibos: Array<RECIBOS> = []
     print("Entre a funcion")
-    guard let url = URL(string: "http://10.14.255.65:10206/crud/readRecibo?id=\(idR)") else{
+    guard let url = URL(string: "https://equipo01.tc2007b.tec.mx:10206/crud/readRecibo?id=\(idR)") else{
         return listaRecibos
     }
 
@@ -192,7 +192,7 @@ func traerDonante(idD:Int) -> DONANTES{
     var listaDonantes: Array<DONANTES> = []
 
     var donanteF = DONANTES(A_MATERNO: "", A_PATERNO: "", EMAIL: "", FECHA_NAC: "", NOMBRE: "", TELEFONO: "", id: 0)
-    guard let url = URL(string: "http://10.14.255.65:10206/crud/readDonante?id=\(idD)") else{
+    guard let url = URL(string: "https://equipo01.tc2007b.tec.mx:10206/crud/readDonante?id=\(idD)") else{
         print("Error en hacer crud")
         return donanteF
     }
@@ -233,7 +233,7 @@ func enviarEstatus(estatus:Int, idRecibo:Int) {
         let jsonData = try JSONEncoder().encode(datos)
         
         // Crear la URL del servidor
-        let url = URL(string: "http://10.14.255.65:10206/crud/updateEstatus") // Reemplaza con la URL correcta de tu servidor
+        let url = URL(string: "https://equipo01.tc2007b.tec.mx:10206/crud/updateEstatus") // Reemplaza con la URL correcta de tu servidor
 
         // Crear una solicitud HTTP POST
         var request = URLRequest(url: url!)
@@ -275,7 +275,7 @@ func enviarComentarios(comentarios: String, idRecibo: Int) {
         let jsonData = try JSONEncoder().encode(datos)
         
         // Crear la URL del servidor
-        let url = URL(string: "http://10.14.255.65:10206/crud/updateComentarios") // Reemplaza con la URL correcta de tu servidor
+        let url = URL(string: "https://equipo01.tc2007b.tec.mx:10206/crud/updateComentarios") // Reemplaza con la URL correcta de tu servidor
 
         // Crear una solicitud HTTP POST
         var request = URLRequest(url: url!)

@@ -39,13 +39,7 @@ struct ListaDeRecibos: View {
                                 .multilineTextAlignment(.center)
                         }
                         .padding(.top, 15.0)
-                        HStack {
-                            Text("\(formatearFecha(fechaBase: fechaActual))")
-                                .font(.system(size: 20))
-                                .fontWeight(.bold)
-                                .foregroundColor(Color("Azul oscuro"))
-                                .multilineTextAlignment(.center)
-                        }
+                        
                         
                         List(listaRecibos){
                             recibosItem in

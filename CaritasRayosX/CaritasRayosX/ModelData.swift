@@ -11,7 +11,7 @@ import UIKit
 func loginVer(usuario:String, contrasenaI:String) -> Bool{
     var lista: Array<RECOLECTOR> = []
     var contrasena: String = ""
-    guard let url = URL(string: "http://10.14.255.65:10206/crud/read?usuario=\(usuario)") else{
+    guard let url = URL(string: "https://10.14.255.65:10206/crud/read?usuario=\(usuario)") else{
         print("Error en hacer crud")
         return false
     }
@@ -56,7 +56,7 @@ func loginVer(usuario:String, contrasenaI:String) -> Bool{
 func RecuperarIDRecolector(usuario:String, contrasenaI:String) -> Int{
     var lista: Array<RECOLECTOR> = []
     var IDRecolector: Int = 0
-    guard let url = URL(string: "http://10.14.255.65:10206/crud/read?usuario=\(usuario)") else{
+    guard let url = URL(string: "https://10.14.255.65:10206/crud/read?usuario=\(usuario)") else{
         print("Error en hacer crud")
         return 0
     }

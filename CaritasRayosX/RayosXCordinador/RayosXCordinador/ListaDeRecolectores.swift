@@ -20,20 +20,15 @@ struct ListaDeRecolectores: View {
                 HStack(alignment: .top){
                     
                 }
-                
                 Spacer()
                
                 VStack(alignment: .center) {
                     HStack {
                         Text("Recolectores")
-                            .font(.largeTitle)
+                            .font(.system(size: 40))
+                            .fontWeight(.heavy)
                             .multilineTextAlignment(.center)
-                            .fontWeight(.bold)
                             .foregroundColor(Color("AzulOscuro"))
-    //                        .padding(.leading, 30.0)
-    //                        .padding(.top, 10.0)
-    //                        .padding(.horizontal,70)
-                            //.offset(y:5)
                     }
 
                     ZStack{
@@ -42,52 +37,48 @@ struct ListaDeRecolectores: View {
                             
                             List(listaRecolectores){
                                 recolectoresItem in
+                                NavigationLink(){
+                                    ComentariosRecibosView(listaRecibos: callRecibosNoCobrados(idR: recolectoresItem.id))
+                                }label:{
                                 ZStack {
-                                    HStack {
-                                        if (callRecibosHechos(idR: recolectoresItem.id) == callRecibosTotales(idR: recolectoresItem.id) ) {
-                                            Color("VerdeOpaco")
-                                        } else if (callRecibosHechos(idR: recolectoresItem.id) == 0) {
-                                            Color("RojoOpaco")
+                                        HStack {
+                                            if (callRecibosHechos(idR: recolectoresItem.id) == callRecibosTotales(idR: recolectoresItem.id) ) {
+                                                Color("VerdeOpaco")
+                                            } else if (callRecibosHechos(idR: recolectoresItem.id) == 0) {
+                                                Color("RojoOpaco")
+                                            }
+                                            else if (callRecibosHechos(idR: recolectoresItem.id) < callRecibosTotales(idR: recolectoresItem.id) ) {
+                                                Color("Amarillo")
+                                            }
+                                            
                                         }
-                                        else if (callRecibosHechos(idR: recolectoresItem.id) < callRecibosTotales(idR: recolectoresItem.id) ) {
-                                            Color("Amarillo")
+                                        .frame(width: 250.0, height: 50.0)
+                                        .cornerRadius(20)
+                                        .offset(y: 8)
+                                        
+                                        HStack{
+                                            Text(recolectoresItem.NOMBRE)
+                                                .multilineTextAlignment(.leading)
+                                                .font(.system(size:20))
+                                                .fontWeight(.heavy)
+                                                .foregroundColor(.black)
+                                                .padding(.vertical, 10.0)
+                                            Spacer()
+                                            Text("\(callRecibosHechos(idR: recolectoresItem.id))/\(callRecibosTotales(idR: recolectoresItem.id))")
+                                                .multilineTextAlignment(.trailing)
+                                                .font(.system(size:20))
+                                                .fontWeight(.heavy)
+                                                .foregroundColor(.black)
+                                            
                                         }
-                                        
+                                        .frame(maxWidth: .infinity)
+                                        .padding(.horizontal)
+                                        .frame(maxWidth: .infinity)
+                                        .overlay( RoundedRectangle(cornerRadius: 20)
+                                            .stroke(.black, lineWidth: 5))
+                                        .cornerRadius(20)
+                                        .padding(.vertical, 10.0)
                                     }
-                                    .frame(width: 250.0, height: 50.0)
-                                                .cornerRadius(20)
-                                                .offset(y: 8)
-
-                                    HStack{
-                                        Image("Persona")
-                                            .resizable()
-                                            .frame(width: 40, height: 40)
-                                            .clipShape(Capsule())
-                                            .bold()
-                                            .padding(.trailing, 10.0)
-                                            .padding(.vertical, 5.0)
-                                            .foregroundColor(.black)
-                                        Text(recolectoresItem.NOMBRE)
-                                            .multilineTextAlignment(.leading)
-                                            .font(.system(size:20))
-                                            .fontWeight(.heavy)
-                                            .foregroundColor(.black)
-                                            .padding(.vertical, 10.0)
-                                        Spacer()
-                                        Text("\(callRecibosHechos(idR: recolectoresItem.id))/\(callRecibosTotales(idR: recolectoresItem.id))")
-                                            .multilineTextAlignment(.trailing)
-                                            .font(.system(size:20))
-                                            .fontWeight(.heavy)
-                                            .foregroundColor(.black)
-                                        
-                                    }
-                                    .frame(maxWidth: .infinity)
-                                    .padding(.horizontal)
-                                    .frame(maxWidth: .infinity)
-                                    .overlay( RoundedRectangle(cornerRadius: 20)
-                                        .stroke(.black, lineWidth: 5))
-                                    .cornerRadius(20)
-                                    .padding(.vertical, 10.0)
                                 }
                                 
                             }
@@ -101,7 +92,7 @@ struct ListaDeRecolectores: View {
                         
                     }
                 }
-                .padding(.all, 30.0)
+                .padding(.all, 10.0)
                 .navigationBarHidden(true)
                 .navigationBarBackButtonHidden(true)
                 .navigationDestination(for: Bool.self) { isAuth in
@@ -132,6 +123,8 @@ struct ListaDeRecolectores: View {
             }
             .background(.white)
             .cornerRadius(30)
+            .overlay( RoundedRectangle(cornerRadius: 30)
+                .stroke(Color("Rosa"), lineWidth: 5))
             .padding(.top, 130.0)
             .padding(.horizontal, 20.0)
             .padding(.bottom, 10.0)

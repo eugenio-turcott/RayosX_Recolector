@@ -3,4 +3,54 @@
    uuid = "F0AC2B15-E58A-4F25-9BAE-22C511B95ADE"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A5EBE978-026C-49E3-BC36-B1EFC36ACEC7"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CaritasRayosX/ModelData.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "268"
+            endingLineNumber = "268"
+            landmarkName = "enviarComentarios(comentarios:idRecibo:)"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "A5EBE978-026C-49E3-BC36-B1EFC36ACEC7 - 2568a409a9101f81"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CaritasRayosX.enviarComentarios(comentarios: Swift.String, idRecibo: Swift.Int) -&gt; ()"
+                  moduleName = "CaritasRayosX"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/A01198189/Github/RayosX_Recolector/CaritasRayosX/CaritasRayosX/ModelData.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "270"
+                  endingLineNumber = "270"
+                  offsetFromSymbolStart = "416">
+               </Location>
+               <Location
+                  uuid = "A5EBE978-026C-49E3-BC36-B1EFC36ACEC7 - 2568a409a9101f81"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CaritasRayosX.enviarComentarios(comentarios: Swift.String, idRecibo: Swift.Int) -&gt; ()"
+                  moduleName = "CaritasRayosX"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/A01198189/Github/RayosX_Recolector/CaritasRayosX/CaritasRayosX/ModelData.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "270"
+                  endingLineNumber = "270"
+                  offsetFromSymbolStart = "396">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

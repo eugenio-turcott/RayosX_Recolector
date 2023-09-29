@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct DetallesView: View {
-    @State private var estatus: Int = 0
+    @State private var estatus: Int = 1
     @State var recibo: RECIBOS
     @State var donante: DONANTES
     @State private var isValid = false
-    @State private var texto = ""
+    @State private var texto : String = ""
     @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
@@ -116,8 +116,8 @@ struct DetallesView: View {
                     .cornerRadius(10)
                     HStack {
                         Picker(selection: $estatus, label: Text("Picker")){
-                            Text("Pagado").tag(1)
-                            Text("No pagado").tag(2)
+                            Text("Cobrado").tag(1)
+                            Text("No cobrado").tag(2)
                         }
                         .pickerStyle(.segmented)
                         .frame(width: 275.0, height: 30.0)
@@ -133,7 +133,7 @@ struct DetallesView: View {
                         .font(.system(size: 20))
                         .fontWeight(.bold)
                         .foregroundColor(Color("Azul oscuro"))
-                    TextField("", text: $texto)
+                    TextField("", text: $texto, axis: .vertical)
                         .textFieldStyle(.roundedBorder)
                         .frame(width: 275.0)
                         .onChange(of: texto) {value in
@@ -141,6 +141,10 @@ struct DetallesView: View {
                         }
                         .overlay(RoundedRectangle(cornerRadius: 10.0).stroke(Color.black, lineWidth: 0.35))
                 }
+                .onAppear(){
+                    texto = recibo.COMENTARIOS
+                }
+                
                 .padding(.bottom, 30.0)
                 .padding(.horizontal, 30.0)
             }
@@ -171,8 +175,8 @@ struct DetallesView: View {
     
 }
 
-/*struct DetallesView_Previews: PreviewProvider {
+struct DetallesView_Previews: PreviewProvider {
     static var previews: some View {
         DetallesView(recibo: listaRecibos[0], donante: listaDonantes[0])
     }
-}*/
+}

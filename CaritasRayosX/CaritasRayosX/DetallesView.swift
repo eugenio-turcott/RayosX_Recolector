@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct DetallesView: View {
-    @State private var estatus: Int = 0
+    @State private var estatus: Int = 1
     @State var recibo: RECIBOS
     @State var donante: DONANTES
     @State private var isValid = false
-    @State private var texto = ""
+    @State private var texto : String = ""
     @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
@@ -141,6 +141,10 @@ struct DetallesView: View {
                         }
                         .overlay(RoundedRectangle(cornerRadius: 10.0).stroke(Color.black, lineWidth: 0.35))
                 }
+                .onAppear(){
+                    texto = recibo.COMENTARIOS
+                }
+                
                 .padding(.bottom, 30.0)
                 .padding(.horizontal, 30.0)
             }

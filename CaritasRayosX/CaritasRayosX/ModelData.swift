@@ -108,9 +108,6 @@ func callAllRecibos() -> Array<RECIBOS>{
             do{
                 let reciboList = try jsonDecoder.decode([RECIBOS].self, from: data!)
                 lista = reciboList
-                for reciboItem in reciboList {
-                    print("RECIBO: ID = \(reciboItem.id) - Importe: \(reciboItem.IMPORTE)")
-                }
             } catch {
                 print(error)
             }
@@ -271,7 +268,8 @@ func enviarEstatus(estatus:Int, idRecibo:Int) {
 func enviarComentarios(comentarios: String, idRecibo: Int) {
     // Crear una instancia de la estructura MyData con los datos que deseas enviar
     let datos = ObtenerComentarios(COMENTARIOS: comentarios, id: idRecibo)
-
+    print("Comentarios \(comentarios)")
+    print("id \(idRecibo)")
     // Convertir la estructura a JSON
     do {
         let jsonData = try JSONEncoder().encode(datos)

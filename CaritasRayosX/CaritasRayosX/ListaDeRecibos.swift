@@ -13,6 +13,7 @@ import SwiftUI
 
 struct ListaDeRecibos: View {
     @State private var listaRecibos: Array<RECIBOS> = []
+    @State var estatus: Int = 0
     var body: some View {
         NavigationStack {
             ZStack {

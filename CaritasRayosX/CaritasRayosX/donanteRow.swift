@@ -13,23 +13,11 @@ struct donanteRow: View {
     @State private var estatus: Int = 0
 
     var body: some View {
-        ZStack {
-            HStack {
-                if (recibo.ID_ESTATUS == 1) {
-                    Color("Verde")
-                } else if (recibo.ID_ESTATUS == 2) {
-                    Color("Rojo")
-                } else {
-                    Color("Gris claro")
-                }
-            }
-            .frame(width: 300.0, height: 115.0)
-            .cornerRadius(10)
-            .offset(y: 10)
+        if (recibo.ID_ESTATUS == 1) {
             VStack{
                 HStack{ //Nombre                   Apellido
                     Text("\(donante.NOMBRE) \(donante.A_PATERNO)")
-                        .font(.title)
+                        .font(.system(size: 25))
                         .fontWeight(.bold)
                         .foregroundColor(Color(red: 0/255, green: 59/255, blue: 92/255))
                         .padding(.leading, 15.0)
@@ -42,12 +30,69 @@ struct donanteRow: View {
                 }
                 HStack{
                     Text(recibo.DIRECCION_COBRO)
-                        .font(.title3)
+                        .font(.system(size: 23))
                         .padding(.leading, 15)
+                        .offset(y: -10)
                 }
                 .padding(.top, 1.0)
             }
+            .background(Color("Verde"))
+            .cornerRadius(20)
+            .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color("Rosa"), lineWidth: 4))
+        } else if (recibo.ID_ESTATUS == 2) {
+            VStack{
+                HStack{ //Nombre                   Apellido
+                    Text("\(donante.NOMBRE) \(donante.A_PATERNO)")
+                        .font(.system(size: 25))
+                        .fontWeight(.bold)
+                        .foregroundColor(Color(red: 0/255, green: 59/255, blue: 92/255))
+                        .padding(.leading, 15.0)
+                        .padding(.top, 10.0)
+                        .offset(y: 5)
+                    Spacer()
+                }
+                .onAppear(){
+                    donante = traerDonante(idD: recibo.ID_DONANTE)
+                }
+                HStack{
+                    Text(recibo.DIRECCION_COBRO)
+                        .font(.system(size: 23))
+                        .padding(.leading, 15)
+                        .offset(y: -10)
+                }
+                .padding(.top, 1.0)
+            }
+            .background(Color("Rojo"))
+            .cornerRadius(20)
+            .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color("Rosa"), lineWidth: 4))
+        } else {
+            VStack{
+                HStack{ //Nombre                   Apellido
+                    Text("\(donante.NOMBRE) \(donante.A_PATERNO)")
+                        .font(.system(size: 25))
+                        .fontWeight(.bold)
+                        .foregroundColor(Color(red: 0/255, green: 59/255, blue: 92/255))
+                        .padding(.leading, 15.0)
+                        .padding(.top, 10.0)
+                        .offset(y: 5)
+                    Spacer()
+                }
+                .onAppear(){
+                    donante = traerDonante(idD: recibo.ID_DONANTE)
+                }
+                HStack{
+                    Text(recibo.DIRECCION_COBRO)
+                        .font(.system(size: 23))
+                        .padding(.leading, 15)
+                        .offset(y: -10)
+                }
+                .padding(.top, 1.0)
+            }
+            .background(Color("Gris claro"))
+            .cornerRadius(20)
+            .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color("Rosa"), lineWidth: 4))
         }
+            
     }
 }
 

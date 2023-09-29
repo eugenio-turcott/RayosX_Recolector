@@ -14,6 +14,7 @@ import SwiftUI
 struct ListaDeRecibos: View {
     @State private var listaRecibos: Array<RECIBOS> = []
     @State var estatus: Int = 0
+    let fechaActual = Date()
     var body: some View {
         NavigationStack {
             ZStack {
@@ -38,6 +39,13 @@ struct ListaDeRecibos: View {
                                 .multilineTextAlignment(.center)
                         }
                         .padding(.top, 15.0)
+                        HStack {
+                            Text("\(formatearFecha(fechaBase: fechaActual))")
+                                .font(.system(size: 20))
+                                .fontWeight(.bold)
+                                .foregroundColor(Color("Azul oscuro"))
+                                .multilineTextAlignment(.center)
+                        }
                         List(listaRecibos){
                             recibosItem in
                             NavigationLink{
@@ -63,6 +71,15 @@ struct ListaDeRecibos: View {
             }
             .background(Color(red: 17/255, green: 151/255, blue: 165/255))
         }
+    }
+    func formatearFecha(fechaBase: Date) -> String {
+        let formato = DateFormatter()
+            formato.timeStyle = DateFormatter.Style.none
+            formato.dateFormat = "dd / MMMM / YYYY"
+            formato.locale = Locale(identifier: "es_MX")
+            
+            let fechaString = formato.string(from: fechaBase)
+            return fechaString
     }
 }
 

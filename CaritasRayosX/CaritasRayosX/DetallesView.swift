@@ -133,7 +133,7 @@ struct DetallesView: View {
                         .font(.system(size: 20))
                         .fontWeight(.bold)
                         .foregroundColor(Color("Azul oscuro"))
-                    TextField("", text: $texto)
+                    TextField("", text: $texto, axis: .vertical)
                         .textFieldStyle(.roundedBorder)
                         .frame(width: 275.0)
                         .onChange(of: texto) {value in

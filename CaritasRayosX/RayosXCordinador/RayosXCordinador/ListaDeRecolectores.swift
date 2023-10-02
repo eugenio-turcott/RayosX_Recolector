@@ -3,14 +3,6 @@ import SwiftUI
 struct ListaDeRecolectores: View {
     //var listaRecolectores = callRecibos(idEnCall: idR)
     @State private var listaRecolectores: Array<RECOLECTOR> = []
- 
-
-    @State private var colores1: [String] = []
-    @State private var recibosHechos: Int = 0
-    @State private var recibosTotales: Int = 0
-    @State private var color1: String = ""
-    @State private var color2: String = ""
-    @State private var cont: Int = 0
 
     var body: some View {
         

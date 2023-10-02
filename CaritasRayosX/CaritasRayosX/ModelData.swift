@@ -12,7 +12,6 @@ func loginVer(usuario:String, contrasenaI:String) -> Bool{
     var lista: Array<RECOLECTOR> = []
     var contrasena: String = ""
     guard let url = URL(string: "https://equipo01.tc2007b.tec.mx:10206/crud/read?usuario=\(usuario)") else{
-        print("Error en hacer crud")
         return false
     }
     
@@ -57,7 +56,6 @@ func RecuperarIDRecolector(usuario:String, contrasenaI:String) -> Int{
     var lista: Array<RECOLECTOR> = []
     var IDRecolector: Int = 0
     guard let url = URL(string: "https://equipo01.tc2007b.tec.mx:10206/crud/read?usuario=\(usuario)") else{
-        print("Error en hacer crud")
         return 0
     }
     
@@ -88,6 +86,7 @@ func RecuperarIDRecolector(usuario:String, contrasenaI:String) -> Int{
     
 }
 
+/*
 var listaRecibos = callAllRecibos()
 
 func callAllRecibos() -> Array<RECIBOS>{
@@ -156,11 +155,10 @@ func callAllDonantes() -> Array<DONANTES>{
     group.wait()
     
     return lista
-}
+}*/
 
 func callRecibos(idR: Int) -> Array<RECIBOS>{ //recibir como input idrecolector
     var listaRecibos: Array<RECIBOS> = []
-    print("Entre a funcion")
     guard let url = URL(string: "https://equipo01.tc2007b.tec.mx:10206/crud/readRecibo?id=\(idR)") else{
         return listaRecibos
     }
@@ -184,17 +182,14 @@ func callRecibos(idR: Int) -> Array<RECIBOS>{ //recibir como input idrecolector
     }
     task.resume()
     group.wait()
-    print(listaRecibos)
     return listaRecibos
 
 }
 
 func traerDonante(idD:Int) -> DONANTES{
     var listaDonantes: Array<DONANTES> = []
-
     var donanteF = DONANTES(A_MATERNO: "", A_PATERNO: "", EMAIL: "", FECHA_NAC: "", NOMBRE: "", TELEFONO: "", id: 0)
     guard let url = URL(string: "https://equipo01.tc2007b.tec.mx:10206/crud/readDonante?id=\(idD)") else{
-        print("Error en hacer crud")
         return donanteF
     }
     

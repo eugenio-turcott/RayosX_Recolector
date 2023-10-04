@@ -10,7 +10,8 @@ import SwiftUI
 struct sesionView: View {
     @State private var usuario: String = ""
     @State private var contraseña: String = ""
-
+    @State var dataPie: [(Double, Color)] = []
+  
     var body: some View {
         VStack{
             TextField("", text: $usuario, axis: .vertical)
@@ -32,11 +33,17 @@ struct sesionView: View {
                     .padding(.horizontal, 20.0)
                     .padding(.bottom, 20.0)
             }
+            
+            PieChartView(slices:[
+                (callRecibosHechos(idR: UserDefaults.standard.integer(forKey:"idR")), Color.red),
+                ((callRecibosTotales(idR: UserDefaults.standard.integer(forKey:"idR")) - callRecibosHechos(idR: UserDefaults.standard.integer(forKey:"idR"))), Color.green)
+                ])
+
         }
         .onAppear(){
             usuario=UserDefaults.standard.string(forKey:"usuario") ?? ""
             contraseña=UserDefaults.standard.string(forKey:"contraseña") ?? ""
-
+           
         }
     }
 }

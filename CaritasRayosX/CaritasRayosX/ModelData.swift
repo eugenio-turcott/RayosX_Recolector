@@ -384,4 +384,72 @@ func enviarContrasena(contrasena: String, idRecolector: Int) {
     }
 }
 
+func callRecibosHechos(idR: Int) -> Double{ //recibir como input idrecolector
+    var listaRecibos: Array<RECIBOS> = []
+    var cant: Double = 0
+    guard let url = URL(string: "https://equipo01.tc2007b.tec.mx:10206/crud/readRecibo?id=\(idR)") else{
+        return cant
+    }
+
+    let group = DispatchGroup()
+    group.enter()
+
+    let task = URLSession.shared.dataTask(with: url){
+        data, response, error in
+
+        let jsonDecoder = JSONDecoder()
+        if(data != nil){
+            do{
+                let decodeRecibos = try jsonDecoder.decode([RECIBOS].self, from: data!)
+                listaRecibos = decodeRecibos
+                for recibosItem in listaRecibos{
+                    if recibosItem.ID_ESTATUS==1 || recibosItem.ID_ESTATUS==2{
+                        cant+=1
+                    }
+                }
+            }catch{
+                print(error)
+            }
+        }
+        group.leave()
+    }
+    task.resume()
+    group.wait()
+    return cant
+
+}
+
+func callRecibosTotales(idR: Int) -> Double{ //recibir como input idrecolector
+    var listaRecibos: Array<RECIBOS> = []
+    var cant: Double = 0
+    guard let url = URL(string: "https://equipo01.tc2007b.tec.mx:10206/crud/readRecibo?id=\(idR)") else{
+        return cant
+    }
+
+    let group = DispatchGroup()
+    group.enter()
+
+    let task = URLSession.shared.dataTask(with: url){
+        data, response, error in
+
+        let jsonDecoder = JSONDecoder()
+        if(data != nil){
+            do{
+                let decodeRecibos = try jsonDecoder.decode([RECIBOS].self, from: data!)
+                listaRecibos = decodeRecibos
+                for _ in listaRecibos{
+                    cant+=1
+                }
+            }catch{
+                print(error)
+            }
+        }
+        group.leave()
+    }
+    task.resume()
+    group.wait()
+    return cant
+
+}
+
 

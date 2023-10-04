@@ -109,6 +109,7 @@ struct Login: View {
                     .background(
                         // Mandar recuperarIDRecolector en listarecibos()
                         NavigationLink(destination: ListaDeRecibos(), isActive: $isValid) {
+
                         }
                             .toolbar(.hidden)
                     )
@@ -143,6 +144,8 @@ struct Login: View {
         if (usuario != "" && contraseña != ""){
             valor = loginVer(usuario: usuario, contrasenaI: contraseña)
             if (valor == true){
+                UserDefaults.standard.setValue(usuario, forKey: "usuario")
+                UserDefaults.standard.setValue(contraseña, forKey: "contraseña")
                 return true
             }
             else{

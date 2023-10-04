@@ -18,14 +18,26 @@ struct ListaDeRecibos: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                HStack {
-                    Image("logo")
-                        .resizable(resizingMode: .stretch)
-                        .aspectRatio(contentMode: .fit)
+                HStack{
+                    HStack {
+                        Image("logo")
+                            .resizable(resizingMode: .stretch)
+                            .aspectRatio(contentMode: .fit)
                         
+                        NavigationLink (destination: sesionView()){
+                            Image("sesion")
+                                .resizable(resizingMode: .stretch)
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 50.0, height: 50.0)
+                        }
+                                
+                        
+                    }
+                    .frame(width: 205.0)
+                    .padding(.top, -410.0)
+                   
                 }
-                .frame(width: 205.0)
-                .padding(.top, -410.0)
+                
                 VStack {
                     HStack {
                     }
@@ -67,6 +79,7 @@ struct ListaDeRecibos: View {
             .background(Color(red: 17/255, green: 151/255, blue: 165/255))
         }
     }
+    
     func formatearFecha(fechaBase: Date) -> String {
         let formato = DateFormatter()
             formato.timeStyle = DateFormatter.Style.none

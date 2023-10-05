@@ -16,8 +16,8 @@
 		FBB0BFD72AC365D40010CF37 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBB0BFD62AC365D40010CF37 /* Preview Assets.xcassets */; };
 		FBB0BFDE2AC36F350010CF37 /* ListaDeRecolectores.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0BFDD2AC36F350010CF37 /* ListaDeRecolectores.swift */; };
 		FBB0BFE02AC36F8A0010CF37 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0BFDF2AC36F8A0010CF37 /* BackgroundView.swift */; };
-		FBB0BFE42AC373C00010CF37 /* AccordionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0BFE32AC373C00010CF37 /* AccordionView.swift */; };
-		FBB0BFE62AC373FD0010CF37 /* CollapsibleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0BFE52AC373FD0010CF37 /* CollapsibleView.swift */; };
+		FBB799CD2AC6462A00726475 /* DONANTES.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB799CC2AC6462A00726475 /* DONANTES.swift */; };
+		FBB799CF2AC6477C00726475 /* CambiarRecibosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB799CE2AC6477C00726475 /* CambiarRecibosView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,8 +31,8 @@
 		FBB0BFD62AC365D40010CF37 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FBB0BFDD2AC36F350010CF37 /* ListaDeRecolectores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaDeRecolectores.swift; sourceTree = "<group>"; };
 		FBB0BFDF2AC36F8A0010CF37 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
-		FBB0BFE32AC373C00010CF37 /* AccordionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccordionView.swift; sourceTree = "<group>"; };
-		FBB0BFE52AC373FD0010CF37 /* CollapsibleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsibleView.swift; sourceTree = "<group>"; };
+		FBB799CC2AC6462A00726475 /* DONANTES.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DONANTES.swift; sourceTree = "<group>"; };
+		FBB799CE2AC6477C00726475 /* CambiarRecibosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CambiarRecibosView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +51,7 @@
 			children = (
 				FB33A5A72AC3AEA7000CFD0B /* RECOLECTOR.swift */,
 				FB33A5A42AC3AA52000CFD0B /* RECIBOS.swift */,
+				FBB799CC2AC6462A00726475 /* DONANTES.swift */,
 			);
 			path = Structs;
 			sourceTree = "<group>";
@@ -77,11 +78,10 @@
 				FBB0BFCF2AC365D30010CF37 /* RayosXCordinadorApp.swift */,
 				FBB0BFD12AC365D30010CF37 /* ContentView.swift */,
 				FBB0BFDD2AC36F350010CF37 /* ListaDeRecolectores.swift */,
+				FBB799CE2AC6477C00726475 /* CambiarRecibosView.swift */,
 				FB33A5A22AC3A8EF000CFD0B /* ModelData.swift */,
 				FB33A5A62AC3AA60000CFD0B /* Structs */,
 				FBB0BFDF2AC36F8A0010CF37 /* BackgroundView.swift */,
-				FBB0BFE32AC373C00010CF37 /* AccordionView.swift */,
-				FBB0BFE52AC373FD0010CF37 /* CollapsibleView.swift */,
 				FBB0BFD32AC365D40010CF37 /* Assets.xcassets */,
 				FBB0BFD52AC365D40010CF37 /* Preview Content */,
 			);
@@ -168,10 +168,10 @@
 			files = (
 				FB33A5A82AC3AEA7000CFD0B /* RECOLECTOR.swift in Sources */,
 				FBB0BFDE2AC36F350010CF37 /* ListaDeRecolectores.swift in Sources */,
+				FBB799CF2AC6477C00726475 /* CambiarRecibosView.swift in Sources */,
 				FBB0BFD22AC365D30010CF37 /* ContentView.swift in Sources */,
 				FBB0BFE02AC36F8A0010CF37 /* BackgroundView.swift in Sources */,
-				FBB0BFE62AC373FD0010CF37 /* CollapsibleView.swift in Sources */,
-				FBB0BFE42AC373C00010CF37 /* AccordionView.swift in Sources */,
+				FBB799CD2AC6462A00726475 /* DONANTES.swift in Sources */,
 				FBB0BFD02AC365D30010CF37 /* RayosXCordinadorApp.swift in Sources */,
 				FB33A5A32AC3A8EF000CFD0B /* ModelData.swift in Sources */,
 				FB33A5A52AC3AA52000CFD0B /* RECIBOS.swift in Sources */,

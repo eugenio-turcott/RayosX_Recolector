@@ -34,7 +34,7 @@ struct ListaDeRecibos: View {
                         
                     }
                     .frame(width: 205.0)
-                    .padding(.top, -410.0)
+                    .padding(.top, -380.0)
                    
                 }
                 
@@ -68,9 +68,9 @@ struct ListaDeRecibos: View {
                 .background(.white)
                 .cornerRadius(20)
                 .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color("Rosa"), lineWidth: 5))
-                
-                .padding(.horizontal, 5.0)
-                .padding()
+                .padding(.top, 30.0)
+                .padding(.horizontal, 20.0)
+                .padding(.bottom, 10.0)
             }
             .onAppear(){
                 listaRecibos = callRecibos(idR: UserDefaults.standard.integer(forKey:"idR"))

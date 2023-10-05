@@ -155,7 +155,7 @@ struct DetallesView: View {
                     .stroke(Color("Rosa"), lineWidth: 5))
             .padding(.top, 65.0)
             .padding(.horizontal, 20.0)
-            .padding(.bottom, 125.0)
+            .padding(.bottom, 10.0)
             
         }
         .background(Color(red: 17/255, green: 151/255, blue: 165/255))

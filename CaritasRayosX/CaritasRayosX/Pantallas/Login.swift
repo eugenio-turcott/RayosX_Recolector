@@ -98,7 +98,7 @@ struct Login: View {
                     label: {
                         Text("Iniciar Sesión")
                             .padding(20)
-                            .frame(width: 300.0, height: 70.0)
+                            .frame(width: 330.0, height: 70.0)
                             .font(.headline)
                             .background(Color("Azul oscuro"))
                             .foregroundColor(.white)

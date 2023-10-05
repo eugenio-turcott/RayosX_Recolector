@@ -114,9 +114,8 @@ struct ListaDeRecolectores: View {
                 
             }
             .background(.white)
-            .cornerRadius(30)
-            .overlay( RoundedRectangle(cornerRadius: 30)
-                .stroke(Color("Rosa"), lineWidth: 5))
+            .cornerRadius(20)
+            .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color("Rosa"), lineWidth: 5))
             .padding(.top, 130.0)
             .padding(.horizontal, 20.0)
             .padding(.bottom, 10.0)

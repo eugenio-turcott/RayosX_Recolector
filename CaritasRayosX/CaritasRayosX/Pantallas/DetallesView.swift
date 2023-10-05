@@ -17,72 +17,20 @@ struct DetallesView: View {
 
     var body: some View {
         ZStack{
-            HStack {
-                Image("logo")
-                    .resizable(resizingMode: .stretch)
-                    .aspectRatio(contentMode: .fit)
-                    
-            }
-            .frame(width: 205.0)
-            .padding(.top, -410.0)
+            BackgroundView()
             
             VStack(alignment: .center){
-                NavigationStack{
-                    HStack(alignment: .top){
-                        Button(action: {}) {
-                            Image(systemName: "multiply")
-                            .resizable(capInsets: EdgeInsets(), resizingMode: .stretch)
-                            .aspectRatio(contentMode: .fit)
-                            .foregroundColor(Color("Rosa"))
-                            .frame(width: 75.0)
-                            .padding(.top, 25.0)
-                            .padding(.leading, 200.0)
-                            .onTapGesture {
-                                self.isValid = validate()
-                                if self.isValid {
-                                    self.presentationMode.wrappedValue.dismiss()
-                                }
-                            }
-                        }
-                    }
-                }
+                
                 HStack { //Nombre
                     Text(donante.NOMBRE + " " + donante.A_PATERNO)
                         .font(.system(size: 35))
                         .fontWeight(.heavy)
                         .foregroundColor(Color("Azul oscuro"))
                 }
-                .padding(.top, 15.0)
+                .padding(.top, 50.0)
                 .padding(.bottom, 20.0)
                 .padding(.horizontal, 10.0)
                 
-                HStack(alignment: .center) {
-                    Spacer()
-                    Text("Contacto:")
-                        .font(.system(size: 23))
-                        .fontWeight(.bold)
-                        .foregroundColor(Color("Azul oscuro"))
-                        .padding(.leading, 5)
-                    Spacer()
-                    VStack{
-                        Text(donante.TELEFONO)//telefono
-                            .font(.system(size: 25))
-                            .foregroundColor(Color("Gris"))
-                            .multilineTextAlignment(.trailing)
-                            .frame(width: 180)
-                            .padding(.bottom, 1)
-                    }
-                }
-                .padding(.horizontal, 20.0)
-                
-                HStack(alignment: .top) {
-                    Text(donante.EMAIL)//correo
-                        .font(.system(size: 18))
-                        .foregroundColor(Color("Gris"))
-                        .multilineTextAlignment(.trailing)
-                        .frame(width: 286)
-                }
-                .padding(.bottom, 15.0)
                 
                 HStack(alignment: .center) {
                     Spacer()
@@ -94,12 +42,38 @@ struct DetallesView: View {
                     Spacer()
                     Text("$" + String(recibo.IMPORTE))
                         .font(.system(size: 25))
+                        .bold()
                         .foregroundColor(Color("Gris"))
                         .multilineTextAlignment(.leading)
                         .frame(width: 150.0)
                 }
                 .padding(.bottom, 30.0)
                 .padding(.horizontal, 30.0)
+                
+                
+                HStack(alignment: .center) {
+                    Spacer()
+                    Text("Contacto:")
+                        .font(.system(size: 23))
+                        .fontWeight(.bold)
+                        .foregroundColor(Color("Azul oscuro"))
+                        .padding(.leading, 5)
+                    Spacer()
+                    VStack{
+                        Text(donante.TELEFONO)//telefono
+                            .font(.system(size: 20))
+                            .foregroundColor(Color("Gris"))
+                            .multilineTextAlignment(.trailing)
+                            .frame(width: 180)
+                            .padding(.bottom, 1)
+                    }
+                }
+                .padding(.horizontal, 20.0)
+                .padding(.bottom, 70.0)
+                
+                
+                
+                
                 
                 ZStack{
                     Spacer()
@@ -136,6 +110,7 @@ struct DetallesView: View {
                     TextField("", text: $texto, axis: .vertical)
                         .textFieldStyle(.roundedBorder)
                         .frame(width: 275.0)
+                        .font(.system(size: 22))
                         .onChange(of: texto) {value in
                             
                         }
@@ -147,13 +122,42 @@ struct DetallesView: View {
                 
                 .padding(.bottom, 30.0)
                 .padding(.horizontal, 30.0)
+                
+                
+                
+                
+                NavigationStack{
+                    HStack(alignment: .top){
+                        Button{}
+                        label: {
+                            Text("Actualizar")
+                                .padding(20)
+                                .frame(width: 330.0, height: 70.0)
+                                .font(.headline)
+                                .background(Color("Azul oscuro"))
+                                .foregroundColor(.white)
+                                .cornerRadius(10)
+                                .padding(.horizontal, 20.0)
+                                .padding(.bottom, 20.0)
+                                .onTapGesture {
+                                    self.isValid = validate()
+                                    if self.isValid {
+                                        self.presentationMode.wrappedValue.dismiss()
+                                    }
+                                }
+                        }
+                            
+                            
+                    }
+                        
+                }
+                
+                
             }
             .background(.white)
             .cornerRadius(20)
-            .overlay(
-                RoundedRectangle(cornerRadius: 20)
-                    .stroke(Color("Rosa"), lineWidth: 5))
-            .padding(.top, 65.0)
+            .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color("Rosa"), lineWidth: 5))
+            .padding(.top, 130.0)
             .padding(.horizontal, 20.0)
             .padding(.bottom, 10.0)
             
@@ -175,9 +179,9 @@ struct DetallesView: View {
     
 }
 
-/*
+
 struct DetallesView_Previews: PreviewProvider {
     static var previews: some View {
         DetallesView(recibo: listaRecibos[0], donante: listaDonantes[0])
     }
-}7*/
+}

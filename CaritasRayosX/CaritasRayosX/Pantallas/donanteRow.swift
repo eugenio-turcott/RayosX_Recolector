@@ -96,11 +96,11 @@ struct donanteRow: View {
     }
 }
 
-/*
+
 struct donanteRow_Previews: PreviewProvider {
     static var previews: some View {
         @State var estatus: Int = 1
         donanteRow(recibo: listaRecibos[0], donante: listaDonantes[0])
     }
 }
-*/
+

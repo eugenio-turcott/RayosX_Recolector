@@ -16,11 +16,24 @@ struct sesionView: View {
         ZStack{
             BackgroundView()
             
+            
             VStack{
+                Spacer()
+                
                 TextField("", text: $usuario, axis: .vertical)
+                    .submitLabel(.next)
+                    .font(.system(size: 22))
                     .textFieldStyle(.roundedBorder)
+                    .overlay(RoundedRectangle(cornerRadius: 10.0).stroke(Color.black, lineWidth: 0.35))
+                    .padding()
                 TextField("", text: $contraseña, axis: .vertical)
+                    .submitLabel(.next)
+                    .font(.system(size: 22))
                     .textFieldStyle(.roundedBorder)
+                    .overlay(RoundedRectangle(cornerRadius: 10.0).stroke(Color.black, lineWidth: 0.35))
+                    .padding()
+                
+                
                 Button {
                     enviarUsuario(usuario: usuario, idRecolector: UserDefaults.standard.integer(forKey:"idR"))
                     enviarContrasena(contrasena:contraseña, idRecolector: UserDefaults.standard.integer(forKey:"idR"))

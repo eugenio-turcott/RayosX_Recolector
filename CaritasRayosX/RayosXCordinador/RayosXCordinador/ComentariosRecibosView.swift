@@ -13,15 +13,11 @@ struct ComentariosRecibosView: View {
     var body: some View {
         ZStack{
             BackgroundView()
-            List(listaRecibos){
-                recibosItem in
-                ZStack {
-                    HStack {
-                        Color("AccentColor")
-                    }
-                    .frame(width: 310.0, height: 80.0)
-                    .cornerRadius(20)
-                    .offset(y: 6)
+            
+            VStack{
+                Text("Comentarios de recibos no pagados")
+                List(listaRecibos){
+                    recibosItem in
                     VStack{
                         HStack{
                             HStack{
@@ -62,8 +58,11 @@ struct ComentariosRecibosView: View {
                      Text("\(recibosItem.COMENTARIOS)")*/
                 }
             }
+            
+            
         }
         
+   
     }
 }
 

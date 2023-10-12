@@ -21,12 +21,10 @@ struct ListaDeRecibos: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                HStack{
-                    HStack {
-                        Image("logo")
-                            .resizable(resizingMode: .stretch)
-                            .aspectRatio(contentMode: .fit)
-                        
+                BackgroundView()
+                VStack(alignment: .center) {
+                    HStack{
+                        Spacer()
                         NavigationLink (destination: sesionView(cambio: $cambio)){
                             Image("sesion")
                                 .resizable(resizingMode: .stretch)
@@ -37,18 +35,11 @@ struct ListaDeRecibos: View {
                             self.presentationMode.wrappedValue.dismiss()
 
                         }
-                                
-                        
                     }
                     .frame(width: 205.0)
                     .padding(.top, -380.0)
-                   
-                }
-                
-                VStack {
-                    HStack {
-                    }
-                    .padding(.bottom, 45.0)
+                    
+
                     VStack {
                         HStack {
                             Text("Recibos")
@@ -59,7 +50,7 @@ struct ListaDeRecibos: View {
                         }
                         .padding(.top, 15.0)
                         
-                        
+                            
                         List(listaRecibos){
                             recibosItem in
                             NavigationLink{
@@ -67,23 +58,30 @@ struct ListaDeRecibos: View {
                             }
                             label:{
                                 donanteRow(recibo: recibosItem, donante: DONANTES(A_MATERNO: "", A_PATERNO: "", EMAIL: "", FECHA_NAC: "", NOMBRE: "", TELEFONO: "", id: 0))
+                            
                         }
+                        .padding(.top, -5.0)
+                        .listStyle(.inset)
+
                     }
-                    .padding(.top, -5.0)
-                    .listStyle(.inset)
+                    
+                }
+                .onAppear(){
+                    listaRecibos = callRecibos(idR: UserDefaults.standard.integer(forKey:"idR"))
+                }
+                
                 }
                 .background(.white)
                 .cornerRadius(20)
                 .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color("Rosa"), lineWidth: 5))
-                .padding(.top, 30.0)
+                .padding(.top, 130.0)
                 .padding(.horizontal, 20.0)
                 .padding(.bottom, 10.0)
-            }
-            .onAppear(){
-                listaRecibos = callRecibos(idR: UserDefaults.standard.integer(forKey:"idR"))
-            }
+                      
+                    
             }
             .background(Color(red: 17/255, green: 151/255, blue: 165/255))
+                    
         }
     }
     

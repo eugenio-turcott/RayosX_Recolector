@@ -10,7 +10,7 @@ import UIKit
 func callRecolectores() -> Array<RECOLECTOR> {
     var listaRecolectores: Array<RECOLECTOR> = []
 
-    guard let url = URL(string: "https://equipo01.tc2007b.tec.mx:10206/crud/readRecolectores") else{
+    guard let url = URL(string: "http://10.14.255.65:10206/crud/readRecolectores") else{
         return listaRecolectores
     }
 
@@ -42,7 +42,7 @@ func callRecolectores() -> Array<RECOLECTOR> {
 func callRecibosHechos(idR: Int) -> Int{ //recibir como input idrecolector
     var listaRecibos: Array<RECIBOS> = []
     var cant: Int = 0
-    guard let url = URL(string: "https://equipo01.tc2007b.tec.mx:10206/crud/readRecibo?id=\(idR)") else{
+    guard let url = URL(string: "http://10.14.255.65:10206/crud/readRecibo?id=\(idR)") else{
         return cant
     }
 
@@ -77,7 +77,7 @@ func callRecibosHechos(idR: Int) -> Int{ //recibir como input idrecolector
 func callRecibosTotales(idR: Int) -> Int{ //recibir como input idrecolector
     var listaRecibos: Array<RECIBOS> = []
     var cant: Int = 0
-    guard let url = URL(string: "https://equipo01.tc2007b.tec.mx:10206/crud/readRecibo?id=\(idR)") else{
+    guard let url = URL(string: "http://10.14.255.65:10206/crud/readRecibo?id=\(idR)") else{
         return cant
     }
 
@@ -110,7 +110,7 @@ func callRecibosTotales(idR: Int) -> Int{ //recibir como input idrecolector
 
 func callRecibosNoCobrados(idR: Int) -> Array<RECIBOS>{ //recibir como input idrecolector
     var listaRecibos: Array<RECIBOS> = []
-    guard let url = URL(string: "https://equipo01.tc2007b.tec.mx:10206/crud/readRecibosNoCobrados?id=\(idR)") else{
+    guard let url = URL(string: "http://10.14.255.65:10206/crud/readRecibosNoCobrados?id=\(idR)") else{
         return listaRecibos
     }
 
@@ -143,7 +143,7 @@ func callRecibosNoCobrados(idR: Int) -> Array<RECIBOS>{ //recibir como input idr
 func callNombreDonante(idD: Int) -> String{ //recibir como input idrecolector
     var listaDonantes: Array<DONANTES> = []
     var nombre: String=""
-    guard let url = URL(string: "https://equipo01.tc2007b.tec.mx:10206/crud/readNombreDonante?id=\(idD)") else{
+    guard let url = URL(string: "http://10.14.255.65:10206/crud/readNombreDonante?id=\(idD)") else{
         return nombre
     }
 

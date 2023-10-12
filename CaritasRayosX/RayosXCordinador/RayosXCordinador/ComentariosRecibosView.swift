@@ -17,23 +17,22 @@ struct ComentariosRecibosView: View {
             BackgroundView()
             
             VStack(alignment: .center){
-                /*
                 HStack(alignment: .top){
                     
                 }
                 Spacer()
-                 */
+                
                 VStack(alignment: .center) {
                     HStack {
-                        Text("Comentarios de recibos no pagados")
-                            .font(.system(size: 25))
+                        Text("Comentarios")
+                            .font(.system(size: 40))
                             .fontWeight(.heavy)
                             .multilineTextAlignment(.center)
                             .foregroundColor(Color("AzulOscuro"))
-                            .padding()
                     }
+                    
                     ZStack{
-                        Spacer()
+                        
                         VStack{
                             
                             List(listaRecibos){

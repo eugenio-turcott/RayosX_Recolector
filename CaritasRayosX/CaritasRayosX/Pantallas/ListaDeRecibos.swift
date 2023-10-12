@@ -18,12 +18,10 @@ struct ListaDeRecibos: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                HStack{
+                BackgroundView()
+                VStack(alignment: .center) {
                     HStack {
-                        Image("logo")
-                            .resizable(resizingMode: .stretch)
-                            .aspectRatio(contentMode: .fit)
-                        
+                        Spacer()
                         NavigationLink (destination: sesionView()){
                             Image("sesion")
                                 .resizable(resizingMode: .stretch)
@@ -35,46 +33,55 @@ struct ListaDeRecibos: View {
                     }
                     .frame(width: 205.0)
                     .padding(.top, -380.0)
-                   
-                }
-                
-                VStack {
-                    HStack {
-                    }
-                    .padding(.bottom, 45.0)
+                    
+                    
                     VStack {
-                        HStack {
-                            Text("Recibos")
-                                .font(.system(size: 40))
-                                .fontWeight(.heavy)
-                                .foregroundColor(Color("Azul oscuro"))
-                                .multilineTextAlignment(.center)
-                        }
-                        .padding(.top, 15.0)
-                        
-                        
-                        List(listaRecibos){
-                            recibosItem in
-                            NavigationLink{
-                                DetallesView(recibo: recibosItem, donante: DONANTES(A_MATERNO: "", A_PATERNO: "", EMAIL: "", FECHA_NAC: "", NOMBRE: "", TELEFONO: "", id: 0))
+                        VStack {
+                            HStack {
+                                Text("Recibos")
+                                    .font(.system(size: 40))
+                                    .fontWeight(.heavy)
+                                    .foregroundColor(Color("Azul oscuro"))
+                                    .multilineTextAlignment(.center)
                             }
-                            label:{
-                                donanteRow(recibo: recibosItem, donante: DONANTES(A_MATERNO: "", A_PATERNO: "", EMAIL: "", FECHA_NAC: "", NOMBRE: "", TELEFONO: "", id: 0))
+                            .padding(.top, 15.0)
+                            
+                            
+                            List(listaRecibos){
+                                recibosItem in
+                                NavigationLink{
+                                    DetallesView(recibo: recibosItem, donante: DONANTES(A_MATERNO: "", A_PATERNO: "", EMAIL: "", FECHA_NAC: "", NOMBRE: "", TELEFONO: "", id: 0))
+                                }
+                                label:{
+                                    donanteRow(recibo: recibosItem, donante: DONANTES(A_MATERNO: "", A_PATERNO: "", EMAIL: "", FECHA_NAC: "", NOMBRE: "", TELEFONO: "", id: 0))
+                            }
                         }
+                        .padding(.top, -5.0)
+                        .listStyle(.inset)
                     }
-                    .padding(.top, -5.0)
-                    .listStyle(.inset)
+                    .background(.white)
+                    .cornerRadius(20)
+                    .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color("Rosa"), lineWidth: 5))
+                    .padding(.top, 30.0)
+                    .padding(.horizontal, 20.0)
+                    .padding(.bottom, 10.0)
+                }
+                .onAppear(){
+                    listaRecibos = callRecibos(idR: UserDefaults.standard.integer(forKey:"idR"))
+                }
+                    
+                    
                 }
                 .background(.white)
                 .cornerRadius(20)
                 .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color("Rosa"), lineWidth: 5))
-                .padding(.top, 30.0)
+                .padding(.top, 130.0)
                 .padding(.horizontal, 20.0)
                 .padding(.bottom, 10.0)
-            }
-            .onAppear(){
-                listaRecibos = callRecibos(idR: UserDefaults.standard.integer(forKey:"idR"))
-            }
+                
+                
+                
+                
             }
             .background(Color(red: 17/255, green: 151/255, blue: 165/255))
         }

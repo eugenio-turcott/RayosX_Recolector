@@ -15,6 +15,9 @@ struct ListaDeRecibos: View {
     @State private var listaRecibos: Array<RECIBOS> = []
     @State var estatus: Int = 0
     let fechaActual = Date()
+    @State var cambio: Bool = false
+    @Environment(\.presentationMode) var presentationMode
+    
     var body: some View {
         NavigationStack {
             ZStack {
@@ -24,11 +27,15 @@ struct ListaDeRecibos: View {
                             .resizable(resizingMode: .stretch)
                             .aspectRatio(contentMode: .fit)
                         
-                        NavigationLink (destination: sesionView()){
+                        NavigationLink (destination: sesionView(cambio: $cambio)){
                             Image("sesion")
                                 .resizable(resizingMode: .stretch)
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 50.0, height: 50.0)
+                        }
+                        .onChange(of: cambio){ value in
+                            self.presentationMode.wrappedValue.dismiss()
+
                         }
                                 
                         

@@ -11,7 +11,10 @@ struct sesionView: View {
     @State private var usuario: String = ""
     @State private var contraseña: String = ""
     @State var dataPie: [(Double, Color)] = []
-  
+    @State private var showAlert = false
+    @Environment(\.presentationMode) var presentationMode
+    @Binding var cambio: Bool
+    
     var body: some View {
         ZStack{
             BackgroundView()
@@ -59,6 +62,21 @@ struct sesionView: View {
                     (callRecibosHechos(idR: UserDefaults.standard.integer(forKey:"idR")), Color.red),
                     ((callRecibosTotales(idR: UserDefaults.standard.integer(forKey:"idR")) - callRecibosHechos(idR: UserDefaults.standard.integer(forKey:"idR"))), Color.green)
                     ])
+                
+                Button {
+                    showAlert.toggle()
+                }
+                label: {
+                    Text("Cerrar Sesión")
+                        .padding(20)
+                        .frame(width: 300.0, height: 70.0)
+                        .font(.headline)
+                        .background(Color("Azul oscuro"))
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                        .padding(.horizontal, 20.0)
+                        .padding(.bottom, 20.0)
+                }
 
             }
             .onAppear(){
@@ -67,13 +85,21 @@ struct sesionView: View {
                
             }
         }
+        .alert("¿Seguro que quieres cerrar la sesión?", isPresented: $showAlert){
+            Button("Si"){
+                cambio.toggle()
+                self.presentationMode.wrappedValue.dismiss()
+            }
+            Button("No"){}
+        }
         
     }
 }
 
 struct sesionView_Previews: PreviewProvider {
     static var previews: some View {
-        sesionView()
+        @State var cambio:Bool = false
+        sesionView(cambio:$cambio)
     }
     
 }

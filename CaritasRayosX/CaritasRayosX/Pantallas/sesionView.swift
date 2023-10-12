@@ -20,19 +20,24 @@ struct sesionView: View {
             VStack{
                 Spacer()
                 
-                TextField("", text: $usuario, axis: .vertical)
-                    .submitLabel(.next)
-                    .font(.system(size: 22))
-                    .textFieldStyle(.roundedBorder)
-                    .overlay(RoundedRectangle(cornerRadius: 10.0).stroke(Color.black, lineWidth: 0.35))
-                    .padding()
-                TextField("", text: $contraseña, axis: .vertical)
-                    .submitLabel(.next)
-                    .font(.system(size: 22))
-                    .textFieldStyle(.roundedBorder)
-                    .overlay(RoundedRectangle(cornerRadius: 10.0).stroke(Color.black, lineWidth: 0.35))
-                    .padding()
-                
+                VStack(alignment: .leading){
+                    TextField("", text: $usuario)
+                        .submitLabel(.next)
+                        .font(.system(size: 22))
+                        .textFieldStyle(.roundedBorder)
+                        .overlay(RoundedRectangle(cornerRadius: 10.0).stroke(Color.black, lineWidth: 0.35))
+                        .padding(.horizontal, 40.0)
+                        .padding(.top, 150.0)
+                    TextField("", text: $contraseña)
+                        .submitLabel(.next)
+                        .font(.system(size: 22))
+                        .textFieldStyle(.roundedBorder)
+                        .overlay(RoundedRectangle(cornerRadius: 10.0).stroke(Color.black, lineWidth: 0.35))
+                        .padding(.horizontal, 40.0)
+                        .padding(.vertical, 20.0)
+                }
+                .padding(.vertical)
+
                 
                 Button {
                     enviarUsuario(usuario: usuario, idRecolector: UserDefaults.standard.integer(forKey:"idR"))

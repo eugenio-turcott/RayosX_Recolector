@@ -17,10 +17,12 @@ struct ComentariosRecibosView: View {
             BackgroundView()
             
             VStack(alignment: .center){
+                /*
                 HStack(alignment: .top){
                     
                 }
                 Spacer()
+                 */
                 VStack(alignment: .center) {
                     HStack {
                         Text("Comentarios de recibos no pagados")
@@ -31,42 +33,39 @@ struct ComentariosRecibosView: View {
                             .padding()
                     }
                     ZStack{
+                        Spacer()
                         VStack{
-                            HStack{
-                                Text("Nombre")
-                                Text("ID de recibo")
-                                Text("Comentario")
-                            }
                             
                             List(listaRecibos){
                                 recibosItem in
                                 VStack{
-                                    
-                                    HStack{
-                                        
-                                        Text(callNombreDonante(idD:recibosItem.ID_DONANTE))
-                                            .multilineTextAlignment(.leading)
-                                            .font(.system(size:20))
-                                            .fontWeight(.heavy)
-                                            .foregroundColor(.black)
-                                            .padding(.vertical, 10.0)
-                                        
-                                        Text("\(recibosItem.id)")
-                                            .multilineTextAlignment(.leading)
-                                            .font(.system(size:20))
-                                            .fontWeight(.heavy)
-                                            .foregroundColor(.black)
-                                            .padding(.vertical, 10.0)
-                                        
-                                        Spacer()
-                                        
-                                        Text("\(recibosItem.COMENTARIOS)")
-                                            .multilineTextAlignment(.trailing)
-                                            .font(.system(size:20))
-                                            .fontWeight(.heavy)
-                                            .foregroundColor(.black)
-                                        
+                                    VStack{
+                                        HStack{
+                                            
+                                            Text(callNombreDonante(idD:recibosItem.ID_DONANTE))
+                                                .multilineTextAlignment(.leading)
+                                                .font(.system(size:20))
+                                                .fontWeight(.heavy)
+                                                .foregroundColor(.black)
+                                                .padding(.vertical, 10.0)
+                                            
+                                            Spacer()
+                                            
+                                            Text("ID de recibo:")
+                                            Text("\(recibosItem.id)")
+                                                .multilineTextAlignment(.leading)
+                                                .font(.system(size:20))
+                                                .fontWeight(.heavy)
+                                                .foregroundColor(.black)
+                                                .padding(.vertical, 10.0)
+                                        }
                                     }
+                                    
+                                    Text("\(recibosItem.COMENTARIOS)")
+                                        .font(.title2)
+                                        .multilineTextAlignment(.trailing)
+                                        .foregroundColor(.black)
+                                        .padding(.bottom)
                                 }
                                 .frame(maxWidth: .infinity)
                                 .padding(.horizontal)
@@ -75,6 +74,7 @@ struct ComentariosRecibosView: View {
                                     .stroke(.black, lineWidth: 3))
                                 .cornerRadius(20)
                             }
+                            .padding(.vertical)
                         }
                     }
                     
@@ -87,8 +87,7 @@ struct ComentariosRecibosView: View {
             .padding(.top, 130.0)
             .padding(.horizontal, 20.0)
             .padding(.bottom, 10.0)
-            
-            
+
         }
     }
 }

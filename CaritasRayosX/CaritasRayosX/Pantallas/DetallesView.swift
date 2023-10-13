@@ -145,46 +145,47 @@ struct DetallesView: View {
                 
                 
                 VStack{
-                    VStack(alignment: .center){
-                        Spacer()
-                        Text("Comentarios:")
-                            .font(.system(size: 20))
-                            .fontWeight(.bold)
-                            .foregroundColor(Color("Azul oscuro"))
-                        Picker("Comentarios", selection: $selectedMotivo) {
-                                Text("Estaba enfermo").tag(Motivo.enfermo)
-                                Text("No estaba").tag(Motivo.noEstaba)
-                                Text("No tenia el dinero").tag(Motivo.noDinero)
-                        }
-                        .textFieldStyle(.roundedBorder)
-                        .frame(width: 275.0)
-                        .font(.title)
-                        .bold()
-                        .accentColor(Color("Azul oscuro"))
-                        .onChange(of: texto) {value in
-                            
-                        }
-                        .overlay(RoundedRectangle(cornerRadius: 10.0).stroke(Color.black, lineWidth: 0.35))
-                        .frame(width: 300, height: 60.0)
-                        .clipped()
-                        /*
-                        TextField("", text: $texto, axis: .vertical)
+                    if estatus==2{
+                        VStack(alignment: .center){
+                            Spacer()
+                            Text("Comentarios:")
+                                .font(.system(size: 20))
+                                .fontWeight(.bold)
+                                .foregroundColor(Color("Azul oscuro"))
+                            Picker("Comentarios", selection: $texto) {
+                                Text("Estaba enfermo").tag("Estaba enfermo")
+                                Text("No estaba").tag("No estaba")
+                                Text("No tenia el dinero").tag("No tenia el dinero")
+                            }
                             .textFieldStyle(.roundedBorder)
                             .frame(width: 275.0)
-                            .font(.system(size: 22))
+                            .font(.title)
+                            .bold()
+                            .accentColor(Color("Azul oscuro"))
                             .onChange(of: texto) {value in
                                 
                             }
                             .overlay(RoundedRectangle(cornerRadius: 10.0).stroke(Color.black, lineWidth: 0.35))
-                         */
+                            .frame(width: 300, height: 60.0)
+                            .clipped()
+                            /*
+                             TextField("", text: $texto, axis: .vertical)
+                             .textFieldStyle(.roundedBorder)
+                             .frame(width: 275.0)
+                             .font(.system(size: 22))
+                             .onChange(of: texto) {value in
+                             
+                             }
+                             .overlay(RoundedRectangle(cornerRadius: 10.0).stroke(Color.black, lineWidth: 0.35))
+                             */
+                        }
+                        .onAppear(){
+                            texto = recibo.COMENTARIOS
+                        }
+                        
+                        .padding(.bottom, 30.0)
+                        .padding(.horizontal, 30.0)
                     }
-                    .onAppear(){
-                        texto = recibo.COMENTARIOS
-                    }
-                    
-                    .padding(.bottom, 30.0)
-                    .padding(.horizontal, 30.0)
-                         
                     
                     
                     
@@ -233,6 +234,7 @@ struct DetallesView: View {
         .onAppear(){
             estatus = recibo.ID_ESTATUS
             donante = traerDonante(idD: recibo.ID_DONANTE)
+            texto=recibo.COMENTARIOS
         }
     }
     

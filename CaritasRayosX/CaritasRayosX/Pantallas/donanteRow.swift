@@ -38,7 +38,7 @@ struct donanteRow: View {
             }
             .background(Color("Verde"))
             .cornerRadius(20)
-            .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color("Rosa"), lineWidth: 4))
+            .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color("VerdePicker"), lineWidth: 3))
         } else if (recibo.ID_ESTATUS == 2) {
             VStack{
                 HStack{ //Nombre                   Apellido
@@ -64,7 +64,7 @@ struct donanteRow: View {
             }
             .background(Color("Rojo"))
             .cornerRadius(20)
-            .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color("Rosa"), lineWidth: 4))
+            .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color("RojoPicker"), lineWidth: 3))
         } else {
             VStack{
                 HStack{ //Nombre                   Apellido
@@ -90,7 +90,7 @@ struct donanteRow: View {
             }
             .background(Color("Azul claro"))
             .cornerRadius(20)
-            .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color("Rosa"), lineWidth: 4))
+            .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color("Gris"), lineWidth: 3))
         }
             
     }

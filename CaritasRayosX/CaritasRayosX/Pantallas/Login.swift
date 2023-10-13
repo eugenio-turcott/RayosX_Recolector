@@ -120,6 +120,7 @@ struct Login: View {
                                 
                     } else {
                         ProgressView()
+                            .toolbar(.hidden)
                     }
                  
                     }
@@ -127,11 +128,10 @@ struct Login: View {
                     Spacer()
                 }
                 .background(.white)
-                .cornerRadius(20)
-                .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color("Rosa"), lineWidth: 5))
-                .padding(.top, 130.0)
+                .cornerRadius(35)
+                .overlay(RoundedRectangle(cornerRadius: 35).stroke(Color("Rosa"), lineWidth: 4))
+                .padding(.top, 110.0)
                 .padding(.horizontal, 20.0)
-                .padding(.bottom, 10.0)
     
         }
         

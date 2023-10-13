@@ -22,22 +22,28 @@ struct ListaDeRecibos: View {
         NavigationStack {
             ZStack {
                 BackgroundView()
-                VStack(alignment: .center) {
-                    HStack{
-                        Spacer()
-                        NavigationLink (destination: sesionView(cambio: $cambio)){
-                            Image("sesion")
-                                .resizable(resizingMode: .stretch)
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 50.0, height: 50.0)
-                        }
-                        .onChange(of: cambio){ value in
-                            self.presentationMode.wrappedValue.dismiss()
-
-                        }
+                
+                VStack{
+                    NavigationLink (destination: sesionView(cambio: $cambio, recibo: RECIBOS(COMENTARIOS: "", DIRECCION_COBRO: "", FECHA_COBRO: "", ID_DONANTE: 0, ID_ESTATUS: 0, ID_RECOLECTOR: 0, IMPORTE: 0.0, id: 0), donante: DONANTES(A_MATERNO: "", A_PATERNO: "", EMAIL: "", FECHA_NAC: "", NOMBRE: "", TELEFONO: "", id: 0))){
+                        Image("sesion")
+                            .resizable(resizingMode: .stretch)
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 50.0, height: 50.0)
                     }
-                    .frame(width: 205.0)
-                    .padding(.top, -380.0)
+                    .toolbar(.hidden)
+                    .onChange(of: cambio){ value in
+                        self.presentationMode.wrappedValue.dismiss()
+
+                    }
+                    
+                    
+                }
+                .foregroundColor(.white)
+                .padding(.top, -380.0)
+                .padding(.leading, 270)
+                
+                
+                VStack(alignment: .center) {
                     
 
                     VStack {
@@ -55,9 +61,11 @@ struct ListaDeRecibos: View {
                             recibosItem in
                             NavigationLink{
                                 DetallesView(recibo: recibosItem, donante: DONANTES(A_MATERNO: "", A_PATERNO: "", EMAIL: "", FECHA_NAC: "", NOMBRE: "", TELEFONO: "", id: 0))
+                                    .toolbar(.hidden)
                             }
                             label:{
                                 donanteRow(recibo: recibosItem, donante: DONANTES(A_MATERNO: "", A_PATERNO: "", EMAIL: "", FECHA_NAC: "", NOMBRE: "", TELEFONO: "", id: 0))
+                                    .toolbar(.hidden)
                             
                         }
                         .padding(.top, -5.0)
@@ -66,17 +74,18 @@ struct ListaDeRecibos: View {
                     }
                     
                 }
+                .padding(.bottom, 30.0)
                 .onAppear(){
                     listaRecibos = callRecibos(idR: UserDefaults.standard.integer(forKey:"idR"))
                 }
+                Spacer()
                 
                 }
                 .background(.white)
-                .cornerRadius(20)
-                .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color("Rosa"), lineWidth: 5))
-                .padding(.top, 130.0)
+                .cornerRadius(35)
+                .overlay(RoundedRectangle(cornerRadius: 35).stroke(Color("Rosa"), lineWidth: 4))
+                .padding(.top, 110.0)
                 .padding(.horizontal, 20.0)
-                .padding(.bottom, 10.0)
                       
                     
             }

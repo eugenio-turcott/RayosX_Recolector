@@ -26,8 +26,37 @@ struct DetallesView: View {
 
     var body: some View {
         ZStack{
+            
             BackgroundView()
+            VStack{
+                Button(action: {}){
+                    HStack{
+                        Image(systemName: "arrowshape.turn.up.backward.2")
+                            .resizable(resizingMode: .stretch)
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 25)
+                        Text("Atrás")
+                            .font(.title3)
+                            
+                    }
+                    .onTapGesture {
+                        self.isValid = validate()
+                        if self.isValid{
+                            self.presentationMode.wrappedValue.dismiss()
+                        }
+                    }
+                }
+
+            }
+            .foregroundColor(.white)
+            .padding(.top, -380.0)
+            .padding(.leading, -170)
+            
+        
+            
+            
             VStack(alignment: .center){
+                
                 VStack{
                     HStack { //Nombre
                         Text(donante.NOMBRE + " " + donante.A_PATERNO)
@@ -186,17 +215,18 @@ struct DetallesView: View {
                             
                     }
                 }
+                .padding(.bottom, 30.0)
+                Spacer()
                 
                 
                 
                 
             }
             .background(.white)
-            .cornerRadius(20)
-            .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color("Rosa"), lineWidth: 5))
-            .padding(.top, 130.0)
+            .cornerRadius(35)
+            .overlay(RoundedRectangle(cornerRadius: 35).stroke(Color("Rosa"), lineWidth: 4))
+            .padding(.top, 110.0)
             .padding(.horizontal, 20.0)
-            .padding(.bottom, 10.0)
             
         }
         .background(Color("Rosa"))

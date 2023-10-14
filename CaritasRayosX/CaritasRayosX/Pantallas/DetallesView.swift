@@ -20,7 +20,7 @@ struct DetallesView: View {
     @State private var isValid = false
     @State private var texto : String = ""
     @Environment(\.presentationMode) var presentationMode
-    
+    @State private var isValid: Bool = false
     @State private var selectedMotivo: Motivo = .noDinero
 
 
@@ -131,7 +131,7 @@ struct DetallesView: View {
                             }
                             .pickerStyle(SegmentedPickerStyle())
                             .scaledToFit()
-                            .scaleEffect(CGSize(width: 1.0, height: 1.5))
+                            .scaleEffect(CGSize(width: 1, height: 1.5))
                             .frame(width: 300.0, height: 50.0)
                             .background(RoundedRectangle(cornerRadius: 5.0).fill(Color.white))
                             
@@ -145,7 +145,7 @@ struct DetallesView: View {
                 
                 
                 VStack{
-                    if estatus==2{
+                    if estatus==2 {
                         VStack(alignment: .center){
                             Spacer()
                             Text("Comentarios:")
@@ -168,22 +168,10 @@ struct DetallesView: View {
                             .overlay(RoundedRectangle(cornerRadius: 10.0).stroke(Color.black, lineWidth: 0.35))
                             .frame(width: 300, height: 60.0)
                             .clipped()
-                            /*
-                             TextField("", text: $texto, axis: .vertical)
-                             .textFieldStyle(.roundedBorder)
-                             .frame(width: 275.0)
-                             .font(.system(size: 22))
-                             .onChange(of: texto) {value in
-                             
-                             }
-                             .overlay(RoundedRectangle(cornerRadius: 10.0).stroke(Color.black, lineWidth: 0.35))
-                             */
                         }
                         .onAppear(){
                             texto = recibo.COMENTARIOS
                         }
-                        
-                        .padding(.bottom, 30.0)
                         .padding(.horizontal, 30.0)
                     }
                     
@@ -191,18 +179,17 @@ struct DetallesView: View {
                     
                     
                     NavigationStack{
-                        HStack(alignment: .top){
+                        VStack(){
                             Button{}
                             label: {
                                 Text("Actualizar")
                                     .padding(20)
-                                    .frame(width: 330.0, height: 70.0)
+                                    .frame(width: 330.0, height: 50.0)
                                     .font(.headline)
                                     .background(Color("Azul oscuro"))
                                     .foregroundColor(.white)
                                     .cornerRadius(10)
                                     .padding(.horizontal, 20.0)
-                                    .padding(.bottom, 20.0)
                                     .onTapGesture {
                                         self.isValid = validate()
                                         if self.isValid {
@@ -210,18 +197,27 @@ struct DetallesView: View {
                                         }
                                     }
                             }
-                                
-                                
+                            Button{
+                            }
+                            label: {
+                                Text("Ver Mapa")
+                                    .padding(20)
+                                    .frame(width: 330.0, height: 50.0)
+                                    .font(.headline)
+                                    .background(Color("Azul oscuro"))
+                                    .foregroundColor(.white)
+                                    .cornerRadius(10)
+                                    .padding(.horizontal, 20.0)
+                            }
+                            .navigationDestination(isPresented: $isValid) {
+                                MapaView(latitud: LOCATION.lat, longitud: LOCATION.lng)
+                            }
+                            .onAppear()
                         }
-                            
                     }
                 }
-                .padding(.bottom, 30.0)
+                .padding(.bottom, 10.0)
                 Spacer()
-                
-                
-                
-                
             }
             .background(.white)
             .cornerRadius(35)

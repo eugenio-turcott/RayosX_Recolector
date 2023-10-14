@@ -20,7 +20,6 @@ struct DetallesView: View {
     @State private var isValid = false
     @State private var texto : String = ""
     @Environment(\.presentationMode) var presentationMode
-    @State private var isValid: Bool = false
     @State private var selectedMotivo: Motivo = .noDinero
 
 

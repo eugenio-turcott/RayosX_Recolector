@@ -25,6 +25,8 @@
 		FBAADD2C2AA8EE720064A068 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAADD2B2AA8EE720064A068 /* ContentView.swift */; };
 		FBAADD2E2AA8EE730064A068 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBAADD2D2AA8EE730064A068 /* Assets.xcassets */; };
 		FBAADD312AA8EE730064A068 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBAADD302AA8EE730064A068 /* Preview Assets.xcassets */; };
+		FBAE89992ADA35A600885192 /* LOCATION.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAE89982ADA35A600885192 /* LOCATION.swift */; };
+		FBAE899B2ADA3B3300885192 /* MapaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAE899A2ADA3B3300885192 /* MapaView.swift */; };
 		FBEE20782AA927DE000956FE /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEE20772AA927DE000956FE /* ModelData.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +50,8 @@
 		FBAADD2B2AA8EE720064A068 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FBAADD2D2AA8EE730064A068 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FBAADD302AA8EE730064A068 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FBAE89982ADA35A600885192 /* LOCATION.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LOCATION.swift; sourceTree = "<group>"; };
+		FBAE899A2ADA3B3300885192 /* MapaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapaView.swift; sourceTree = "<group>"; };
 		FBEE20772AA927DE000956FE /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -72,6 +76,7 @@
 				FB7B1A2F2ABE2E3C00DABF63 /* RECIBOS.swift */,
 				FB7B1A312ABE2ED200DABF63 /* DONANTES.swift */,
 				FB7B1A2D2ABE2DEA00DABF63 /* RECOLECTOR.swift */,
+				FBAE89982ADA35A600885192 /* LOCATION.swift */,
 			);
 			path = Structs;
 			sourceTree = "<group>";
@@ -82,6 +87,7 @@
 				FB71D1002AA914E300610ED0 /* Login.swift */,
 				FB24D1ED2AA8F4D80038D109 /* ListaDeRecibos.swift */,
 				FB6670DA2AA8F0D0007C38A9 /* DetallesView.swift */,
+				FBAE899A2ADA3B3300885192 /* MapaView.swift */,
 				FB6670D82AA8F082007C38A9 /* donanteRow.swift */,
 				FB0015302ACDFDBD00875E53 /* sesionView.swift */,
 			);
@@ -202,6 +208,7 @@
 				FB2D282E2AC4EA2E00552366 /* ObtenerComentarios.swift in Sources */,
 				FB71D0FF2AA9144A00610ED0 /* BackgroundView.swift in Sources */,
 				FB0015352ACE07AF00875E53 /* ObtenerContrasena.swift in Sources */,
+				FBAE89992ADA35A600885192 /* LOCATION.swift in Sources */,
 				FB71D1012AA914E300610ED0 /* Login.swift in Sources */,
 				FB7B1A302ABE2E3C00DABF63 /* RECIBOS.swift in Sources */,
 				FBAADD2C2AA8EE720064A068 /* ContentView.swift in Sources */,
@@ -211,6 +218,7 @@
 				FB24D1EE2AA8F4D80038D109 /* ListaDeRecibos.swift in Sources */,
 				FB6670DB2AA8F0D0007C38A9 /* DetallesView.swift in Sources */,
 				FB7B1A322ABE2ED200DABF63 /* DONANTES.swift in Sources */,
+				FBAE899B2ADA3B3300885192 /* MapaView.swift in Sources */,
 				FB00153D2ACE278400875E53 /* PieChartView.swift in Sources */,
 				FBAADD2A2AA8EE720064A068 /* CaritasRayosXApp.swift in Sources */,
 				FB0015332ACE076900875E53 /* ObtenerUsuario.swift in Sources */,
@@ -351,6 +359,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -380,6 +389,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

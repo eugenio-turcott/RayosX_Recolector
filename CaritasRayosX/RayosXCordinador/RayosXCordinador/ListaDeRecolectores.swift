@@ -75,6 +75,8 @@ struct ListaDeRecolectores: View {
                                 
                             }
                             .listStyle(.inset)
+                            
+                        
                         }
                         .onAppear(){
                             listaRecolectores = callRecolectores()
@@ -89,28 +91,24 @@ struct ListaDeRecolectores: View {
                 .navigationBarBackButtonHidden(true)
                 .navigationDestination(for: Bool.self) { isAuth in
                 }
-                
-                Spacer()
-                
+                                
                 
                 
                 VStack{
-                    Button("Asignar Recolecciones") {
-                    }
-                    .padding(20)
-                    .frame(maxWidth:.infinity)
-                    .font(.headline)
-                    //.fontWeight(.bold)
-                    .navigationBarTitle("Volver")
-                    .toolbar(.hidden)
-                    .background(Color("Azul oscuro"))
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
-                    .padding(.horizontal, 5.0)
-                    .frame(maxWidth: .infinity)
-                    .padding(.horizontal, 20.0)
-                    .padding(.bottom, 20.0)
-                } 
+                    NavigationLink(){
+                                            CambiarRecibosView(listaRecolectoresV: listaRecolectores)
+                                        }label:{
+                                            Text("Cambiar recibo")
+                                                .padding(20)
+                                                .frame(width: 250, height: 60)
+                                                .font(.headline)
+                                                .background(Color("AzulOscuro"))
+                                                .foregroundColor(.white)
+                                                .cornerRadius(10)
+                                        }
+                }
+                
+                Spacer()
                 
             }
             .background(.white)

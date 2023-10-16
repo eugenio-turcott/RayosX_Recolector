@@ -153,6 +153,7 @@ struct DetallesView: View {
                                 .fontWeight(.bold)
                                 .foregroundColor(Color("Azul oscuro"))
                             Picker("Comentarios", selection: $texto) {
+                                Text("").tag("")
                                 Text("Estaba enfermo").tag("Estaba enfermo")
                                 Text("No estaba").tag("No estaba")
                                 Text("No tenia el dinero").tag("No tenia el dinero")
@@ -168,16 +169,7 @@ struct DetallesView: View {
                             .overlay(RoundedRectangle(cornerRadius: 10.0).stroke(Color.black, lineWidth: 0.35))
                             .frame(width: 300, height: 60.0)
                             .clipped()
-                            /*
-                             TextField("", text: $texto, axis: .vertical)
-                             .textFieldStyle(.roundedBorder)
-                             .frame(width: 275.0)
-                             .font(.system(size: 22))
-                             .onChange(of: texto) {value in
-                             
-                             }
-                             .overlay(RoundedRectangle(cornerRadius: 10.0).stroke(Color.black, lineWidth: 0.35))
-                             */
+                            
                         }
                         .onAppear(){
                             texto = recibo.COMENTARIOS

@@ -16,6 +16,8 @@
 		FBB0BFD72AC365D40010CF37 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBB0BFD62AC365D40010CF37 /* Preview Assets.xcassets */; };
 		FBB0BFDE2AC36F350010CF37 /* ListaDeRecolectores.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0BFDD2AC36F350010CF37 /* ListaDeRecolectores.swift */; };
 		FBB0BFE02AC36F8A0010CF37 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB0BFDF2AC36F8A0010CF37 /* BackgroundView.swift */; };
+		FBCFCE4C2AD9CD6800848C0D /* cambiarReciboView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCFCE4B2AD9CD6800848C0D /* cambiarReciboView.swift */; };
+		FBCFCE4E2AD9D8B800848C0D /* ObtenerRecolector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCFCE4D2AD9D8B800848C0D /* ObtenerRecolector.swift */; };
 		FBD63ADE2AC7662800C8EBC3 /* ComentariosRecibosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD63ADD2AC7662800C8EBC3 /* ComentariosRecibosView.swift */; };
 		FBD63AE02AC7756100C8EBC3 /* DONANTES.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD63ADF2AC7756100C8EBC3 /* DONANTES.swift */; };
 /* End PBXBuildFile section */
@@ -31,6 +33,8 @@
 		FBB0BFD62AC365D40010CF37 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FBB0BFDD2AC36F350010CF37 /* ListaDeRecolectores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaDeRecolectores.swift; sourceTree = "<group>"; };
 		FBB0BFDF2AC36F8A0010CF37 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
+		FBCFCE4B2AD9CD6800848C0D /* cambiarReciboView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cambiarReciboView.swift; sourceTree = "<group>"; };
+		FBCFCE4D2AD9D8B800848C0D /* ObtenerRecolector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObtenerRecolector.swift; sourceTree = "<group>"; };
 		FBD63ADD2AC7662800C8EBC3 /* ComentariosRecibosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComentariosRecibosView.swift; sourceTree = "<group>"; };
 		FBD63ADF2AC7756100C8EBC3 /* DONANTES.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DONANTES.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -79,7 +83,9 @@
 				FBB0BFD12AC365D30010CF37 /* ContentView.swift */,
 				FBB0BFDD2AC36F350010CF37 /* ListaDeRecolectores.swift */,
 				FBD63ADD2AC7662800C8EBC3 /* ComentariosRecibosView.swift */,
+				FBCFCE4B2AD9CD6800848C0D /* cambiarReciboView.swift */,
 				FB33A5A22AC3A8EF000CFD0B /* ModelData.swift */,
+				FBCFCE4D2AD9D8B800848C0D /* ObtenerRecolector.swift */,
 				FB33A5A62AC3AA60000CFD0B /* Structs */,
 				FBB0BFDF2AC36F8A0010CF37 /* BackgroundView.swift */,
 				FBB0BFD32AC365D40010CF37 /* Assets.xcassets */,
@@ -172,6 +178,8 @@
 				FBB0BFE02AC36F8A0010CF37 /* BackgroundView.swift in Sources */,
 				FBB0BFD02AC365D30010CF37 /* RayosXCordinadorApp.swift in Sources */,
 				FBD63AE02AC7756100C8EBC3 /* DONANTES.swift in Sources */,
+				FBCFCE4E2AD9D8B800848C0D /* ObtenerRecolector.swift in Sources */,
+				FBCFCE4C2AD9CD6800848C0D /* cambiarReciboView.swift in Sources */,
 				FBD63ADE2AC7662800C8EBC3 /* ComentariosRecibosView.swift in Sources */,
 				FB33A5A32AC3A8EF000CFD0B /* ModelData.swift in Sources */,
 				FB33A5A52AC3AA52000CFD0B /* RECIBOS.swift in Sources */,

@@ -24,7 +24,7 @@ struct ListaDeRecibos: View {
                 BackgroundView()
                 
                 VStack{
-                    NavigationLink (destination: sesionView(cambio: $cambio, recibo: RECIBOS(COMENTARIOS: "", DIRECCION_COBRO: "", FECHA_COBRO: "", ID_DONANTE: 0, ID_ESTATUS: 0, ID_RECOLECTOR: 0, IMPORTE: 0.0, id: 0), donante: DONANTES(A_MATERNO: "", A_PATERNO: "", EMAIL: "", FECHA_NAC: "", NOMBRE: "", TELEFONO: "", id: 0))){
+                    NavigationLink (destination: sesionView(cambio: $cambio, recibo: RECIBOS(COMENTARIOS: "", DIRECCION_COBRO: "", FECHA_COBRO: "", ID_DONANTE: 0, ID_ESTATUS: 0, ID_RECOLECTOR: 0, IMPORTE: 0.0, LATITUD: 0.0, LONGITUD: 0.0, id: 0), donante: DONANTES(A_MATERNO: "", A_PATERNO: "", EMAIL: "", FECHA_NAC: "", NOMBRE: "", TELEFONO: "", id: 0))){
                         Image("sesion")
                             .resizable(resizingMode: .stretch)
                             .aspectRatio(contentMode: .fit)

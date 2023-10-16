@@ -20,7 +20,8 @@ struct DetallesView: View {
     @State private var isValid = false
     @State private var texto : String = ""
     @Environment(\.presentationMode) var presentationMode
-    
+    @State private var showAlert = false
+
     @State private var selectedMotivo: Motivo = .noDinero
 
 
@@ -184,7 +185,11 @@ struct DetallesView: View {
                     
                     NavigationStack{
                         HStack(alignment: .top){
-                            Button{}
+                            Button{
+                                if texto==""{
+                                    showAlert.toggle()
+                                }
+                            }
                             label: {
                                 Text("Actualizar")
                                     .padding(20)
@@ -197,7 +202,10 @@ struct DetallesView: View {
                                     .padding(.bottom, 20.0)
                                     .onTapGesture {
                                         self.isValid = validate()
-                                        if self.isValid {
+                                        if texto==""{
+                                            showAlert.toggle()
+                                        }
+                                        else{
                                             self.presentationMode.wrappedValue.dismiss()
                                         }
                                     }
@@ -228,6 +236,9 @@ struct DetallesView: View {
             donante = traerDonante(idD: recibo.ID_DONANTE)
             texto=recibo.COMENTARIOS
         }
+        .alert("Tienes que ingresar un comentario", isPresented: $showAlert){
+
+        }
     }
     
         
@@ -240,9 +251,10 @@ struct DetallesView: View {
     
 }
 
-
+/*
 struct DetallesView_Previews: PreviewProvider {
     static var previews: some View {
         DetallesView(recibo: listaRecibos[0], donante: listaDonantes[0])
     }
 }
+*/

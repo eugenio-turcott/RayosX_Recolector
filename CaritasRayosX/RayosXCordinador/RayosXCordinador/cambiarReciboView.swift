@@ -14,7 +14,7 @@ struct CambiarRecibosView: View {
     @State private var seleccionRecolectorFinal = -1
     @State private var seleccionDonante = 0
     @State private var seleccionid = 0
-
+    @State private var showAlert = false
     @Environment(\.dismiss) private var dismiss
         
     @State var listaRecibos: Array<RECIBOS> = []
@@ -161,7 +161,12 @@ struct CambiarRecibosView: View {
                     
                 Button {
                     enviarRecolector(idNuevo: listaRecolectoresV[seleccionRecolectorFinal].id, idRecibo: listaRecibos[seleccionid].id)
-                    dismiss()
+                    if seleccionRecolector == -1 || seleccionRecolectorFinal == -1{
+                        showAlert.toggle()
+                    }
+                    else{
+                        dismiss()
+                    }
                 }
                 label: {
                     Text("Cambiar Recibo")
@@ -183,11 +188,11 @@ struct CambiarRecibosView: View {
                 .padding(.bottom, 20.0)
                 
             }
-            /*.onAppear(){
-                estatus = recibo.ID_ESTATUS
-                donante = traerDonante(idD: recibo.ID_DONANTE)
+        .alert("Tienes que ingresar todos los datos", isPresented: $showAlert){
 
-            }*/
+
+        }
+
         }
 }
 

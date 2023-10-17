@@ -26,6 +26,7 @@
 		FBAADD312AA8EE730064A068 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBAADD302AA8EE730064A068 /* Preview Assets.xcassets */; };
 		FBAE89992ADA35A600885192 /* LOCATION.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAE89982ADA35A600885192 /* LOCATION.swift */; };
 		FBAE899B2ADA3B3300885192 /* MapaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAE899A2ADA3B3300885192 /* MapaView.swift */; };
+		FBDC8C9B2ADEDDB7006ABE6A /* PieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDC8C9A2ADEDDB7006ABE6A /* PieChartView.swift */; };
 		FBEE20782AA927DE000956FE /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEE20772AA927DE000956FE /* ModelData.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +51,7 @@
 		FBAADD302AA8EE730064A068 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FBAE89982ADA35A600885192 /* LOCATION.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LOCATION.swift; sourceTree = "<group>"; };
 		FBAE899A2ADA3B3300885192 /* MapaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapaView.swift; sourceTree = "<group>"; };
+		FBDC8C9A2ADEDDB7006ABE6A /* PieChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartView.swift; sourceTree = "<group>"; };
 		FBEE20772AA927DE000956FE /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,6 +119,7 @@
 				FB00153E2ACE278D00875E53 /* Structs */,
 				FBEE20772AA927DE000956FE /* ModelData.swift */,
 				FB71D0FE2AA9144A00610ED0 /* BackgroundView.swift */,
+				FBDC8C9A2ADEDDB7006ABE6A /* PieChartView.swift */,
 				FBAADD2D2AA8EE730064A068 /* Assets.xcassets */,
 				FBAADD2F2AA8EE730064A068 /* Preview Content */,
 			);
@@ -212,6 +215,7 @@
 				FBEE20782AA927DE000956FE /* ModelData.swift in Sources */,
 				FB6670D92AA8F082007C38A9 /* donanteRow.swift in Sources */,
 				FB7B1A342ABE2F4000DABF63 /* ObtenerEstatus.swift in Sources */,
+				FBDC8C9B2ADEDDB7006ABE6A /* PieChartView.swift in Sources */,
 				FB24D1EE2AA8F4D80038D109 /* ListaDeRecibos.swift in Sources */,
 				FB6670DB2AA8F0D0007C38A9 /* DetallesView.swift in Sources */,
 				FB7B1A322ABE2ED200DABF63 /* DONANTES.swift in Sources */,

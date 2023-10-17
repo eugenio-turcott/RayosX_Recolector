@@ -14,10 +14,10 @@
             filePath = "CaritasRayosX/ModelData.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "262"
-            endingLineNumber = "262"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "257"
+            endingLineNumber = "257"
+            landmarkName = "enviarComentarios(comentarios:idRecibo:)"
+            landmarkType = "9">
             <Locations>
                <Location
                   uuid = "A5EBE978-026C-49E3-BC36-B1EFC36ACEC7 - 2568a409a9101f81"
@@ -66,6 +66,102 @@
             endingLineNumber = "192"
             landmarkName = "body"
             landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6E851B71-E42B-4D47-BE23-DB29635F737E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CaritasRayosX/ModelData.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "loginVer(usuario:contrasenaI:)"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "6E851B71-E42B-4D47-BE23-DB29635F737E - 3c12afb65f6321a1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CaritasRayosX.loginVer(usuario: Swift.String, contrasenaI: Swift.String) -&gt; Swift.Bool"
+                  moduleName = "CaritasRayosX"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Alumno/Documents/GitHub/RayosX/CaritasRayosX/CaritasRayosX/ModelData.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "1244">
+               </Location>
+               <Location
+                  uuid = "6E851B71-E42B-4D47-BE23-DB29635F737E - 3c12afb65f6320d6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CaritasRayosX.loginVer(usuario: Swift.String, contrasenaI: Swift.String) -&gt; Swift.Bool"
+                  moduleName = "CaritasRayosX"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Alumno/Documents/GitHub/RayosX/CaritasRayosX/CaritasRayosX/ModelData.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "1656">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "77B72FD9-BB85-455D-8D93-E22714A3B890"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CaritasRayosX/ModelData.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "loginVer(usuario:contrasenaI:)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "90A0D6BA-D09F-4BAE-A870-B4EC8844F0CB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CaritasRayosX/ModelData.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "loginVer(usuario:contrasenaI:)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2F356F3B-57E9-4110-B702-E52158FFA3F0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CaritasRayosX/ModelData.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "loginVer(usuario:contrasenaI:)"
+            landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

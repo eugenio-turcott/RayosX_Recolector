@@ -103,18 +103,18 @@ struct DetallesView: View {
                                 .padding(.leading, 5)
                             Spacer()
                             VStack{
-                                /*Link(donante.TELEFONO, destination: URL(string: "tel:\(donante.TELEFONO)")!)
-                                    .font(.system(size: 20))
-                                    .foregroundColor(Color("Gris"))
-                                    .multilineTextAlignment(.trailing)
-                                    .frame(width: 180)
-                                    .padding(.bottom, 1)*/
-                                Text(donante.TELEFONO)//telefono
+                                Link(donante.TELEFONO, destination: URL(string: "tel:\(donante.TELEFONO)")!)
                                     .font(.system(size: 20))
                                     .foregroundColor(Color("Gris"))
                                     .multilineTextAlignment(.trailing)
                                     .frame(width: 180)
                                     .padding(.bottom, 1)
+                                /*Text(donante.TELEFONO)//telefono
+                                    .font(.system(size: 20))
+                                    .foregroundColor(Color("Gris"))
+                                    .multilineTextAlignment(.trailing)
+                                    .frame(width: 180)
+                                    .padding(.bottom, 1)*/
                             }
                         }
                         .padding(.horizontal, 20.0)

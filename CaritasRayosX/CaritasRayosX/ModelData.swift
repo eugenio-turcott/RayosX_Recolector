@@ -10,8 +10,10 @@ import UIKit
 
 func loginVer(usuario:String, contrasenaI:String) -> Bool{
     var lista: Array<RECOLECTOR> = []
-    var contrasena: String = ""
-    guard let url = URL(string:"https://equipo01.tc2007b.tec.mx:10206/crud/read?usuario=\(usuario)") else{
+    var res: String = ""
+    var res2: Bool = false
+
+    guard let url = URL(string:"https://equipo01.tc2007b.tec.mx:10206/crud/loginCheck?usuario=\(usuario)&password=\(contrasenaI)") else{
         return false
     }
     
@@ -24,10 +26,13 @@ func loginVer(usuario:String, contrasenaI:String) -> Bool{
         let jsonDecoder = JSONDecoder()
         if(data != nil){
             do{
-                let recolectorList = try jsonDecoder.decode([RECOLECTOR].self, from: data!)
-                lista = recolectorList
-                for recolector in recolectorList{
-                    contrasena = recolector.CONTRASENA
+                let res = String(decoding:data!, as:UTF8.self)
+
+                if res == "\"yes\"\n"{
+                    res2=true
+                }
+                else{
+                    res2=false
                 }
             }catch{
                 print(error)
@@ -37,18 +42,8 @@ func loginVer(usuario:String, contrasenaI:String) -> Bool{
     }
     task.resume()
     group.wait()
+    return res2
     
-    if lista.isEmpty {
-        return false
-    }
-    else{
-        if (contrasena == contrasenaI){
-            return true
-        }
-        else{
-            return false
-        }
-    }
     
 }
 

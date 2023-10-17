@@ -30,7 +30,6 @@ struct DetallesView: View {
     var body: some View {
         NavigationStack {
             ZStack{
-                
                 BackgroundView()
                 VStack{
                     Button(action: {}){
@@ -41,13 +40,9 @@ struct DetallesView: View {
                                 .frame(width: 25)
                             Text("Atrás")
                                 .font(.title3)
-                            
                         }
                         .onTapGesture {
-                            self.isValid = validate()
-                            if self.isValid{
-                                self.presentationMode.wrappedValue.dismiss()
-                            }
+                            self.presentationMode.wrappedValue.dismiss()
                         }
                     }
                     
@@ -55,9 +50,6 @@ struct DetallesView: View {
                 .foregroundColor(.white)
                 .padding(.top, -380.0)
                 .padding(.leading, -170)
-                
-                
-                
                 
                 VStack(alignment: .center){
                     
@@ -91,10 +83,6 @@ struct DetallesView: View {
                         .padding(.bottom, 30.0)
                         .padding(.horizontal, 30.0)
                         
-                        
-                        
-                        
-                        
                         HStack(alignment: .center) {
                             Text("Contacto:")
                                 .font(.system(size: 23))
@@ -103,24 +91,28 @@ struct DetallesView: View {
                                 .padding(.leading, 5)
                             Spacer()
                             VStack{
-                                Link(donante.TELEFONO, destination: URL(string: "tel:\(donante.TELEFONO)")!)
+//                                let telefonoLimpio = donante.TELEFONO.replacingOccurrences(of: " ", with: "")
+//                                                                  .replacingOccurrences(of: "-", with: "")
+//                                                                  .replacingOccurrences(of: "(", with: "")
+//                                                                  .replacingOccurrences(of: ")", with: "")
+//
+//
+//                                Link("\(donante.TELEFONO)", destination: URL(string: "tel:\(telefonoLimpio)")!)
+//                                    .font(.system(size: 20))
+//                                    .foregroundColor(Color("Gris"))
+//                                    .multilineTextAlignment(.trailing)
+//                                    .frame(width: 180)
+//                                    .padding(.bottom, 1)
+                                Text(donante.TELEFONO)//telefono
                                     .font(.system(size: 20))
                                     .foregroundColor(Color("Gris"))
                                     .multilineTextAlignment(.trailing)
                                     .frame(width: 180)
                                     .padding(.bottom, 1)
-                                /*Text(donante.TELEFONO)//telefono
-                                    .font(.system(size: 20))
-                                    .foregroundColor(Color("Gris"))
-                                    .multilineTextAlignment(.trailing)
-                                    .frame(width: 180)
-                                    .padding(.bottom, 1)*/
                             }
                         }
                         .padding(.horizontal, 20.0)
                         .padding(.bottom, 40.0)
-                        
-                        
                         
                         ZStack{
                             HStack {

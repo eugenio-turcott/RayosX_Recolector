@@ -9,8 +9,6 @@ import Foundation
 import UIKit
 
 func loginVer(usuario:String, contrasenaI:String) -> Bool{
-    var lista: Array<RECOLECTOR> = []
-    var res: String = ""
     var res2: Bool = false
 
     guard let url = URL(string:"https://equipo01.tc2007b.tec.mx:10206/crud/loginCheck?usuario=\(usuario)&password=\(contrasenaI)") else{

@@ -31,7 +31,7 @@ struct MapaView: View {
         .alert(isPresented: $isShowingAlert) {
             Alert (
                 title: Text("Abrir en Maps"),
-                message: Text("¿Deseas abrir esta ubicación en la aplicación Mapas?"),
+                message: Text("¿Deseas acceder a esta ubicación en Maps?"),
                 primaryButton: .default(Text("Abrir")) {
                     openInMaps()
                 },

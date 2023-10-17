@@ -77,6 +77,10 @@ struct sesionView: View {
                     Button {
                         enviarUsuario(usuario: usuario, idRecolector: UserDefaults.standard.integer(forKey:"idR"))
                         enviarContrasena(contrasena:contraseña, idRecolector: UserDefaults.standard.integer(forKey:"idR"))
+                        UserDefaults.standard.setValue(usuario, forKey: "usuario")
+                        UserDefaults.standard.setValue(contraseña, forKey: "contraseña")
+
+
                     }
                     label: {
                         Text("Guardar")

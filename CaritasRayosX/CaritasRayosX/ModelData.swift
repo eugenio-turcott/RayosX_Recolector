@@ -451,23 +451,24 @@ func callRecibosTotales(idR: Int) -> Double{ //recibir como input idrecolector
 
 }
 
-func callLocation(direccion: String) -> String {
-    var mensaje = "NO FUNCIONA"
+extension String {
+    func removeAccents() -> String {
+        return self.folding(options: .diacriticInsensitive, locale: .current)
+    }
+}
+
+func callLocation(direccion: String, completion: @escaping (LOCATION) -> Void) {
+  
+    var formattedAddress = direccion.removeAccents()
+    var finalAddress = formattedAddress.replacingOccurrences(of: " ", with: "%20")
     
-    let formattedAddress = direccion.replacingOccurrences(of: " ", with: "+")
-    
-    var string1 = "http://10.14.255.65:10206/servicioGoogle?DIRECCION_COBRO=\(formattedAddress)"
-    
-    print(string1)
+    var string1 = "https://equipo01.tc2007b.tec.mx:10206/servicioGoogle?DIRECCION_COBRO=\(finalAddress)"
     
     guard let url = URL(string: string1)
     else {
         print("No funciona")
-        return mensaje
+        return
     }
-    
-    let group = DispatchGroup()
-    group.enter()
     
     let task = URLSession.shared.dataTask(with: url) {
         data, response, error in
@@ -475,22 +476,18 @@ func callLocation(direccion: String) -> String {
         let jsonDecoder = JSONDecoder()
         if (data != nil) {
             do{
-                let postList = try jsonDecoder.decode([LOCATION].self, from: data!)
-                for postItem in postList {
-                    print("Google Request: Latitud = \(postItem.lat) - Longitud: \(postItem.lng)")
-                }
+                let postItem = try jsonDecoder.decode(LOCATION.self, from: data!)
+                completion(postItem)
+                print("Google Request: Latitud = \(postItem.lat) - Longitud: \(postItem.lng)")
             } catch {
                 print(error)
             }
             
         }
-        group.leave()
     }
     task.resume()
     
-    group.wait()
-    
-    return mensaje
+    return
 }
 
 

@@ -12,11 +12,11 @@ import CoreLocation
 struct MapaView: View {
     @State var latitud: Double = 0.0
     @State var longitud: Double = 0.0
+    @State private var isShowingAlert = true
     @State private var region: MKCoordinateRegion = MKCoordinateRegion()
     @State var cities: [Marcador] = [
     Marcador(coordinate: .init(latitude: 25.649991, longitude: -100.290744))
     ]
-    @State private var locationManager = CLLocationManager()
 
     var body: some View {
         VStack {
@@ -24,12 +24,26 @@ struct MapaView: View {
                 MapMarker(coordinate: city.coordinate, tint: .red)
                 })
                 .onAppear() {
-                    locationManager
-                        .requestWhenInUseAuthorization()
                     region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: latitud, longitude: longitud), latitudinalMeters: 3000, longitudinalMeters: 3000)
                 }
         }
         .ignoresSafeArea()
+        .alert(isPresented: $isShowingAlert) {
+            Alert (
+                title: Text("Abrir en Maps"),
+                message: Text("¿Deseas abrir esta ubicación en la aplicación Mapas?"),
+                primaryButton: .default(Text("Abrir")) {
+                    openInMaps()
+                },
+                secondaryButton: .cancel()
+            )
+        }
+    }
+    func openInMaps() {
+        let coordinates = CLLocationCoordinate2D(latitude: latitud, longitude: longitud)
+        let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinates))
+        mapItem.name = "Ubicación personalizada"
+        mapItem.openInMaps()
     }
 }
 

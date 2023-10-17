@@ -110,6 +110,8 @@ func callRecibosTotales(idR: Int) -> Int{ //recibir como input idrecolector
 
 func callRecibosNoCobrados(idR: Int) -> Array<RECIBOS>{ //recibir como input idrecolector
     var listaRecibos: Array<RECIBOS> = []
+    var listaRecibosF: Array<RECIBOS> = []
+
     guard let url = URL(string: "https://equipo01.tc2007b.tec.mx:10206/crud/readRecibosNoCobrados?id=\(idR)") else{
         return listaRecibos
     }

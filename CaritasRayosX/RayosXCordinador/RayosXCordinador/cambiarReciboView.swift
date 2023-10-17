@@ -15,6 +15,8 @@ struct CambiarRecibosView: View {
     @State private var seleccionDonante = 0
     @State private var seleccionid = 0
     @State private var showAlert = false
+    @State private var showAlert2 = false
+
     @Environment(\.dismiss) private var dismiss
         
     @State var listaRecibos: Array<RECIBOS> = []
@@ -70,26 +72,6 @@ struct CambiarRecibosView: View {
                         listaRecibos = callRecibosNoCobrados(idR: listaRecolectoresV[newValue].id)
                     }
                     
-                    //Text("index: \(seleccionRecolector)")
-                    
-                    HStack(alignment: .top){
-                        Spacer()
-                        Text("Donante:")
-                            .font(.title3)
-                            .fontWeight(.bold)
-                            .foregroundColor(Color("AzulOscuro"))
-                        Spacer()
-                        Picker(selection: $seleccionDonante, label: Text("Donante")) {
-                            ForEach(listaRecibos.indices, id: \.self){ index in
-                                Text(callNombreDonante(idD:(self.listaRecibos[index].ID_DONANTE)))
-                            }
-                        }
-                        .offset(y: -5.0)
-                        Spacer()
-                    }
-                    .padding(.bottom, 40.0)
-                    .padding(.leading, 20.0)
-                    .padding(.trailing, 5.0)
                 
                 HStack(alignment: .top){
                     Spacer()
@@ -99,6 +81,8 @@ struct CambiarRecibosView: View {
                         .foregroundColor(Color("AzulOscuro"))
                     Spacer()
                     Picker(selection: $seleccionid, label: Text("ID")) {
+                        Text("").tag(0)
+
                         ForEach(listaRecibos.indices, id: \.self){ index in
                             Text("\(self.listaRecibos[index].id)")
                         }
@@ -160,13 +144,7 @@ struct CambiarRecibosView: View {
                     Spacer()
                     
                 Button {
-                    enviarRecolector(idNuevo: listaRecolectoresV[seleccionRecolectorFinal].id, idRecibo: listaRecibos[seleccionid].id)
-                    if seleccionRecolector == -1 || seleccionRecolectorFinal == -1{
-                        showAlert.toggle()
-                    }
-                    else{
-                        dismiss()
-                    }
+                    
                 }
                 label: {
                     Text("Cambiar Recibo")
@@ -174,6 +152,19 @@ struct CambiarRecibosView: View {
                         .frame(width: 400.0)
                         .tint(Color("AzulOscuro"))
                         .padding(.bottom, 20.0)
+                        .onTapGesture {
+                            if seleccionRecolector == -1 || seleccionRecolectorFinal == -1 || seleccionid == 0{
+                                showAlert.toggle()
+                            }
+                            else if listaRecibos.isEmpty{
+                                showAlert2.toggle()
+                            }
+                            else{
+                                enviarRecolector(idNuevo: listaRecolectoresV[seleccionRecolectorFinal].id, idRecibo: listaRecibos[seleccionid].id)
+                                dismiss()
+                            }
+                        }
+
                 }
 
                     
@@ -189,6 +180,8 @@ struct CambiarRecibosView: View {
                 
             }
         .alert("Tienes que ingresar todos los datos", isPresented: $showAlert){
+        }
+        .alert("El recolector no tiene recibos", isPresented: $showAlert2){
 
 
         }

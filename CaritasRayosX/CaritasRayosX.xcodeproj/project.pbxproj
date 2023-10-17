@@ -10,7 +10,6 @@
 		FB0015312ACDFDBD00875E53 /* sesionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0015302ACDFDBD00875E53 /* sesionView.swift */; };
 		FB0015332ACE076900875E53 /* ObtenerUsuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0015322ACE076900875E53 /* ObtenerUsuario.swift */; };
 		FB0015352ACE07AF00875E53 /* ObtenerContrasena.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0015342ACE07AF00875E53 /* ObtenerContrasena.swift */; };
-		FB00153D2ACE278400875E53 /* PieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB00153C2ACE278400875E53 /* PieChartView.swift */; };
 		FB24D1EE2AA8F4D80038D109 /* ListaDeRecibos.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB24D1ED2AA8F4D80038D109 /* ListaDeRecibos.swift */; };
 		FB2D282E2AC4EA2E00552366 /* ObtenerComentarios.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2D282D2AC4EA2E00552366 /* ObtenerComentarios.swift */; };
 		FB6670D92AA8F082007C38A9 /* donanteRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6670D82AA8F082007C38A9 /* donanteRow.swift */; };
@@ -34,7 +33,6 @@
 		FB0015302ACDFDBD00875E53 /* sesionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sesionView.swift; sourceTree = "<group>"; };
 		FB0015322ACE076900875E53 /* ObtenerUsuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObtenerUsuario.swift; sourceTree = "<group>"; };
 		FB0015342ACE07AF00875E53 /* ObtenerContrasena.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObtenerContrasena.swift; sourceTree = "<group>"; };
-		FB00153C2ACE278400875E53 /* PieChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PieChartView.swift; path = ../../../../../Downloads/PieChartView.swift; sourceTree = "<group>"; };
 		FB24D1ED2AA8F4D80038D109 /* ListaDeRecibos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaDeRecibos.swift; sourceTree = "<group>"; };
 		FB2D282D2AC4EA2E00552366 /* ObtenerComentarios.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObtenerComentarios.swift; sourceTree = "<group>"; };
 		FB6670D82AA8F082007C38A9 /* donanteRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = donanteRow.swift; sourceTree = "<group>"; };
@@ -119,7 +117,6 @@
 				FB00153E2ACE278D00875E53 /* Structs */,
 				FBEE20772AA927DE000956FE /* ModelData.swift */,
 				FB71D0FE2AA9144A00610ED0 /* BackgroundView.swift */,
-				FB00153C2ACE278400875E53 /* PieChartView.swift */,
 				FBAADD2D2AA8EE730064A068 /* Assets.xcassets */,
 				FBAADD2F2AA8EE730064A068 /* Preview Content */,
 			);
@@ -219,7 +216,6 @@
 				FB6670DB2AA8F0D0007C38A9 /* DetallesView.swift in Sources */,
 				FB7B1A322ABE2ED200DABF63 /* DONANTES.swift in Sources */,
 				FBAE899B2ADA3B3300885192 /* MapaView.swift in Sources */,
-				FB00153D2ACE278400875E53 /* PieChartView.swift in Sources */,
 				FBAADD2A2AA8EE720064A068 /* CaritasRayosXApp.swift in Sources */,
 				FB0015332ACE076900875E53 /* ObtenerUsuario.swift in Sources */,
 				FB0015312ACDFDBD00875E53 /* sesionView.swift in Sources */,

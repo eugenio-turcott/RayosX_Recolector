@@ -11,10 +11,31 @@ import SwiftUI
 struct ComentariosRecibosView: View {
     //@State var listaRecibos: Array<RECIBOS> = []
     @State var listaRecibos: [RECIBOS] = []
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         ZStack{
             BackgroundView()
+            VStack{
+                Button(action: {}){
+                    HStack{
+                        Image(systemName: "arrowshape.turn.up.backward.2")
+                            .resizable(resizingMode: .stretch)
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 25)
+                        Text("Atrás")
+                            .font(.title3)
+                        
+                    }
+                    .onTapGesture {
+                        self.presentationMode.wrappedValue.dismiss()
+                    }
+                }
+                
+            }
+            .foregroundColor(.white)
+            .padding(.top, -380.0)
+            .padding(.leading, -170)
             
             VStack(alignment: .center){
                 HStack(alignment: .top){

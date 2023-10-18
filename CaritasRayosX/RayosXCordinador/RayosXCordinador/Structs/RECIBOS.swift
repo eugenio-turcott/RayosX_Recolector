@@ -12,6 +12,5 @@ struct RECIBOS: Codable, Identifiable{
     let ID_DONANTE, ID_ESTATUS: Int
     let ID_RECOLECTOR: Int
     let IMPORTE: Float
-    let LATITUD, LONGITUD: Double
     let id: Int
 }

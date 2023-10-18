@@ -91,12 +91,6 @@ struct sesionView: View {
                         
                         
                         Button {
-                            enviarUsuario(usuario: usuario, idRecolector: UserDefaults.standard.integer(forKey:"idR"))
-                            enviarContrasena(contrasena:contraseña, idRecolector: UserDefaults.standard.integer(forKey:"idR"))
-                            UserDefaults.standard.setValue(usuario, forKey: "usuario")
-                            UserDefaults.standard.setValue(contraseña, forKey: "contraseña")
-                            
-                            
                         }
                     label: {
                         Text("Guardar")
@@ -108,6 +102,15 @@ struct sesionView: View {
                             .cornerRadius(10)
                             .padding(.horizontal, 20.0)
                             .padding(.bottom, 10.0)
+                    }
+                    .alert("¿Seguro que quieres cerrar la sesión?", isPresented: $showAlert){
+                        Button("Si"){
+                            enviarUsuario(usuario: usuario, idRecolector: UserDefaults.standard.integer(forKey:"idR"))
+                            enviarContrasena(contrasena:contraseña, idRecolector: UserDefaults.standard.integer(forKey:"idR"))
+                            UserDefaults.standard.setValue(usuario, forKey: "usuario")
+                            UserDefaults.standard.setValue(contraseña, forKey: "contraseña")
+                        }
+                        Button("No"){}
                     }
                         
                         VStack {

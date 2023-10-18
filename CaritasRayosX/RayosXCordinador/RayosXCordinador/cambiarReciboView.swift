@@ -141,7 +141,7 @@ struct CambiarRecibosView: View {
                         .tint(Color("AzulOscuro"))
                         .padding(.bottom, 20.0)
                         .onTapGesture {
-                            if seleccionRecolector == -1 || seleccionRecolectorFinal == -1 || seleccionid == 0{
+                            if seleccionRecolector == -1 || seleccionRecolectorFinal == -1 || seleccionid == -1{
                                 showAlert.toggle()
                             }
                             else if listaRecibos.isEmpty{

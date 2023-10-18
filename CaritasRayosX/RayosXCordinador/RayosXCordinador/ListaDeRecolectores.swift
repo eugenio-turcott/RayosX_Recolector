@@ -30,7 +30,7 @@ struct ListaDeRecolectores: View {
                             List(listaRecolectores){
                                 recolectoresItem in
                                 NavigationLink(){
-                                    ComentariosRecibosView(listaRecibos: callRecibosNoCobrados(idR: recolectoresItem.id))
+                                    ComentariosRecibosView(listaRecibos: callComentariosNoCobrados(idR: recolectoresItem.id))
                                 }label:{
                                 ZStack {
                                         HStack {

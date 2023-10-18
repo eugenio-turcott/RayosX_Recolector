@@ -12,6 +12,8 @@ struct sesionView: View {
     @State private var contraseña: String = ""
     @State var dataPie: [(Double, Color)] = []
     @State private var showAlert = false
+    @State private var showAlert2 = false
+
     @Environment(\.presentationMode) var presentationMode
     @Binding var cambio: Bool
     @State private var estatus: Int = 1
@@ -91,6 +93,7 @@ struct sesionView: View {
                         
                         
                         Button {
+                            showAlert2.toggle()
                         }
                     label: {
                         Text("Guardar")
@@ -103,15 +106,7 @@ struct sesionView: View {
                             .padding(.horizontal, 20.0)
                             .padding(.bottom, 10.0)
                     }
-                    .alert("¿Seguro que quieres cerrar la sesión?", isPresented: $showAlert){
-                        Button("Si"){
-                            enviarUsuario(usuario: usuario, idRecolector: UserDefaults.standard.integer(forKey:"idR"))
-                            enviarContrasena(contrasena:contraseña, idRecolector: UserDefaults.standard.integer(forKey:"idR"))
-                            UserDefaults.standard.setValue(usuario, forKey: "usuario")
-                            UserDefaults.standard.setValue(contraseña, forKey: "contraseña")
-                        }
-                        Button("No"){}
-                    }
+                    
                         
                         VStack {
                             PieChartView(slices:[
@@ -170,6 +165,15 @@ struct sesionView: View {
                 Button("No"){}
             }
             .background(Color(red: 17/255, green: 151/255, blue: 165/255))
+        }
+        .alert("¿Seguro que desear actualizar tu usuario?", isPresented: $showAlert2){
+            Button("Si"){
+                enviarUsuario(usuario: usuario, idRecolector: UserDefaults.standard.integer(forKey:"idR"))
+                enviarContrasena(contrasena:contraseña, idRecolector: UserDefaults.standard.integer(forKey:"idR"))
+                UserDefaults.standard.setValue(usuario, forKey: "usuario")
+                UserDefaults.standard.setValue(contraseña, forKey: "contraseña")
+            }
+            Button("No"){}
         }
     }
     

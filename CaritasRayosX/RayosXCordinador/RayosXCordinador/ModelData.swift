@@ -140,6 +140,38 @@ func callRecibosNoCobrados(idR: Int) -> Array<RECIBOS>{ //recibir como input idr
 
 }
 
+func callComentariosNoCobrados(idR: Int) -> Array<RECIBOS>{ //recibir como input idrecolector
+    var listaRecibos: Array<RECIBOS> = []
+    var listaRecibosF: Array<RECIBOS> = []
+
+    guard let url = URL(string: "https://equipo01.tc2007b.tec.mx:10206/crud/readComentariosNoCobrados?id=\(idR)") else{
+        return listaRecibos
+    }
+
+    let group = DispatchGroup()
+    group.enter()
+
+    let task = URLSession.shared.dataTask(with: url){
+        data, response, error in
+
+        let jsonDecoder = JSONDecoder()
+        if(data != nil){
+            do{
+                let decodeRecibos = try jsonDecoder.decode([RECIBOS].self, from: data!)
+                listaRecibos = decodeRecibos
+                
+            }catch{
+                print(error)
+            }
+        }
+        group.leave()
+    }
+    task.resume()
+    group.wait()
+    return listaRecibos
+
+}
+
 
 
 func callNombreDonante(idD: Int) -> String{ //recibir como input idrecolector

@@ -89,14 +89,7 @@ struct DetallesView: View {
                                 .fontWeight(.bold)
                                 .foregroundColor(Color("Azul oscuro"))
                                 .padding(.leading, 5)
-                            Spacer()
                             VStack{
-//                                let telefonoLimpio = donante.TELEFONO.replacingOccurrences(of: " ", with: "")
-//                                                                  .replacingOccurrences(of: "-", with: "")
-//                                                                  .replacingOccurrences(of: "(", with: "")
-//                                                                  .replacingOccurrences(of: ")", with: "")
-//
-//
 //                                Link("\(donante.TELEFONO)", destination: URL(string: "tel:\(telefonoLimpio)")!)
 //                                    .font(.system(size: 20))
 //                                    .foregroundColor(Color("Gris"))
@@ -133,9 +126,9 @@ struct DetallesView: View {
                                 }
                                 .pickerStyle(SegmentedPickerStyle())
                                 .scaledToFit()
-                                .scaleEffect(CGSize(width: 1.0, height: 1.5))
+                                .scaleEffect(CGSize(width: 1.0, height: 1.2))
                                 .frame(width: 300.0, height: 50.0)
-                                .background(RoundedRectangle(cornerRadius: 5.0).fill(Color.white))
+                                .background(RoundedRectangle(cornerRadius: 3.0).fill(Color.white))
                                 
                             }
                         }
@@ -156,9 +149,11 @@ struct DetallesView: View {
                                     .foregroundColor(Color("Azul oscuro"))
                                 Picker("Comentarios", selection: $texto) {
                                     Text("").tag("")
-                                    Text("Estaba enfermo").tag("Estaba enfermo")
-                                    Text("No estaba").tag("No estaba")
-                                    Text("No tenia el dinero").tag("No tenia el dinero")
+                                    Text("No se encontraba en casa").tag("No se encontraba en casa")
+                                    Text("Ya no vive ahí").tag("Ya no vive ahí")
+                                    Text("No desea continuar ayudando").tag("No desea continuar ayudando")
+                                    Text("Indispuesto").tag("Indispuesto")
+                                    Text("No se ubicó el domicilio").tag("No se ubicó el domicilio")
                                 }
                                 .textFieldStyle(.roundedBorder)
                                 .frame(width: 275.0)
@@ -194,10 +189,10 @@ struct DetallesView: View {
                                 .foregroundColor(.white)
                                 .cornerRadius(10)
                                 .padding(.horizontal, 20.0)
-                                .padding(.bottom, 20.0)
+                                .padding(.bottom, 7.0)
                                 .onTapGesture {
                                     self.isValid = validate()
-                                    if texto==""{
+                                    if texto == "" && estatus == 2{
                                         showAlert.toggle()
                                     }
                                     else{
@@ -222,17 +217,12 @@ struct DetallesView: View {
                                     .foregroundColor(.white)
                                     .cornerRadius(10)
                                     .padding(.horizontal, 20.0)
+                                    .toolbar(.hidden)
                             })
-                            
-                            
                         }
                     }
                     .padding(.bottom, 30.0)
                     Spacer()
-                    
-                    
-                    
-                    
                 }
                 .background(.white)
                 .cornerRadius(35)

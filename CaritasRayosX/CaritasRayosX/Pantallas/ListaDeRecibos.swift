@@ -22,9 +22,8 @@ struct ListaDeRecibos: View {
         NavigationStack {
             ZStack {
                 BackgroundView()
-                
                 VStack{
-                    NavigationLink (destination: sesionView(cambio: $cambio, recibo: RECIBOS(COMENTARIOS: "", DIRECCION_COBRO: "", FECHA_COBRO: "", ID_DONANTE: 0, ID_ESTATUS: 0, ID_RECOLECTOR: 0, IMPORTE: 0.0, LATITUD: 0.0, LONGITUD: 0.0, id: 0), donante: DONANTES(A_MATERNO: "", A_PATERNO: "", EMAIL: "", FECHA_NAC: "", NOMBRE: "", TELEFONO: "", id: 0))){
+                    NavigationLink (destination: sesionView(cambio: $cambio, recibo: RECIBOS(COMENTARIOS: "", DIRECCION_COBRO: "", FECHA_COBRO: "", ID_DONANTE: 0, ID_ESTATUS: 0, ID_RECOLECTOR: 0, IMPORTE: 0.0, id: 0), donante: DONANTES(A_MATERNO: "", A_PATERNO: "", EMAIL: "", FECHA_NAC: "", NOMBRE: "", TELEFONO: "", id: 0))){
                         Image("sesion")
                             .resizable(resizingMode: .stretch)
                             .aspectRatio(contentMode: .fit)
@@ -33,19 +32,13 @@ struct ListaDeRecibos: View {
                     .toolbar(.hidden)
                     .onChange(of: cambio){ value in
                         self.presentationMode.wrappedValue.dismiss()
-
                     }
-                    
-                    
                 }
                 .foregroundColor(.white)
                 .padding(.top, -380.0)
                 .padding(.leading, 270)
                 
-                
                 VStack(alignment: .center) {
-                    
-
                     VStack {
                         HStack {
                             Text("Recibos")
@@ -56,7 +49,6 @@ struct ListaDeRecibos: View {
                         }
                         .padding(.top, 15.0)
                         
-                            
                         List(listaRecibos){
                             recibosItem in
                             NavigationLink{
@@ -70,9 +62,7 @@ struct ListaDeRecibos: View {
                         }
                         .padding(.top, -5.0)
                         .listStyle(.inset)
-
                     }
-                    
                 }
                 .padding(.bottom, 30.0)
                 .onAppear(){
@@ -90,7 +80,6 @@ struct ListaDeRecibos: View {
                     
             }
             .background(Color(red: 17/255, green: 151/255, blue: 165/255))
-                    
         }
     }
     

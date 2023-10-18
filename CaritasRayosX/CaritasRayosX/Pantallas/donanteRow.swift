@@ -16,11 +16,18 @@ struct donanteRow: View {
         if (recibo.ID_ESTATUS == 1) {
             VStack{
                 HStack{ //Nombre                   Apellido
-                    Text("\(donante.NOMBRE) \(donante.A_PATERNO)")
+                    Text("#\(recibo.id)")
                         .font(.system(size: 25))
                         .fontWeight(.bold)
                         .foregroundColor(Color(red: 0/255, green: 59/255, blue: 92/255))
                         .padding(.leading, 15.0)
+                        .padding(.top, 10.0)
+                        .offset(y: 5)
+                    Text("\(donante.NOMBRE) \(donante.A_PATERNO)")
+                        .font(.system(size: 25))
+                        .fontWeight(.bold)
+                        .foregroundColor(Color(red: 0/255, green: 59/255, blue: 92/255))
+                        .padding(.leading, 5.0)
                         .padding(.top, 10.0)
                         .offset(y: 5)
                     Spacer()
@@ -42,11 +49,18 @@ struct donanteRow: View {
         } else if (recibo.ID_ESTATUS == 2) {
             VStack{
                 HStack{ //Nombre                   Apellido
-                    Text("\(donante.NOMBRE) \(donante.A_PATERNO)")
+                    Text("#\(recibo.id)")
                         .font(.system(size: 25))
                         .fontWeight(.bold)
                         .foregroundColor(Color(red: 0/255, green: 59/255, blue: 92/255))
                         .padding(.leading, 15.0)
+                        .padding(.top, 10.0)
+                        .offset(y: 5)
+                    Text("\(donante.NOMBRE) \(donante.A_PATERNO)")
+                        .font(.system(size: 25))
+                        .fontWeight(.bold)
+                        .foregroundColor(Color(red: 0/255, green: 59/255, blue: 92/255))
+                        .padding(.leading, 5.0)
                         .padding(.top, 10.0)
                         .offset(y: 5)
                     Spacer()
@@ -68,11 +82,18 @@ struct donanteRow: View {
         } else {
             VStack{
                 HStack{ //Nombre                   Apellido
-                    Text("\(donante.NOMBRE) \(donante.A_PATERNO)")
+                    Text("#\(recibo.id)")
                         .font(.system(size: 25))
                         .fontWeight(.bold)
                         .foregroundColor(Color(red: 0/255, green: 59/255, blue: 92/255))
                         .padding(.leading, 15.0)
+                        .padding(.top, 10.0)
+                        .offset(y: 5)
+                    Text("\(donante.NOMBRE) \(donante.A_PATERNO)")
+                        .font(.system(size: 25))
+                        .fontWeight(.bold)
+                        .foregroundColor(Color(red: 0/255, green: 59/255, blue: 92/255))
+                        .padding(.leading, 5.0)
                         .padding(.top, 10.0)
                         .offset(y: 5)
                     Spacer()
